@@ -124,6 +124,7 @@ return {
     },
     -- 提供对SchemaStore目录的访问
     {
-        "b0o/SchemaStore.nvim"
+        "b0o/SchemaStore.nvim",
+        lazy = true
     }
 }

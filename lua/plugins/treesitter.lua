@@ -137,7 +137,9 @@ return {
     {
         "haringsrob/nvim_context_vt",
         event = "BufReadPost",
-        opts = {}
+        opts = {
+            prefix = ''
+        }
     },
     -- 突出显示参数的定义和用法
     {

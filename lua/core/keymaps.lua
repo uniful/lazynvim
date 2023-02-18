@@ -372,6 +372,10 @@ mapcmd("<leader>ni", "NullLsInfo")
 -- notify
 maplua("<leader>nh", "require('notify').history()")
 
+-- contect_vt
+-- 切换上下文虚拟文本
+mapcmd("<leader>nv", "NvimContectVtToggle")
+
 
 -- O
 

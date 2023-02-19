@@ -39,14 +39,11 @@ Introduction](https://github.com/neovim/neovim/wiki/Introduction)
 - 如果是windows10/11用户，则进入%LocalAppData%,新建一个nvim文件夹，然后在nvim文件夹里面打开终端,
 输入这段指令:git clone https://github.com/uniful/lazynvim.git
 - 由于在这个配置中，我自己改了一些东西，直接启动Neovim，插件安装会报错，需要先修改一下里面的东西。
-- 自行修改如下：
-1.
-alpha-nvim,由于我自己在此插件里面修改了一些布局样式，并且命名为dashboardt.lua,所以要修改回来，在plugins/cover.lua文件下，将dashboardt改为dashboard
+- 自行修改如下：(注意：不要直接使用neovim来修改，否则插件将会直接安装，并且报错，可以使用vim/nano/emacs/helix等)
+1. alpha-nvim,由于我自己在此插件里面修改了一些布局样式，并且命名为dashboardt.lua,所以要修改回来，在plugins/cover.lua文件下，将dashboardt改为dashboard
 2. HighStr,在plugins/highstr.lua里面修改为你自己的位置
-3.
-telescope,在plugins/inquiry.lua中修改history、frecency的位置，*其实在inquiry.luaz中frecency这段可以直接删除，我自己懒得改了*
-4.
-如果是windows用户，则使用sqlite的时候需要修改一些东西，详情可在[sqlite.lua](https://github.com/kkharji/sqlite.lua)中查看
+3. telescope,在plugins/inquiry.lua中修改history、frecency的位置，*其实在inquiry.luaz中frecency这段可以直接删除，我自己懒得改了*
+4. 如果是windows用户，则使用sqlite的时候需要修改一些东西，详情可在[sqlite.lua](https://github.com/kkharji/sqlite.lua)中查看
 ### 完成
 - 修改完成后，在终端输入nvim,插件便会自动安装
 

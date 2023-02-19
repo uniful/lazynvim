@@ -94,7 +94,7 @@ return {
         event = "BufReadPost",
 		opts = {
 			verbosity = 0,
-			saving_path = "~/.cache/nvim/highstr/",
+			saving_path = "/home/colin/.cache/nvim/highstr/", -- 最好使用绝对路径
 			highlight_colors = {
 				color_0 = {"#0c0d0e", "smart"},	-- Cosmic charcoal
 				color_1 = {"#e5c07b", "smart"},	-- Pastel yellow

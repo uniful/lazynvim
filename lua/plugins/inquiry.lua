@@ -83,6 +83,7 @@ return {
             require("telescope").load_extension("noice")
             require("telescope").load_extension("undo")
             require("telescope").load_extension("harpoon")
+            require("telescope").load_extension("yank_history")
         end
     },
     -- fzf模糊查找

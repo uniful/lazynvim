@@ -137,6 +137,8 @@ maptext("<leader>dvs", "DiffviewFileHistory ")
 
 -- F
 -- fzf
+-- 功能选择
+maptext("<leader>fs", "FzfLua ")
 -- 直接查找文件
 mapcmd("<leader>ff", "FzfLua files")
 -- 带参数查找
@@ -425,6 +427,11 @@ mapnorm("<leader>su","vnew:lua require('spectre').toggle_live_update()")
 -- ssr
 vim.keymap.set({ "n", "x" }, "<leader>sr", function() require("ssr").open() end)
 
+-- substitute
+maplua("<leader>sxo", "require('substitute.range').operator()")
+vim.keymap.set("x","<leader>sxv", "require('substitute.range').visual()",opts)
+maplua("<leader>sxw", "require('substitute.range').word()")
+
 -- search
 mapkey('n', '<leader>ss', '/')
 mapkey('n', '<leader>sw', '/\\<lt>\\><left><left>')
@@ -474,13 +481,14 @@ mapcmd("<leader>td", "TodoTelescope theme=dropdown")
 
 -- telescope
 mapcmd("<leader>tsw", "Telescope find_files")
-mapcmd('<leader>tsg', "Telescope live_grep")
-mapcmd('<leader>tsb', "Telescope buffers")
-mapcmd('<leader>tsh', "Telescope help_tags")
-mapcmd('<leader>tso', "Telescope oldfiles")
-mapcmd('<leader>tsm', "Telescope marks")
+mapcmd("<leader>tsg", "Telescope live_grep")
+mapcmd("<leader>tsb", "Telescope buffers")
+mapcmd("<leader>tsh", "Telescope help_tags")
+mapcmd("<leader>tso", "Telescope oldfiles")
+mapcmd("<leader>tsm", "Telescope marks")
+mapcmd("<leader>tsy", "Telescope yank_history")
 -- 显示弹窗历史记录
-maplua('<leader>tsn', "require('telescope').extensions.notify.notify()")
+mapcmd('<leader>tsn', "Telescope notify")
 -- telescope dap
 mapcmd("<leader>tpc", "Telescope dap commands")
 mapcmd("<leader>tps", "Telescope dap configurations")
@@ -552,6 +560,9 @@ mapcmd("<leader>xr", "TroubleToggle lsp_references")
 
 
 -- Y
+-- yanky
+mapcmd("<leader>yr", "YankRingHistory")
+mapcmd("<leader>yc", "YankClearHistory")
 
 
 -- Z

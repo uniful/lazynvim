@@ -26,6 +26,12 @@ return {
             require("leap").add_default_mappings(true)
         end
     },
+    -- 快速替换和交换文本
+    {
+        "gbprod/substitute.nvim",
+        event = "BufReadPre",
+        opts = {}
+    },
     -- 文本字符替换
     {
         "nvim-pack/nvim-spectre",

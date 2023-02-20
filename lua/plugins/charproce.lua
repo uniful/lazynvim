@@ -1,9 +1,9 @@
--- 字符处理，跳转、修改、规律转换、搜索
+-- 字符处理: 跳转、修改、转换、搜索
 return {
     -- 快速跳转
     {
         "phaazon/hop.nvim",
-        event = "BufReadPost",
+        event = "User FileOpened",
         branch = 'v2',
         opts = {
             keys = "etovxqpdygfblzhckisuran"
@@ -25,12 +25,6 @@ return {
         config = function ()
             require("leap").add_default_mappings(true)
         end
-    },
-    -- 快速替换和交换文本
-    {
-        "gbprod/substitute.nvim",
-        event = "BufReadPre",
-        opts = {}
     },
     -- 文本字符替换
     {

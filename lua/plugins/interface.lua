@@ -1,5 +1,12 @@
 return {
-    -- 用于在编辑会话期间保留和切换多个终端
+    --侧边栏
+    {
+        "sidebar-nvim/sidebar.nvim",
+        cmd = {"SidebarNvimToggle","SidebarNvimFocus","SidebarNvimOpen",
+            "SidebarNvimResize","SidebarNvimClose","SidebarNvimUpdate"},
+        opts = {}
+    },
+    -- 终端
     {
         "akinsho/toggleterm.nvim",
         version = '*',
@@ -30,6 +37,20 @@ return {
                     border = "shadow"
                 }
             })
+        end
+    },
+    -- 文件目录树
+    {
+        "nvim-neo-tree/neo-tree.nvim",
+        cmd = "Neotree",
+        opts = {}
+    },
+    -- 启动界面
+    {
+        "goolord/alpha-nvim",
+        event = "VimEnter",
+        config = function ()
+            require("alpha").setup(require'alpha.themes.dashboardt'.config)
         end
     }
 }

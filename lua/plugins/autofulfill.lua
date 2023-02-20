@@ -28,6 +28,7 @@ return {
             local Rule = require("nvim-autopairs.rule")
 
             npairs.setup({
+                disable_filetype = {"TelescopePrompt","spectre_panel"},
                 check_ts = true,
                 ts_config = {
                     lua = {'string'},

@@ -1,3 +1,4 @@
+-- 文件查找
 return {
    -- telescope模糊查找
    {
@@ -96,6 +97,14 @@ return {
                     border = "FloatBorder",
                 }
             }
+        }
+    },
+    -- 文件标记
+    {
+        "ThePrimeagen/harpoon",
+        event = "VeryLazy",
+        opts = {
+            save_on_toggle = true
         }
     }
 }

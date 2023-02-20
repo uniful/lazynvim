@@ -11,16 +11,8 @@ return {
 
             local sources = {
                 -- code_actions
-                code_actions.eslint,
-                code_actions.gitsigns.with({
-                    disabled_filetypes = {"c","cpp","javascript","typescript","sh"},
-                    config = {
-                        filter_actions = function(title)
-                            return title:lower():match("blame") == nil
-                        end,
-                    }
-                }),
-                code_actions.shellcheck,
+                code_actions.eslint, -- javascript,typescript
+                code_actions.shellcheck, -- sh
                 code_actions.cspell.with({
                     disabled_filetypes = {"c","cpp","javascript","typescript","sh"}
                 }),

@@ -1,10 +1,44 @@
 -- 功能加强和优化
 return {
-    -- 完善旧的 quickfix 窗口
+    -- 完善旧的quickfix窗口
     {
         "kevinhwang91/nvim-bqf",
-        lazy = true,
-        opts = {}
+        event = "VimEnter",
+        opts = {
+            auto_resize_height = true,
+            preview = {
+                win_height = 12,
+                win_vheight = 12,
+                delay_syntax = 80,
+                border_chars = {'┃', '┃', '━', '━', '┏', '┓', '┗', '┛', '█'},
+                show_title = false,
+                should_preview_cb = function(bufnr, qwinid)
+                    local ret = true
+                    local bufname = vim.api.nvim_buf_get_name(bufnr)
+                    local fsize = vim.fn.getfsize(bufname)
+                    if fsize > 100 * 1024 then
+                        ret = false
+                    elseif bufname:match('^fugitive://') then
+                        ret = false
+                    end
+                    return ret
+                end
+            },
+            func_map = {
+                drop = 'o',
+                openc = 'O',
+                split = '<M-S>',
+                tabdrop = '<M-T>',
+                tabc = '',
+                ptogglemode = 'z,',
+            },
+            filter = {
+                fzf = {
+                    action_for = {['ctrl-s'] = 'split', ['ctrl-t'] = 'tab drop'},
+                    extra_opts = {'--bind', 'ctrl-o:toggle-all', '--prompt', '> '}
+                }
+            }
+        }
     },
     -- 改进了Yank和Put功能
     {
@@ -21,18 +55,7 @@ return {
         "folke/neodev.nvim",
         lazy = true,
         opts = {
-            library = {
-                plugins = {
-                    "nvim-dap-ui",
-                    "nvim-treesitter",
-                    "plenary.nvim",
-                    "telescope.nvim",
-                    "trouble.nvim",
-                    "null-ls.nvim",
-                    "nvim-cmp",
-                },
-                type = true,
-            }
+            experimental = {pathStrict = true}
         }
     },
     -- 中文文档
@@ -52,49 +75,6 @@ return {
             },
             windows = {
                 border = "shadow"
-            }
-        }
-    },
-    -- 加快启动时间
-    {
-        "nathom/filetype.nvim",
-        opts = {
-            overrides = {
-                extensions = {
-                    pn = "potion",
-                },
-                literal = {
-                    MyBackupFile = "lua",
-                },
-                complex = {
-                    [".*git/config"] = "gitconfig",
-                },
-                function_extensions = {
-                    ["cpp"] = function()
-                        vim.bo.filetype = "cpp"
-                        vim.bo.cinoptions = vim.bo.cinoptions .. "L0"
-                    end,
-                    ["pdf"] = function()
-                        vim.bo.filetype = "pdf"
-                        vim.fn.jobstart(
-                            "open -a skim " .. '"' .. vim.fn.expand("%") .. '"'
-                        )
-                    end,
-                },
-                function_literal = {
-                    Brewfile = function()
-                        vim.cmd("syntax off")
-                    end,
-                },
-                function_complex = {
-                    ["*.math_notes/%w+"] = function()
-                        vim.cmd("iabbrev $ $$")
-                    end,
-                },
-
-                shebang = {
-                    dash = "sh",
-                },
             }
         }
     },
@@ -136,5 +116,13 @@ return {
         "karb94/neoscroll.nvim",
         event = "VimEnter",
         opts = {}
+    },
+    -- 页面切换器
+    {
+        "toppair/reach.nvim",
+        cmd = "ReachOpen",
+        opts = {
+            notifications = true
+        }
     }
 }

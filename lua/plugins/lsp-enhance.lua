@@ -2,7 +2,7 @@ return {
     -- LSP 进度提示
     {
         "j-hui/fidget.nvim",
-        event = "BufReadPost",
+        event = {"BufReadPost","BufNewFile"},
         opts = {
             window = {
                 blend = 0
@@ -24,7 +24,7 @@ return {
     -- 灯泡提示代码行为
     {
         "kosayoda/nvim-lightbulb",
-        event = "BufReadPost",
+        event = {"BufReadPost","BufNewFile"},
         opts = {
             autocmd = {enabled = true}
         }
@@ -37,13 +37,13 @@ return {
     -- LSP高性能UI插件
     {
         "glepnir/lspsaga.nvim",
-        event = "BufReadPost",
+        event = {"BufReadPost","BufNewFile"},
         opts = {}
     },
     -- 使用lsp生成的视图符号
     {
         "simrat39/symbols-outline.nvim",
-        event = "BufReadPost",
+        event = {"BufReadPost","BufNewFile"},
         config = function ()
             local opts = {
                 highlight_hovered_item = true,
@@ -65,7 +65,7 @@ return {
                     close = {"<Esc>", "q"},
                     goto_location = "<Cr>",
                     focus_location = "o",
-                    hover_symbol = "<C-space>",
+                    hover_symbol = "<M-H>",
                     toggle_preview = "K",
                     rename_symbol = "r",
                     code_actions = "a",

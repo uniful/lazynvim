@@ -259,7 +259,7 @@ mapcmd("<leader>iy", "IconPickerYank")
 
 
 -- L
--- lspconfig
+-- lspconfig自带功能
 maplua('<leader>lf', 'vim.diagnostic.open_float()')
 maplua("<leader>lp", "vim.diagnostic.goto_prev()")
 maplua("<leader>ln", "vim.diagnostic.goto_next()")
@@ -428,11 +428,6 @@ mapnorm("<leader>su","vnew:lua require('spectre').toggle_live_update()")
 -- ssr
 vim.keymap.set({ "n", "x" }, "<leader>sr", function() require("ssr").open() end)
 
--- substitute
-maplua("<leader>sxo", "require('substitute.range').operator()")
-vim.keymap.set("x","<leader>sxv", "require('substitute.range').visual()",opts)
-maplua("<leader>sxw", "require('substitute.range').word()")
-
 -- search
 mapkey('n', '<leader>ss', '/')
 mapkey('n', '<leader>sw', '/\\<lt>\\><left><left>')
@@ -444,7 +439,7 @@ maplua("<leader>slt", "require('specs').toggle()")
 maplua("<M-s>", "require('specs').show_specs()")
 
 
--- vim-startupTime
+-- startupTime
 mapcmd("<leader>st", "StartupTime")
 
 -- sidebar
@@ -516,6 +511,11 @@ mapcmd("<leader>twl", "Twilight")
 mapcmd("<leader>twe", "TwilightEnable")
 mapcmd("<leader>twd", "TwilightDisable")
 
+-- treesitter-context
+mapcmd("<leader>tre", "TSContextEnable")
+mapcmd("<leader>trd", "TSContextDisable")
+mapcmd("<leader>trt", "TSContextToggle")
+
 
 -- U
 
@@ -562,8 +562,8 @@ mapcmd("<leader>xr", "TroubleToggle lsp_references")
 
 -- Y
 -- yanky
-mapcmd("<leader>yr", "YankRingHistory")
-mapcmd("<leader>yc", "YankClearHistory")
+mapcmd("<leader>yr", "YankyRingHistory")
+mapcmd("<leader>yc", "YankyClearHistory")
 
 
 -- Z

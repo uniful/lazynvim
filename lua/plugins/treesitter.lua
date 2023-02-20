@@ -3,7 +3,7 @@ return {
     {
         "nvim-treesitter/nvim-treesitter",
         build = {":TSUpdate"},
-        event = "BufReadPost",
+        event = {"BufReadPost","BufNewFile"},
         dependencies = {
             {"nvim-treesitter/nvim-treesitter-textobjects",lazy = true},
             {"JoosepAlviste/nvim-ts-context-commentstring",lazy = true},
@@ -130,13 +130,13 @@ return {
     -- 显示当前可见缓冲区内容的上下文
     {
         "nvim-treesitter/nvim-treesitter-context",
-        event = "BufReadPost",
+        event = {"BufReadPost","BufNewFile"},
         opts = {}
     },
     -- 在函数、方法、语句等之后显示当前上下文的虚拟文本
     {
         "haringsrob/nvim_context_vt",
-        event = "BufReadPost",
+        event = {"BufReadPost","BufNewFile"},
         opts = {
             prefix = ''
         }
@@ -144,7 +144,7 @@ return {
     -- 突出显示参数的定义和用法
     {
         "m-demare/hlargs.nvim",
-        event = "BufReadPost",
+        event = {"BufReadPost","BufNewFile"},
         opts = {}
     }
 }

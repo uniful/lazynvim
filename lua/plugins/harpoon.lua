@@ -4,7 +4,7 @@ return {
         "ThePrimeagen/harpoon",
         event = "VeryLazy",
         opts = {
-            save_on_toggle = true,
+            save_on_toggle = true
         }
     }
 }

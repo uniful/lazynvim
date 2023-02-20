@@ -2,7 +2,7 @@ return {
     -- 页面切换器
     {
         "toppair/reach.nvim",
-        evnet = "VeryLazy",
+        cmd = "ReachOpen",
         opts = {
             notifications = true
         }

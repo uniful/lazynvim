@@ -1,4 +1,12 @@
 return {
+    -- 图标选择器
+    {
+        "ziontee113/icon-picker.nvim",
+        event = "BufReadPost",
+        opts = {
+            disable_legacy_commands =true,
+        }
+    },
     -- 提示用户选择一个窗口，并返回所选取窗口的窗口ID
     {
         "s1n7ax/nvim-window-picker",

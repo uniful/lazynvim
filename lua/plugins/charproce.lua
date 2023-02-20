@@ -106,7 +106,7 @@ return {
     -- 字符、颜色、数字增量/减量
     {
         "monaqa/dial.nvim",
-        evnet = "BufReadPre",
+        evnet = "VeryLazy",
         config = function()
             local augend = require("dial.augend")
             local nopts = {noremap = true}

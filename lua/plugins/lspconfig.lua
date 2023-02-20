@@ -2,7 +2,7 @@ return {
     -- LSP 基础服务
     {
         "neovim/nvim-lspconfig",
-        event = "BufReadPre",
+        event = {"BufReadPre","BufNewFile"},
         config = function()
             local lspconfig = require("lspconfig")
             local capabilities = require("cmp_nvim_lsp").default_capabilities()

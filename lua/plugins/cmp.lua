@@ -8,6 +8,8 @@ return {
             "rafamadriz/friendly-snippets", --提供多种语言的代码片段
             config = function ()
                 require("luasnip.loaders.from_vscode").lazy_load()
+                require("luasnip.loaders.from_lua").lazy_load()
+                require("luasnip.loaders.from_snipmate").lazy_load()
             end
         },
         opts = {
@@ -18,6 +20,7 @@ return {
      --代码补全插件
     {
         "hrsh7th/nvim-cmp",  --补全核心插件
+        event = {"InsertEnter","CmdlineEnter"},
         dependencies = {
             {"onsails/lspkind-nvim",lazy = true}, -- 为补全添加类似vscode的图标
             {"saadparwaiz1/cmp_luasnip",lazy = true}, -- nvim-cmp的luasnip完成源

@@ -2,6 +2,7 @@ return {
     -- 管理lsp,dap,lint服务的安装和配置
     {
         "williamboman/mason.nvim",
+        cmd = {"Mason","MasonInstall","MasonUninstall","MasonUninstallAll","MasonLog"},
         opts = {
             ui = {
                 icons = {
@@ -15,6 +16,7 @@ return {
     -- 管理安装lsp
     {
         "williamboman/mason-lspconfig.nvim",
+        cmd = {"LspInstall","LspUninstall"},
         opts = {
             ensure_installed = {},
             automatic_installation = {exclude = {"lua_ls","cmake","pyright","clangd","bashls","vimls",
@@ -24,6 +26,7 @@ return {
     -- 管理安装null-ls
     {
         "jay-babu/mason-null-ls.nvim",
+        lazy = true,
         opts = {
             ensure_installed = {},
             automatic_installation = {exclude = {"cspell","proselint","gitsigns","eslint","markdownlint",

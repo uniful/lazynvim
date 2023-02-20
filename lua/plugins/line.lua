@@ -1,5 +1,51 @@
+-- buffer栏和status栏
 return {
-    -- 炫酷的状态栏插件
+    -- buffer栏
+    {
+        "akinsho/bufferline.nvim",
+        event = "VeryLazy",
+        version = "v3.*",
+        dependencies = {
+            -- 删除缓冲区不改变布局
+            {"famiu/bufdelete.nvim",lazy = true},
+            -- 缓冲区删除增强
+            {
+                "ojroques/nvim-bufdel",lazy = true,
+                opts = {
+                    next = 'cycle',
+                    quit = false,
+                }
+            },
+        },
+        opts = {
+            options = {
+                -- 为每个buffer都配置一个序数
+                numbers = "ordinal",
+                -- 使用内置 LSP 进行诊断
+                diagnostics = "nvim_lsp",
+                -- 分割符样式
+                separator_style = "thin",
+                -- 显示LSP报错图标
+                diagnostics_indicator = function(count, level, diagnostics_dict, context)
+                    local s = " "
+                    for e, n in pairs(diagnostics_dict) do
+                        local sym = e == "error" and " " or (e == "warning" and " " or "")
+                        s = s .. n .. sym
+                    end
+                    return s
+                end,
+                offset = {
+                    {
+                        filetype = "neo-tree",
+                        text = "Neo-tree",
+                        highlight = "Directory",
+                        "text_align",
+                    }
+                }
+            }
+        }
+    },
+    -- status栏插件
     {
         "nvim-lualine/lualine.nvim",
         event = "VeryLazy",

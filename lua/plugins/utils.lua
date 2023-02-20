@@ -3,13 +3,13 @@ return {
     -- 完善旧的 quickfix 窗口
     {
         "kevinhwang91/nvim-bqf",
-        event = "VeryLazy",
+        lazy = true,
         opts = {}
     },
     -- 改进了Yank和Put功能
     {
         "gbprod/yanky.nvim",
-        event = "VeryLazy",
+        lazy = true,
         opts = {
             ring = {
                 storage = "sqlite"
@@ -19,7 +19,7 @@ return {
     -- 带有nvim lua API的完整签名帮助、文档和补全
     {
         "folke/neodev.nvim",
-        event = "VeryLazy",
+        lazy = true,
         opts = {
             library = {
                 plugins = {
@@ -130,5 +130,11 @@ return {
     {
         "b0o/SchemaStore.nvim",
         lazy = true
+    },
+     -- 平滑滚动
+    {
+        "karb94/neoscroll.nvim",
+        event = "VimEnter",
+        opts = {}
     }
 }

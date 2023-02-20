@@ -1,4 +1,5 @@
 vim.g.mapleader = ';'
+vim.g.maplocalleader = ','
 
 local kopts = {noremap = true, silent = true}
 local bufopts = {noremap = true, silent = true, buffer = bufnr}
@@ -568,3 +569,7 @@ mapcmd("<leader>yc", "YankClearHistory")
 -- Z
 -- zem-mode
 mapcmd("<leader>zm", "ZenMode")
+
+
+-- 手动调用命令执行
+maplua("<leader>cu","require('implement.code_action_utils').code_action_listener()")

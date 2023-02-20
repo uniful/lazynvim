@@ -2,7 +2,7 @@ return {
     -- 显示光标下相同词汇
     {
         "RRethy/vim-illuminate",
-        event = "BufReadPost",
+        event = "User FileOpened",
         config = function ()
             local opts = {
                 providers = {

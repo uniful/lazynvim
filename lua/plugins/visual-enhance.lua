@@ -114,5 +114,55 @@ return {
         "NvChad/nvim-colorizer.lua",
         evnet = "BufReadPost",
         opts = {}
+    },
+    -- 显示缩进线
+    {
+        "lukas-reineke/indent-blankline.nvim",
+        event = "BufReadPost",
+        opts = {
+            -- 显示当前所在区域
+            show_current_context = true,
+            -- 显示当前所在区域的开始位置
+            show_current_context_start = true,
+            -- 显示行尾符
+            show_end_of_line = true,
+            -- 空格字符缩进样式
+            space_char_blankline = " ",
+        }
+    },
+    -- 显示滚动条
+    {
+        "petertriho/nvim-scrollbar",
+        evnet = "VeryLazy",
+        config = function()
+            local colors = {
+                Handle = "#492E42",
+                Search = "#FC8671",
+                Error  = "#FD6883",
+                Warn   = "#FFD886",
+                Info   = "#A9DC76",
+                Hint   = "#78DCE8",
+                Misc   = "#AB9DF2"
+            }
+            require("scrollbar").setup({
+                handle = {
+                    -- 滚动条颜色
+                    color  = colors.Handle
+                },
+                marks = {
+                    -- 诊断颜色
+                    Search = {color = colors.Search},
+                    Error  = {color = colors.Error},
+                    Warn   = {color = colors.Warn},
+                    Info   = {color = colors.Info},
+                    Hint   = {color = colors.Hint},
+                    Misc   = {color = colors.Misc}
+                },
+                handlers = {
+                    gitsigns = true,
+                    search = true
+                }
+            })
+        end
     }
 }

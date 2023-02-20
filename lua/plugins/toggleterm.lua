@@ -3,7 +3,8 @@ return {
     {
         "akinsho/toggleterm.nvim",
         version = '*',
-        event = "VeryLazy",
+        cmd = {"ToggleTerm","TermExec","ToggleTermToggleAll","ToggleTermSendCurrentLine",
+        "ToggleTermSendVisualLines","ToggleTermSendVisualSelection"},
         config = function()
             local Terminal  = require('toggleterm.terminal').Terminal
 

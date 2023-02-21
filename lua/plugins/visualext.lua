@@ -74,7 +74,7 @@ return {
     --光标行号模式指示器
     {
         "mawkler/modicator.nvim",
-        evnet = "BufReadPost",
+        evnet = {"BufReadPost","BufNewFile"},
         init = function ()
             vim.o.cursorline = true
             vim.o.number = true
@@ -91,7 +91,7 @@ return {
 	-- 突出显示文本
 	{
 		"Pocco81/HighStr.nvim",
-        event = "BufReadPost",
+        event = {"BufReadPost","BufNewFile"},
 		opts = {
 			verbosity = 0,
 			saving_path = "/home/colin/.cache/nvim/highstr/", -- 最好使用绝对路径
@@ -112,13 +112,13 @@ return {
     -- 显示十六进制颜色
     {
         "NvChad/nvim-colorizer.lua",
-        evnet = "BufReadPost",
+        evnet = {"BufReadPost","BufNewFile"},
         opts = {}
     },
     -- 显示缩进线
     {
         "lukas-reineke/indent-blankline.nvim",
-        event = "BufReadPost",
+        event = {"BufReadPost","BufNewFile"},
         opts = {
             -- 显示当前所在区域
             show_current_context = true,
@@ -168,7 +168,8 @@ return {
     -- 显示光标下相同词汇
     {
         "RRethy/vim-illuminate",
-        event = "BufReadPre",
+        cmd = {"IlluminatePause","IlluminateResumeBuf","IlluminateResume","IlluminateToggle",
+        "IlluminatePauseBuf","IlluminateToggleBuf","IlluminateDebug"},
         config = function ()
             local opts = {
                 providers = {

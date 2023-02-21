@@ -2,7 +2,7 @@ return {
     -- cmake工具集成
     {
         "Civitasv/cmake-tools.nvim",
-        event = "BufReadPre",
+        event = {"BufReadPre","BufNewFile","User FileOpened"},
         opts = {
             cmake_command = "cmake",
             cmake_build_directory = "",
@@ -29,7 +29,7 @@ return {
     -- 正则表达式解释器
     {
         "bennypowers/nvim-regexplainer",
-        event = "BufReadPre",
+        event = {"BufReadPre","BufNewFile"},
         opts = {
             mappings = {
                 toggle = "gR",

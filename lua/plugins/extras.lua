@@ -2,7 +2,7 @@ return {
     -- 命令面板
     {
         "mrjones2014/legendary.nvim",
-        event = "VeryLazy",
+        cmd = "Legendary",
         opts = {}
     },
     -- 创建自定义子模式和菜单

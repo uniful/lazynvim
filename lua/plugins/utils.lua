@@ -86,7 +86,7 @@ return {
     -- 更好的模式切换
     {
         "max397574/better-escape.nvim",
-        event = "BufReadPost",
+        event = {"BufReadPost","BufNewFile"},
         opts = {
             mapping = {"jk", "jj"},
             timeout = vim.o.timeoutlen,
@@ -97,13 +97,13 @@ return {
     -- 非活动代码变暗
     {
         "folke/twilight.nvim",
-        event = "BufReadPost",
+        cmd = {"Twilight","TwilightEnable","TwilightDisable"},
         opts = {}
     },
     -- 禅模式
     {
         "folke/zen-mode.nvim",
-        event = "BufReadPost",
+        cmd = "ZenMode",
         opts = {}
     },
     -- 提供对SchemaStore目录的访问

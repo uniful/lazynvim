@@ -37,13 +37,13 @@ return {
     -- LSP高性能UI插件
     {
         "glepnir/lspsaga.nvim",
-        event = {"BufReadPost","BufNewFile"},
+        cmd = "Lspsaga",
         opts = {}
     },
     -- 使用lsp生成的视图符号
     {
         "simrat39/symbols-outline.nvim",
-        event = {"BufReadPost","BufNewFile"},
+        cmd = {"SymbolsOutline","SymbolsOutlineOpen","SymbolsOutlineClose"},
         config = function ()
             local opts = {
                 highlight_hovered_item = true,

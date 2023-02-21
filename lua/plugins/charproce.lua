@@ -3,7 +3,7 @@ return {
     -- 快速跳转
     {
         "phaazon/hop.nvim",
-        event = "User FileOpened",
+        event = "BufReadPre",
         branch = 'v2',
         opts = {
             keys = "etovxqpdygfblzhckisuran"

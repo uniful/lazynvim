@@ -84,9 +84,19 @@ return {
                             require("noice").api.status.search.get,
                             cond = require("noice").api.status.search.has,
                             color = { fg = "#ff9e64" },
+                        },
+                        {"aerial"}
+                    },
+                    lualine_y = {
+                        {'progress'},
+                        {"aerial",
+                            sep = ' ) ',
+                            depth = nil,
+                            dense = false,
+                            dense_sep = '.',
+                            colored = true,
                         }
                     },
-                    lualine_y = {'progress'},
                     lualine_z = {'location'}
                 }
             })

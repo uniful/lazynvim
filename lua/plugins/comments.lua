@@ -3,7 +3,7 @@ return {
      -- 快速注释
      {
         "numToStr/Comment.nvim",
-        event = "User FileOpened",
+        event = {"BufReadPost","BufNewFile"},
         config = function ()
             local opts = {
                 -- Normal模式下注释命令

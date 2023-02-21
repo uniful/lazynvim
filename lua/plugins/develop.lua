@@ -2,7 +2,7 @@ return {
     -- cmake工具集成
     {
         "Civitasv/cmake-tools.nvim",
-        event = "User FileOpened",
+        event = "BufReadPre",
         opts = {
             cmake_command = "cmake",
             cmake_build_directory = "",

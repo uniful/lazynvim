@@ -85,6 +85,7 @@ return {
             require("telescope").load_extension("undo")
             require("telescope").load_extension("harpoon")
             require("telescope").load_extension("yank_history")
+            require("telescope").load_extension("aerial")
         end
     },
     -- fzf模糊查找

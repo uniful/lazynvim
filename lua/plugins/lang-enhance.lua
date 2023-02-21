@@ -3,7 +3,7 @@ return {
     -- C/C++
     {
         "p00f/clangd_extensions.nvim",
-        event = "User FileOpened",
+        event = {"BufReadPost","BufNewFile"},
         opts = {}
     }
 }

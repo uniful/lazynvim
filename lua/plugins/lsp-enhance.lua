@@ -111,6 +111,19 @@ return {
             require("symbols-outline").setup(opts)
         end
     },
+    -- 使用lsp生成文件大纲
+    {
+        "stevearc/aerial.nvim",
+        cmd = {"AerialToggle","AerialOpen","AerialOpenAll","AerialClose","AerialCloseAll",
+        "AerialNext","AerialPrev","AerialGo","AerialInfo"},
+        opts = {
+            layout = {
+                min_width = 20,
+                default_direction = "prefer_left",
+            },
+            show_guides = true
+        }
+    },
     --显示代码诊断, 参考, telescope结果, quickfix和位置列表
     {
         "folke/trouble.nvim",

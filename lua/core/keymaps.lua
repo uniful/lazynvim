@@ -31,6 +31,17 @@ end
 -- 关闭或启用自动保存功能
 mapcmd("<leader>at", "ASToggle")
 
+-- aerial
+mapcmd("<leader>ae", "AerialToggle")
+mapcmd("<leader>ao", "AerialOpen")
+mapcmd("<leader>al", "AerialOpenAll")
+mapcmd("<leader>ac", "AerialClose")
+mapcmd("<leader>ax", "AerialCloseAll")
+mapcmd("<leader>ap", "AerialPrev")
+mapcmd("<leader>an", "AerialNext")
+mapcmd("<leader>ag", "AerialGo")
+mapcmd("<leader>ai", "AerialInfo")
+
 
 -- B:
 -- bufferline
@@ -460,6 +471,16 @@ mapcmd("<leader>syc", "SymbolsOutlineClose")
 -- 打开符号大纲
 mapcmd("<leader>syo", "SymbolsOutlineOpen")
 
+-- stickybuf
+-- 将当前缓冲区固定到窗口
+mapcmd("<leader>skf", "PinBuffer")
+-- 将当前的 buftype 固定到窗口。它将允许具有相同 buftype 的任何缓冲区
+mapcmd("<leader>skt", "PinBuftype")
+-- 将当前文件类型固定到窗口。它将允许具有相同文件类型的任何缓冲区
+mapcmd("<leader>ske", "PinFiletype")
+-- 从当前窗口中删除任何类型的固定
+mapcmd("<leader>sku", "UnpinBuffer")
+
 
 -- T
 -- ToggleTerm
@@ -482,7 +503,6 @@ mapcmd("<leader>tsb", "Telescope buffers")
 mapcmd("<leader>tsh", "Telescope help_tags")
 mapcmd("<leader>tso", "Telescope oldfiles")
 mapcmd("<leader>tsm", "Telescope marks")
-mapcmd("<leader>tsy", "Telescope yank_history")
 -- 显示弹窗历史记录
 mapcmd('<leader>tsn', "Telescope notify")
 -- telescope dap
@@ -505,6 +525,10 @@ maplua("<leader>tsa", "require('telescope').extensions.live_grep_args.live_grep_
 mapcmd("<leader>tsu", "Telescope undo")
 -- 查看harpoon标记
 mapcmd("<leader>tss", "Telescope harpoon marks")
+-- 查看文本大纲
+mapcmd("<leader>tsl", "Telescope aerial")
+-- 查看yank历史
+mapcmd("<leader>tsy", "Telescope yank_history")
 
 -- twilight
 mapcmd("<leader>twl", "Twilight")

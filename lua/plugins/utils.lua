@@ -124,5 +124,11 @@ return {
         opts = {
             notifications = true
         }
+    },
+    -- 将缓冲区锁定到窗口
+    {
+        "stevearc/stickybuf.nvim",
+        cmd = {"PinBuffer","PinBuftype","PinFIleType","UnpinBuffer"},
+        opts = {}
     }
 }

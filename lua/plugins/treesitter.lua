@@ -1,3 +1,4 @@
+-- 依赖treesitter才能使用的插件
 return {
     -- 语法高亮
     {

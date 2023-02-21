@@ -3,7 +3,7 @@ return {
     -- 快速跳转
     {
         "phaazon/hop.nvim",
-        event = "BufReadPre",
+        event = {"BufReadPre","BufNewFile"},
         branch = 'v2',
         opts = {
             keys = "etovxqpdygfblzhckisuran"
@@ -12,7 +12,7 @@ return {
     -- 文本内字符移动、跳转
     {
         "ggandor/leap.nvim",
-        event = "BufReadPre",
+        event = {"BufReadPre","BufNewFile"},
         dependencies = {
             {
                 "ggandor/flit.nvim", --跳转增强
@@ -29,20 +29,20 @@ return {
     -- 文本字符替换
     {
         "nvim-pack/nvim-spectre",
-        event = "BufReadPost",
+        event = {"BufReadPost","BufNewFile"},
         opts = {}
     },
     -- 添加/更改/删除周围的定界符对
     {
         "kylechui/nvim-surround",
         version = "*",
-        event = "BufReadPost",
+        event = {"BufReadPost","BufNewFile"},
         opts = {}
     },
     -- 结构搜索和替换
     {
         "cshuaimin/ssr.nvim",
-        evnet = "BufReadPost",
+        evnet = "BufReadPre",
         opts = {
             min_width = 50,
             min_height = 5,
@@ -100,7 +100,7 @@ return {
     -- 字符、颜色、数字增量/减量
     {
         "monaqa/dial.nvim",
-        evnet = "VeryLazy",
+        evnet = {"BufReadPost","BufNewFile"},
         config = function()
             local augend = require("dial.augend")
             local nopts = {noremap = true}
@@ -147,11 +147,11 @@ return {
                     }
                 },
             }
-            vim.keymap.set("n", "<M-a>", require("dial.map").inc_normal("chars_dial"), nopts)
+            vim.keymap.set("n", "<M-z>", require("dial.map").inc_normal("chars_dial"), nopts)
             vim.keymap.set("n", "<M-x>", require("dial.map").dec_normal("chars_dial"), nopts)
-            vim.keymap.set("n", "<M-a>", require("dial.map").inc_normal("color_dial"), nopts)
+            vim.keymap.set("n", "<M-z>", require("dial.map").inc_normal("color_dial"), nopts)
             vim.keymap.set("n", "<M-x>", require("dial.map").dec_normal("color_dial"), nopts)
-            vim.keymap.set("n", "<M-a>", require("dial.map").inc_normal("date_dial"), nopts)
+            vim.keymap.set("n", "<M-z>", require("dial.map").inc_normal("date_dial"), nopts)
             vim.keymap.set("n", "<M-x>", require("dial.map").dec_normal("date_dial"), nopts)
         end
     }

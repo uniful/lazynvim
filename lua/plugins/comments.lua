@@ -51,5 +51,13 @@ return {
                 TEST = {icon = "⏲ ", color = "#FF00FF", alt = { "TESTING", "PASSED", "FAILED" }}
             }
         }
+    },
+    -- 注释生成器
+    {
+        "danymat/neogen",
+        cmd = "Neogen",
+        opts = {
+            snippet_engine = "luasnip",
+        }
     }
 }

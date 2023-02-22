@@ -3,6 +3,7 @@ return {
     -- 减少lua函数的编写
     {
         "nvim-lua/plenary.nvim",
+        cmd = { "PlenaryBustedFile", "PlenaryBustedDirectory"},
         lazy = true
     },
     -- 支持异步

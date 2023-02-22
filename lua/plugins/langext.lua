@@ -3,7 +3,15 @@ return {
     -- C/C++
     {
         "p00f/clangd_extensions.nvim",
-        event = {"BufReadPost","BufNewFile"},
+        ft = {"c","cpp","cxx","C","cc","c++","h","H","hh","hpp","hxx"},
         opts = {}
+    },
+    -- markdown
+    {
+        "mickael-menu/zk-nvim",
+        ft = "md",
+        opts = {
+            picker = "telescope",
+        }
     }
 }

@@ -394,6 +394,13 @@ mapcmd("<leader>nv", "NvimContectVtToggle")
 maplua("<leader>nue", "require('numb').setup()")
 maplua("<leader>nud", "require('numb').disable()")
 
+-- neogen
+mapcmd("<leader>nog", "Neogen")
+-- 生成func,class,type,file注释
+mapcmd("<leader>nof", "Neogen func")
+mapcmd("<leader>noc", "Neogen class")
+mapcmd("<leader>not", "Neogen type")
+mapcmd("<leader>noi", "Neogen file")
 
 -- O
 

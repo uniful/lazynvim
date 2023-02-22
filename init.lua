@@ -20,7 +20,7 @@ local settings = {
     },
     install = {
         missing = true,
-        colorscheme = { "zephyr" },
+        colorscheme = {"onenord"},
     },
     ui = {
         icons = {
@@ -36,7 +36,7 @@ local settings = {
     performance = {
         rtp = {
             -- 列出禁用的插件
-            disabled_plugins = {},
+            disabled_plugins = {}
         }
     }
 }

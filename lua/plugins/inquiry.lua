@@ -4,6 +4,7 @@ return {
    {
         "nvim-telescope/telescope.nvim",
         branch='0.1.x',
+        event = "VeryLazy",
         dependencies = {
             --运行dap界面的命令产生telescope提示
             {"nvim-telescope/telescope-dap.nvim",lazy = true},

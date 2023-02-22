@@ -390,6 +390,10 @@ maplua("<leader>nh", "require('notify').history()")
 -- 切换上下文虚拟文本
 mapcmd("<leader>nv", "NvimContectVtToggle")
 
+-- numb
+maplua("<leader>nue", "require('numb').setup()")
+maplua("<leader>nud", "require('numb').disable()")
+
 
 -- O
 

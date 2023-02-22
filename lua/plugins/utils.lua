@@ -130,5 +130,11 @@ return {
         "stevearc/stickybuf.nvim",
         cmd = {"PinBuffer","PinBuftype","PinFIleType","UnpinBuffer"},
         opts = {}
+    },
+    -- 输入命令查看缓冲区
+    {
+        "nacro90/numb.nvim",
+        event = {"BufReadPost","BufNewFile"},
+        opts = {}
     }
 }

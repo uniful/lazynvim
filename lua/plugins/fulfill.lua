@@ -36,7 +36,7 @@ return {
                     java = false,
                 },
                 enable_check_bracket_line = false,
-                ignored_next_char = "[%w%.]",
+                -- ignored_next_char = "[%w%.]",
                 fast_wrap = {
                     map = '<M-e>',
                     chars = { '{', '[', '(', '"', "'" },

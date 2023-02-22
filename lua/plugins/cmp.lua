@@ -72,6 +72,7 @@ return {
                 -- 格式化补全菜单
                 formatting = {
                     format = lspkind.cmp_format({
+                        mode = "symbol_text",
                         with_text = true,
                         maxwidth = 50,
                         ellipsis_char = '...',

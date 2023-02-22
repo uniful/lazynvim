@@ -1,3 +1,7 @@
 # 介绍
-- dap-config.lua 基本设置，调用dapui,启用相关的配置文件
-- dap-$(lang).lua 具体语言配置不用调试器
+
+- config.lua 基本设置
+
+- startup.lua 调用dapui,启动相关语言调试配置
+
+- dap-$(langname).lua 具体语言配置不同调试器

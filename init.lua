@@ -1,20 +1,20 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable",
-    lazypath,
-  })
+    vim.fn.system({
+        "git",
+        "clone",
+        "--filter=blob:none",
+        "https://github.com/folke/lazy.nvim.git",
+        "--branch=stable",
+        lazypath,
+    })
 end
 vim.opt.rtp:prepend(lazypath)
 
 local settings = {
     concurrency = nil,
     dev = {
-        path = "~/.local/nvim/local-plugin",
+        path = "~/.local/share/nvim/local-plugin",
         patterns = {},
         fallback = false,
     },
@@ -23,6 +23,7 @@ local settings = {
         colorscheme = {"onenord"},
     },
     ui = {
+        border = "rounded",
         icons = {
             lazy = "鈴 ",
         }

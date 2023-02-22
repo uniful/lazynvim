@@ -531,7 +531,7 @@ mapcmd("<leader>tsr", "Telescope frecency")
 -- 使用特定的工作区标签
 mapcmd("<leader>tsc", "Telescope frecency workspace=CWD")
 -- 带参数的grep
-maplua("<leader>tsa", "require('telescope').extensions.live_grep_args.live_grep_args()")
+maplua("<leader>tsa", "Telescope live_grep_args")
 -- 可视化您的撤消树和其中的模糊搜索更改
 mapcmd("<leader>tsu", "Telescope undo")
 -- 查看harpoon标记

@@ -16,6 +16,7 @@ dap.configurations.cpp = {
         cwd = '${workspaceFolder}',
         stopOnEntry = false,
         args = {},
+        runInTerminal = false,
         env = function()
             local variables = {}
             for k, v in pairs(vim.fn.environ()) do

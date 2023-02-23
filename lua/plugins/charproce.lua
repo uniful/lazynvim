@@ -42,7 +42,7 @@ return {
     -- 结构搜索和替换
     {
         "cshuaimin/ssr.nvim",
-        evnet = "BufReadPre",
+        evnet = {"BufReadPost","BufNewFile"},
         opts = {
             border = "rounded",
             min_width = 50,
@@ -79,6 +79,7 @@ return {
                     else
                         indicator = ''
                     end
+
                     local lnum, col = unpack(posList[idx])
                     if nearest then
                         local cnt = #posList

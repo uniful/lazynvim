@@ -25,7 +25,7 @@ local settings = {
     ui = {
         border = "rounded",
         icons = {
-            lazy = "鈴 ",
+            lazy = "鈴",
         }
     },
     checker = {

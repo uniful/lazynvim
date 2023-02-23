@@ -3,7 +3,7 @@ return {
     -- 完善旧的quickfix窗口
     {
         "kevinhwang91/nvim-bqf",
-        event = "VimEnter",
+        event = "VeryLazy",
         opts = {
             auto_resize_height = true,
             preview = {
@@ -114,7 +114,7 @@ return {
      -- 平滑滚动
     {
         "karb94/neoscroll.nvim",
-        event = "VimEnter",
+        event = "VeryLazy",
         opts = {}
     },
     -- 页面切换器
@@ -134,7 +134,7 @@ return {
     -- 输入命令查看缓冲区
     {
         "nacro90/numb.nvim",
-        event = {"BufReadPost","BufNewFile"},
+        event = "CmdlineEnter",
         opts = {
             number_only = true
         }

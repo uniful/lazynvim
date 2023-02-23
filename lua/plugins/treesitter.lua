@@ -4,11 +4,28 @@ return {
     {
         "nvim-treesitter/nvim-treesitter",
         build = {":TSUpdate"},
+        lazy = true,
         event = {"BufReadPost","BufNewFile"},
         dependencies = {
+            -- 不需要配置启动项
             {"nvim-treesitter/nvim-treesitter-textobjects",lazy = true},
             {"JoosepAlviste/nvim-ts-context-commentstring",lazy = true},
             {"mrjones2014/nvim-ts-rainbow",lazy = true},
+            -- 需要配置启动项
+            {
+                "m-demare/hlargs.nvim", lazy = true,  -- 突出显示参数的定义和用法
+                opts = {}
+            },
+            {
+                "nvim-treesitter/nvim-treesitter-context", lazy = true,  -- 显示当前可见缓冲区内容的上下文
+                opts = {}
+            },
+            {
+                "haringsrob/nvim_context_vt", lazy = true, -- 在函数、方法、语句等之后显示当前上下文的虚拟文本
+                opts = {
+                    prefix = "",
+                }
+            }
         },
         config = function()
             require("nvim-treesitter.configs").setup({
@@ -127,25 +144,5 @@ return {
                 }
             })
         end
-    },
-    -- 显示当前可见缓冲区内容的上下文
-    {
-        "nvim-treesitter/nvim-treesitter-context",
-        event = {"BufReadPost","BufNewFile"},
-        opts = {}
-    },
-    -- 在函数、方法、语句等之后显示当前上下文的虚拟文本
-    {
-        "haringsrob/nvim_context_vt",
-        event = {"BufReadPost","BufNewFile"},
-        opts = {
-            prefix = ''
-        }
-    },
-    -- 突出显示参数的定义和用法
-    {
-        "m-demare/hlargs.nvim",
-        event = {"BufReadPost","BufNewFile"},
-        opts = {}
     }
 }

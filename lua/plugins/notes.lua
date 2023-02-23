@@ -20,7 +20,7 @@ return {
                 ["core.norg.dirman"] = {
                     config = {
                         workspaces = {
-                            notes = "~/notes"
+                            notes = "~/Notes"
                         }
                     }
                 }

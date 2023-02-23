@@ -50,7 +50,7 @@ return {
     -- 光标位置
     {
         "edluffy/specs.nvim",
-        event = "VeryLazy",
+        event = "CursorMoved",
         config=function ()
             require("specs").setup({
                 show_jumps  = true,
@@ -137,7 +137,7 @@ return {
         config = function()
             local colors = {
                 Handle = "#492E42",
-                Search = "#FC8671",
+                Search = "#F08671",
                 Error  = "#FD6883",
                 Warn   = "#FFD886",
                 Info   = "#A9DC76",

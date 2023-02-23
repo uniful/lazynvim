@@ -35,10 +35,12 @@ return {
                     },
                     mappings = {
                         i = {
-                            ["<C-h>"] = "which_key",
+                            ["<c-h>"] = "which_key",
                             ["<c-t>"] = trouble.open_with_trouble,
                         },
-                        n = {["<c-t>"] = trouble.open_with_trouble },
+                        n = {
+                            ["<c-t>"] = trouble.open_with_trouble
+                        },
                     }
                 },
                 pickers = {},
@@ -64,11 +66,6 @@ return {
                         layout_config = {
                             preview_height = 0.8,
                         }
-                    },
-                    frecency = {
-                        db_root = "~/.local/share/nvim",
-                        show_scores = false,
-                        show_unindexed = true,
                     },
                     ["ui-select"] = {
                         require("telescope.themes").get_dropdown {}

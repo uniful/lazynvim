@@ -1,12 +1,13 @@
 return {
     -- 主题
-    -- {
-    --     "glepnir/zephyr-nvim",
-    --     priority = 1000,
-    --     config = function ()
-    --         vim.cmd[[colorscheme zephyr]]
-    --     end
-    -- },
+    {
+        "glepnir/zephyr-nvim",
+        lazy = true,
+        priority = 1000,
+        config = function ()
+            vim.cmd[[colorscheme zephyr]]
+        end
+    },
     {
         "rmehri01/onenord.nvim",
         priority = 1000,

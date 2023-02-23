@@ -10,7 +10,7 @@ return {
             local servers = {"clangd","pyright","lua_ls","cmake","vimls","bashls","zk",
                 "yamlls","taplo","tsserver","jsonls","html","cssls"}
             for _, lsp in pairs(servers) do
-                if lsp == "lua_ls" then
+                if rawequal(lsp,"lua_ls") then
                     lspconfig[lsp].setup({
                         settings = {
                             lua = {
@@ -24,7 +24,7 @@ return {
                         },
                         capabilities = capabilities
                     })
-                elseif lsp == "jsonls" then
+                elseif rawequal(lsp,"jsonls") then
                     lspconfig[lsp].setup({
                         settings = {
                             json = {

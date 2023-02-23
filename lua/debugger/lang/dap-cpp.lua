@@ -26,5 +26,5 @@ dap.configurations.cpp = {
         end,
     },
 }
--- 设置其它语言使用此配置,如rust
+-- 设置其它语言使用此配置
 dap.configurations.c = dap.configurations.cpp

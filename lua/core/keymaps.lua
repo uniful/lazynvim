@@ -67,6 +67,7 @@ maptext("<leader>bl","BufDel ")
 -- C
 -- 快捷命令
 mapkey('n', '<leader>ce', ':e<space>')
+mapkey("n", "<leader>,", ":")
 mapcmd('<leader>cw', 'w')
 mapcmd('<leader>cW', 'wa')
 mapcmd('<leader>cE', 'e!')
@@ -104,25 +105,32 @@ mapcmd("<leader>cms", "CMakeStop")
 -- D
 -- dap
 -- 开启调试或到下一个断点处
-maplua("<F5>", "require'dap'.continue()")
+mapcmd("<F5>", "DapContinue")
 -- 单步进入执行（会进入函数内部，有回溯阶段）
-maplua("<F6>", "require'dap'.step_into()")
+mapcmd("<F6>", "DapStepInto")
 -- 单步跳过执行（不进入函数内部，无回溯阶段）
-maplua("<F7>", "require'dap'.step_over()")
+mapcmd("<F7>", "DapStepOver")
 -- 步出当前函数
-maplua("<F8>", "require'dap'.step_out()")
+mapcmd("<F8>", "DapStepOut")
 -- 重启调试
-maplua("<F9>", "require'dap'.run_last()")
+mapcmd("<F9>", "require'dap'.run_last()")
+-- 直接加载json文件调试
+mapcmd("<leader>dj", "DapLoadLaunchJSON")
+-- 显示调试日志
+mapcmd("<leader>dl", "DapShowLog")
 -- 退出调试（关闭调试，关闭 repl，关闭 ui，清除内联文本）
 maplua("<F10>","require'dap'.close()")
-maplua("<F11>","require'dap.repl'.close()")
-maplua("<F12>","require'dapui'.close()")
+mapcmd("<leader>dt","DapToggleRepl")
 mapcmd("<leader>dr","DapVirtualTextForceRefresh")
+-- 开启或关闭虚拟文本
+mapcmd("<leader>dvd", "DapVirtualTextDisable")
+mapcmd("<leader>dve", "DapVirtualTextEnable")
+mapcmd("<leader>dvr", "DapVirtualTextForceRefresh")
+mapcmd("<leader>dvt", "DapVirtualTextToggle")
 -- 打断点
-maplua("<leader>db", "require'dap'.toggle_breakpoint()")
+maplua("<leader>db", "DapToggleBreakpoint")
 maplua("<leader>di", "require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: ')")
 maplua("<leader>dm", "require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: ')")
-maplua("<leader>do", "require'dap'.repl.open()")
 -- 显示或隐藏调试界面
 maplua("<leader>du", "require'dapui'.toggle()")
 

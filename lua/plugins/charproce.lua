@@ -102,16 +102,11 @@ return {
     -- 字符、颜色、数字增量/减量
     {
         "monaqa/dial.nvim",
-        evnet = {"BufReadPost","BufNewFile"},
+        evnet = "VeryLazy",
         config = function()
             local augend = require("dial.augend")
             local nopts = {noremap = true}
             require("dial.config").augends:register_group{
-                default = {
-                    augend.integer.alias.decimal,
-                    augend.integer.alias.hex,
-                    augend.integer.alias["%Y/%m/%d"],
-                },
                 -- 字符循环跳转
                 chars_dial = {
                     augend.constant.new{elements={"+","-"},word=false,cyclic=true},
@@ -132,6 +127,7 @@ return {
                     augend.constant.new{elements={"output","input"},word=true,cyclic=true},
                     augend.constant.new{elements={"front","rear"},word=true,cyclic=true},
                     augend.constant.new{elements={"start","end"},word=true,cyclic=true},
+                    augend.constant.new{elements={"0","1","2","3","4","5","6","7","8","9"},word=false,cyclic=true},
                 },
                 -- 颜色增加或减少
                 color_dial = {
@@ -149,10 +145,10 @@ return {
                     }
                 },
             }
-            vim.keymap.set("n", "<M-z>", require("dial.map").inc_normal("chars_dial"), nopts)
-            vim.keymap.set("n", "<M-x>", require("dial.map").dec_normal("chars_dial"), nopts)
-            vim.keymap.set("n", "<M-z>", require("dial.map").inc_normal("color_dial"), nopts)
-            vim.keymap.set("n", "<M-x>", require("dial.map").dec_normal("color_dial"), nopts)
+            vim.keymap.set("n", "<M-c>", require("dial.map").inc_normal("chars_dial"), nopts)
+            vim.keymap.set("n", "<M-d>", require("dial.map").dec_normal("chars_dial"), nopts)
+            vim.keymap.set("n", "<M-f>", require("dial.map").inc_normal("color_dial"), nopts)
+            vim.keymap.set("n", "<M-g>", require("dial.map").dec_normal("color_dial"), nopts)
             vim.keymap.set("n", "<M-z>", require("dial.map").inc_normal("date_dial"), nopts)
             vim.keymap.set("n", "<M-x>", require("dial.map").dec_normal("date_dial"), nopts)
         end

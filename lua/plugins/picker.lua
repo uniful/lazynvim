@@ -14,10 +14,10 @@ return {
         event = "VeryLazy",
         opts = {
             autoselect_one = true,
-            include_current = false,
+            include_current_win = true,
             filter_rules = {
                 bo = {
-                    filetype = { "neo-tree", "neo-tree-popup", "notify" },
+                    filetype = { "neo-tree", "neo-tree-popup", "notify","markdown" },
                     buftype = { "terminal", "quickfix" }
                 }
             },

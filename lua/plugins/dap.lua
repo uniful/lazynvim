@@ -3,7 +3,9 @@ return {
      -- 代码调试
     {
         "mfussenegger/nvim-dap",
-        evnet = {"BufReadPost","BufNewFile","User FileOpened"},
+        cmd = {"DapContinue","DapToggleBreakpoint","DapTerminate","DapToggleRepl","DapVirtualTextToggle",
+        "DapVirtualTextEnable","DapVirtualTextDisable","DapVirtualTextForceRefresh","DapShowLog","DapStepInto",
+        "DapStepOver","DapStepOut","DapSetLogLevel","DapRestartFrame","DapLoadLaunchJSON"},
         dependencies = {
             {"rcarriga/nvim-dap-ui",lazy = true}, -- 提供UI界面
             {
@@ -25,18 +27,17 @@ return {
                     virt_lines = false,
                     virt_text_win_col = nil
                 }
+            },
+            -- 特定需要插件的语言
+            {
+                "jbyuki/one-small-step-for-vimkind",
+                lazy = true,
+                ft = {"lua","luau"}
             }
         },
         config = function ()
             require("debugger.config")
             require("debugger.startup")
         end
-    },
-
-    ----- 特定需要插件的语言 -----
-    -- lua
-    {
-        "jbyuki/one-small-step-for-vimkind",
-        ft = "lua"
     }
 }

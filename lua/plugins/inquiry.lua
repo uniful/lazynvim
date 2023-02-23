@@ -68,7 +68,18 @@ return {
                         }
                     },
                     ["ui-select"] = {
-                        require("telescope.themes").get_dropdown {}
+                        require("telescope.themes").get_dropdown {
+                            -- cmake-tools插件
+                            width = 0.8,
+                            previewer = false,
+                            prompt_title = false,
+                            borderchars = {
+                                { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
+                                prompt = { "─", "│", " ", "│", "┌", "┐", "│", "│" },
+                                results = { "─", "│", "─", "│", "├", "┤", "┘", "└" },
+                                preview = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
+                            }
+                        }
                     }
                 }
             }

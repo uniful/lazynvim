@@ -3,7 +3,7 @@ return {
     -- 完善旧的quickfix窗口
     {
         "kevinhwang91/nvim-bqf",
-        event = "VeryLazy",
+        ft = "qf",
         opts = {
             auto_resize_height = true,
             preview = {
@@ -61,7 +61,7 @@ return {
     -- 中文文档
     {
         "yianwillis/vimcdoc",
-        event = "VeryLazy"
+        event = "CmdlineEnter"
     },
     -- 弹出按键绑定和输入命令窗口
     {

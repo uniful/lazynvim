@@ -36,17 +36,6 @@ return {
             timeout = 10000
         }
     },
-    -- 带颜色的窗口分割线
-    {
-        "nvim-zh/colorful-winsep.nvim",
-        evnet = "VeryLazy",
-        opts = {
-            highlight = {
-                bg = "#774933",
-                fg = "#1F3432",
-            }
-        }
-    },
     -- 光标位置
     {
         "edluffy/specs.nvim",

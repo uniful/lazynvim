@@ -26,5 +26,15 @@ return {
                 }
             }
         }
+    },
+    -- markdown笔记管理
+    {
+        "jakewvincent/mkdnflow.nvim",
+        ft = {"md","markdown","rmd"},
+        opts = {
+            mappings = {
+                MkdnEnter = {{'i', 'n', 'v'}, '<CR>'}
+            }
+        }
     }
 }

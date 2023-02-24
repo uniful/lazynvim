@@ -49,5 +49,13 @@ return {
                 end
             }
         }
+    },
+    -- Neovim中lua API的完整签名帮助、文档和补全
+    {
+        "folke/neodev.nvim",
+        lazy = true,
+        opts = {
+            experimental = {pathStrict = true}
+        }
     }
 }

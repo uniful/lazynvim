@@ -1,16 +1,4 @@
-# Neovim配置介绍
-
-## Neovim介绍
-
-- Neovim is a project that seeks to aggressively refactor Vim source code in order to achieve the following goals
-
-1. Simplify maintenance to improve the speed that bug fixes and features get merged.
-
-2. Split the work among multiple developers.
-
-3. Enable the implementation of new/modern user interfaces without any modifications to the core source.
-
-4. Improve the extensibility power with a new plugin architecture based on coprocesses. Plugins will be written in any programming language without any explicit support from the editor.
+# Neovim配置
 
 ## Neovim的安装
 
@@ -20,27 +8,31 @@
 
 ### 先决条件
 
-1. 安装git,gcc,unzip等基础工具，Windows下推荐使用Msys2安装基础工具，Msys2官网在[这里](https://www.msys2.org)
+1. 安装git,gcc,unzip,sqlite3,node等基础工具，Windows下推荐使用Msys2安装基础工具，Msys2官网在[这里](https://www.msys2.org)
 
 2. 确保网络环境没有问题，要能正常访问github,否则插件安装很麻烦。
 
-### 配置
+### 安装插件
 
-- 在linux下将这段命令复制到终端命令工具 `git clone https://github.com/uniful/lazynvim.git ~/.config/nvim`
+- linux:
 
-- 如果是windows10/11用户，则打开PowerShell使用 `git clone https://github.com/uniful/lazynvim.git $env:LOCALAPPDATA\nvim`
+- 打开终端输入: `git clone https://github.com/uniful/lazynvim.git ~/.config/nvim`
 
-- 在此配置中，我自己改了一些东西，直接启动Neovim，插件安装会报错，需要先修改一下里面的东西。
+- windows:
 
-- 自行修改如下：(注意：不要直接使用neovim来修改，否则插件将会直接安装，并且报错，可以使用vim/nano/emacs/helix等)
+- 打开PowerShell输入: `git clone https://github.com/uniful/lazynvim.git $env:LOCALAPPDATA\nvim`
 
-1. alpha-nvim,由于我自己在此插件里面修改了一些布局样式，并且命名为dashboardt.lua,所以要修改回来，在plugins/interface.lua文件下，将dashboardt改为dashboard
+- **注意**
 
-2. HighStr,在plugins/visualext.lua里面修改为你自己的位置
+- 在此配置中，某些插件需要自己更改一下路径或配置。直接启动Neovim，插件安装过程会报错。
 
-3. telescope,在plugins/inquiry.lua中修改history的位置
+- 修改如下：(注意：不要直接使用neovim来修改，否则插件将会直接安装，并且报错，可以使用vim/nano/emacs/helix等文本编辑器)
 
-4. 由于需要sqlite，Windows用户使用sqlite的时候需要sqlite3.dll，详情可在[sqlite.lua](https://github.com/kkharji/sqlite.lua)中查看
+1. alpha-nvim：此插件里面修改了一些布局样式，并且命名为dashboardt.lua,所以要修改回来，在plugins/interface.lua文件下，将dashboardt改为dashboard
+
+2. HighStr：在plugins/visualext.lua里面修改为你自己的位置
+
+3. 由于需要sqlite，Windows用户需要sqlite3.dll，详情可在[sqlite.lua](https://github.com/kkharji/sqlite.lua)中查看
 
 ### 完成
 
@@ -60,9 +52,9 @@
 
 ### dap
 
-- dap服务其实吧，不怎么好用，用于调试c/c++还行。调试配置在debugger文件夹下，只能用于c/++和lua。
+- dap服务其实吧，不怎么好用，用于调试c/c++还行。调试配置在debugger文件夹。
 
-- 自定义调试器配置
+- 自定义调试器
 
 1. 在debugger/lang/dap-cpp.lua文件中, 修改你使用的c/c++调试适配器, 具体可以看[dap](https://github.com/mfussenegger/nvim-dap/wiki/Debug-Adapter-installation),自己选择自己需要的适配器，然后修改就可以了。
 

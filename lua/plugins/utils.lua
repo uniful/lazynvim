@@ -44,21 +44,18 @@ return {
     {
         "gbprod/yanky.nvim",
         lazy = true,
+        cmd = {"YankyClearHistory","YankyRingHistory"},
         opts = {
             ring = {
+                history_length = 200,
                 storage = "sqlite"
+            },
+            preserve_cursor_position = {
+                enable = true
             }
         }
     },
-    -- 带有nvim lua API的完整签名帮助、文档和补全
-    {
-        "folke/neodev.nvim",
-        lazy = true,
-        opts = {
-            experimental = {pathStrict = true}
-        }
-    },
-    -- 中文文档
+    -- VIM中文文档
     {
         "yianwillis/vimcdoc",
         event = "CmdlineEnter"

@@ -3,7 +3,7 @@ return {
     -- 快速跳转
     {
         "phaazon/hop.nvim",
-        event = {"BufReadPre","BufNewFile"},
+        event = {"BufReadPost","BufNewFile"},
         branch = 'v2',
         opts = {
             keys = "etovxqpdygfblzhckisuran"
@@ -12,10 +12,11 @@ return {
     -- 文本内字符移动、跳转
     {
         "ggandor/leap.nvim",
-        event = {"BufReadPre","BufNewFile"},
+        event = {"BufReadPost","BufNewFile"},
         dependencies = {
             {
                 "ggandor/flit.nvim", --跳转增强
+                lazy = true,
                 opts = {
                     labeled_modes = "nv",
                     multiline = true,
@@ -102,7 +103,7 @@ return {
     -- 字符、颜色、数字增量/减量
     {
         "monaqa/dial.nvim",
-        evnet = "VeryLazy",
+        evnet = {"BufReadPost","BufNewFile"},
         config = function()
             local augend = require("dial.augend")
             local nopts = {noremap = true}

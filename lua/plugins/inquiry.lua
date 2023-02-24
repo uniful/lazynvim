@@ -30,8 +30,7 @@ return {
             require('telescope').setup{
                 defaults = {
                     history = {
-                        path = '~/.local/share/nvim/databases/telescope_history.sqlite3',
-                        limit = 100,
+                        limit = 200,
                     },
                     mappings = {
                         i = {
@@ -69,7 +68,7 @@ return {
                     },
                     ["ui-select"] = {
                         require("telescope.themes").get_dropdown {
-                            -- cmake-tools插件
+                            -- cmake-tools插件需要用到
                             width = 0.8,
                             previewer = false,
                             prompt_title = false,

@@ -101,6 +101,13 @@ mapcmd("<leader>cmk", "CMakeSelectKit")
 -- 停止
 mapcmd("<leader>cms", "CMakeStop")
 
+-- ccc
+mapcmd("<leader>ccp", "CccPick")
+mapcmd("<leader>ccn", "CccConvert")
+mapcmd("<leader>cct", "CccHighlighterToggle")
+mapcmd("<leader>cce", "CccHighlighterEnable")
+mapcmd("<leader>ccd", "CccHighlighterDisable")
+
 
 -- D
 -- dap

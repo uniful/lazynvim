@@ -1,5 +1,4 @@
 vim.g.mapleader = ';'
-vim.g.maplocalleader = ','
 
 local kopts = {noremap = true, silent = true}
 local bufopts = {noremap = true, silent = true, buffer = bufnr}
@@ -462,9 +461,6 @@ mapnorm("<leader>sn","vnew:lua require('spectre.actions').replace_cmd()")
 -- vim写入文件时更新更改
 mapnorm("<leader>su","vnew:lua require('spectre').toggle_live_update()")
 
--- ssr
-vim.keymap.set({ "n", "x" }, "<leader>sr", function() require("ssr").open() end)
-
 -- search
 mapkey('n', '<leader>ss', '/')
 mapkey('n', '<leader>sw', '/\\<lt>\\><left><left>')
@@ -623,3 +619,8 @@ mapcmd("<leader>zm", "ZenMode")
 
 -- 手动调用命令执行
 maplua("<leader>cu","require('implement.code_action_utils').code_action_listener()")
+
+-- 查看lazygit日志
+vim.keymap.set("n","<leader>lzl",function()
+    require("lazy.util").float_term({ "lazygit","log" })
+end)

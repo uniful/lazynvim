@@ -43,7 +43,11 @@ return {
     -- 结构搜索和替换
     {
         "cshuaimin/ssr.nvim",
-        evnet = {"BufReadPost","BufNewFile"},
+        keys = {
+            vim.keymap.set({"n","x"},"<leader>sr",function ()
+                require("ssr").open()
+            end,{desc = "Structural Replace"})
+        },
         opts = {
             border = "rounded",
             min_width = 50,

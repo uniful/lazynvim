@@ -28,11 +28,9 @@
 
 - 修改如下：(注意：不要直接使用neovim来修改，否则插件将会直接安装，并且报错，可以使用vim/nano/emacs/helix等文本编辑器)
 
-1. alpha-nvim：此插件里面修改了一些布局样式，并且命名为dashboardt.lua,所以要修改回来，在plugins/interface.lua文件下，将dashboardt改为dashboard
+1. HighStr：在plugins/visualext.lua里面修改为你自定义的位置
 
-2. HighStr：在plugins/visualext.lua里面修改为你自己的位置
-
-3. 由于需要sqlite，Windows用户需要sqlite3.dll，详情可在[sqlite.lua](https://github.com/kkharji/sqlite.lua)中查看
+2. 由于需要sqlite，Windows用户需要sqlite3.dll，详情可在[sqlite.lua](https://github.com/kkharji/sqlite.lua)中查看
 
 ### 完成
 

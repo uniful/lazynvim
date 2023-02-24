@@ -63,7 +63,7 @@ return {
     --光标行号模式指示器
     {
         "mawkler/modicator.nvim",
-        evnet = {"BufReadPost","BufNewFile"},
+        evnet = "VeryLazy",
         init = function ()
             vim.o.cursorline = true
             vim.o.number = true
@@ -80,7 +80,7 @@ return {
 	-- 突出显示文本
 	{
 		"Pocco81/HighStr.nvim",
-        event = {"BufReadPost","BufNewFile"},
+        event = "VeryLazy",
 		opts = {
 			verbosity = 0,
 			saving_path = "/home/colin/.cache/nvim/highstr/", -- 最好使用绝对路径
@@ -101,7 +101,7 @@ return {
     -- 显示十六进制颜色
     {
         "NvChad/nvim-colorizer.lua",
-        evnet = {"BufReadPost","BufNewFile"},
+        evnet = "VeryLazy",
         opts = {}
     },
     -- 显示缩进线

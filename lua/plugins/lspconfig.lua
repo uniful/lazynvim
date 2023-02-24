@@ -5,10 +5,12 @@ return {
         event = {"BufReadPre","BufNewFile"},
         config = function()
             local lspconfig = require("lspconfig")
+
             local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
             local servers = {"clangd","pyright","lua_ls","cmake","vimls","bashls","zk",
                 "yamlls","taplo","tsserver","jsonls","html","cssls"}
+
             for _, lsp in pairs(servers) do
                 if rawequal(lsp,"lua_ls") then
                     lspconfig[lsp].setup({

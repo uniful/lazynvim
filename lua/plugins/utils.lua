@@ -92,18 +92,6 @@ return {
             keys = "<Esc>",
         }
     },
-    -- 非活动代码变暗
-    {
-        "folke/twilight.nvim",
-        cmd = {"Twilight","TwilightEnable","TwilightDisable"},
-        opts = {}
-    },
-    -- 禅模式
-    {
-        "folke/zen-mode.nvim",
-        cmd = "ZenMode",
-        opts = {}
-    },
     -- 提供对SchemaStore目录的访问
     {
         "b0o/SchemaStore.nvim",
@@ -114,14 +102,6 @@ return {
         "karb94/neoscroll.nvim",
         event = "VeryLazy",
         opts = {}
-    },
-    -- 页面切换器
-    {
-        "toppair/reach.nvim",
-        cmd = "ReachOpen",
-        opts = {
-            notifications = true
-        }
     },
     -- 将缓冲区锁定到窗口
     {

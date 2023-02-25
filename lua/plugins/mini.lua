@@ -1,4 +1,6 @@
+-- mini模块配置
 return {
+    -- starter
     {
         "echasnovski/mini.starter",
         version = false,
@@ -25,7 +27,7 @@ return {
                     new_section("Find file",    "Telescope find_files", "Telescope"),
                     new_section("Recent files", "Telescope oldfiles",   "Telescope"),
                     new_section("Grep text",    "Telescope live_grep",  "Telescope"),
-                    new_section("Open last projects", "Telescope projects", "Telescope"),
+                    new_section("Open last projects","Telescope projects",   "Telescope"),
                     new_section("MRU",          "Telescope frecency",   "Telescope"),
                     new_section("init.lua",     "e $MYVIMRC",           "Config"),
                     new_section("Lazy",         "Lazy",                 "Config"),

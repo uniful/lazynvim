@@ -36,8 +36,8 @@ return {
             }
         },
         config = function ()
-            require("debugger.config")
-            require("debugger.startup")
+            require("debugger.dapconfig")
+            require("debugger.dapstartup")
         end
     }
 }

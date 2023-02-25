@@ -1,3 +1,4 @@
+-- 一些有用的小玩意
 return {
     -- 命令面板
     {
@@ -22,5 +23,25 @@ return {
             local mapping = ccc.mapping
             ccc.setup({})
         end
-    }
+    },
+    -- 页面切换器
+    {
+        "toppair/reach.nvim",
+        cmd = "ReachOpen",
+        opts = {
+            notifications = true
+        }
+    },
+    -- 非活动代码变暗
+    {
+        "folke/twilight.nvim",
+        cmd = {"Twilight","TwilightEnable","TwilightDisable"},
+        opts = {}
+    },
+    -- 禅模式
+    {
+        "folke/zen-mode.nvim",
+        cmd = "ZenMode",
+        opts = {}
+    },
 }

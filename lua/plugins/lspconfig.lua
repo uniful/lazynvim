@@ -16,8 +16,17 @@ return {
                     lspconfig[lsp].setup({
                         settings = {
                             lua = {
+                                runtime = {
+                                    version = 'luaJIT',
+                                },
                                 diagnostics = {
-                                    globals = { "vim" }
+                                    globals = { 'vim' }
+                                },
+                                workspace = {
+                                    library = vim.api.nvim_get_runtime_file("", true),
+                                },
+                                telemetry = {
+                                    enable = false
                                 },
                                 completion = {
                                     callSnippet = "Replace"

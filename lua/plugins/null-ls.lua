@@ -12,9 +12,8 @@ return {
             local sources = {
                 -- code_actions
                 code_actions.eslint, -- javascript,typescript
-                code_actions.shellcheck, -- sh
                 code_actions.cspell.with({
-                    disabled_filetypes = {"c","cpp","javascript","typescript","sh"}
+                    disabled_filetypes = {"c","cpp","javascript","typescript"}
                 }),
                 -- Diagnostics
                 diagnostics.cmake_lint, --cmake
@@ -50,8 +49,10 @@ return {
             }
             null_ls.setup({
                 sources = sources,
+                border = "rounded",
                 debug = true,
                 diagnostics_format = "[#{c}] #{m} (#{s})",
+                update_in_insert = true,
             })
         end
     }

@@ -45,9 +45,8 @@ return {
                 highlight = {
                     -- 启用高亮支持
                     enable = true,
-                    disable = {"org"},
                     -- 使用treesitter高亮而不是neovim内置的高亮
-                    additional_vim_regex_highlighting = {"org"},
+                    additional_vim_regex_highlighting = false,
                 },
                 -- 范围选择
                 incremental_selection = {

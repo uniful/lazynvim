@@ -6,14 +6,11 @@ return {
         event = "VeryLazy",
         version = "v3.*",
         dependencies = {
-            -- 删除缓冲区不改变布局
-            {"famiu/bufdelete.nvim",lazy = true},
-            -- 缓冲区删除增强
+            -- 改进缓冲区删除
             {
                 "ojroques/nvim-bufdel",lazy = true,
                 opts = {
-                    next = 'cycle',
-                    quit = false,
+                    quit = false
                 }
             },
         },

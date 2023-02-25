@@ -45,8 +45,9 @@ return {
                 highlight = {
                     -- 启用高亮支持
                     enable = true,
+                    disable = {"org"},
                     -- 使用treesitter高亮而不是neovim内置的高亮
-                    additional_vim_regex_highlighting = false,
+                    additional_vim_regex_highlighting = {"org"},
                 },
                 -- 范围选择
                 incremental_selection = {
@@ -95,7 +96,7 @@ return {
                     swap = {
                         enable = true,
                         swap_next = {
-                            ["<leader>a"] = "@parameter.inner",
+                            ["<leader>aa"] = "@parameter.inner",
                         },
                         swap_previous = {
                             ["<leader>A"] = "@parameter.inner",

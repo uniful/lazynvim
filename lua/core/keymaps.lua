@@ -562,6 +562,20 @@ mapcmd("<leader>tre", "TSContextEnable")
 mapcmd("<leader>trd", "TSContextDisable")
 mapcmd("<leader>trt", "TSContextToggle")
 
+-- trailblazer
+-- 标记字符
+mapcmd("<leader>tbn", "TrailBlazerNewTrailMark")
+-- 移动到最后一个标记并且删除此标记
+mapcmd("<leader>tbb", "TrailBlazerTrackBack")
+-- 切换到前一个轨迹标记
+mapcmd("<leader>tbu", "TrailBlazerPeekMovePreviousUp")
+-- 切换到最新的轨迹标记
+mapcmd("<leader>tbd", "TrailBlazerPeekMoveNextDown")
+-- 移动到缓冲区最近的轨迹标记
+mapcmd("<leader>tbr", "TrailBlazerMoveToNearest")
+-- 删除所有标记
+mapcmd("<leader>tba", "TrailBlazerDeleteAllTrailMarks")
+
 
 -- U
 

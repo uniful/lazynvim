@@ -112,9 +112,21 @@ return {
     -- 文件标记
     {
         "ThePrimeagen/harpoon",
-        event = "VeryLazy",
+        event = "CmdlineEnter",
         opts = {
             save_on_toggle = true
         }
+    },
+    -- 文件字符标记
+    {
+        "LeonHeidelbach/trailblazer.nvim",
+        cmd = {"TrailBlazerNewTrailMark","TrailBlazerTrackBack","TrailBlazerPeekMovePreviousUp",
+        "TrailBlazerPeekMoveNextDown","TrailBlazerMoveToNearest","TrailBlazerDeleteAllTrailMarks",
+        "TrailBlazerPasteAtLastTrailMark","TrailBlazerPasteAtAllTrailMarks","TrailBlazerNewTrailMark",
+        "TrailBlazerToggleTrailMarkList","TrailBlazerOpenTrailMarkList","TrailBlazerCloseTrailMarkList",
+        "TrailBlazerSwitchTrailMarkStack","TrailBlazerAddTrailMarkStack","TrailBlazerDeleteTrailMarkStacks",
+        "TrailBlazerDeleteAllTrailMarkStacks","TrailBlazerSwitchNextTrailMarkStack","TrailBlazerSwitchPreviousTrailMarkStack",
+        "TrailBlazerSetTrailMarkStackSortMode","TrailBlazerSaveSession","TrailBlazerLoadSession"},
+        opts = {}
     }
 }

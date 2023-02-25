@@ -1,0 +1,13 @@
+-- local icons ={
+--     New_file = "",
+--     Find_file = "",
+--     Recently_opened_files = "",
+--     Frecency = "",
+--     Settings = "",
+--     Settings_Code = ":e $MYVIMRC | :cd %:p:h | split . | wincmd k | pwd<CR>",
+--     Find_word = "",
+--     Jump_to_bookmarks = "",
+--     Open_last_projects = "",
+--     Lazy = "鈴",
+--     Quit = "",
+-- }

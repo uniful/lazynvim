@@ -7,11 +7,14 @@ return {
         lazy = true,
         event = {"BufReadPost","BufNewFile"},
         dependencies = {
-            -- 不需要配置启动项
+            ------- 不需要配置启动项--------
+            --语法感知文本对象、选择、移动、交换和查看支持
             {"nvim-treesitter/nvim-treesitter-textobjects",lazy = true},
+            -- 根据光标在文件中的位置设置注释字符串
             {"JoosepAlviste/nvim-ts-context-commentstring",lazy = true},
+            -- 彩虹括号
             {"mrjones2014/nvim-ts-rainbow",lazy = true},
-            -- 需要配置启动项
+            ---------- 需要配置启动项----------
             {
                 "m-demare/hlargs.nvim", lazy = true,  -- 突出显示参数的定义和用法
                 opts = {}
@@ -63,20 +66,15 @@ return {
                 indent = {
                     enable = true
                 },
-                -- 彩虹括号，由nvim-ts-rainbow插件提供
                 rainbow = {
                     enable = true,
                     extended_mode = true,
-                    -- colors = {}, -- table of hex strings
-                    -- termcolors = {} -- table of colour name strings
                     max_file_lines = nil
                 },
-                -- 根据当前上下文定义文件类型，由nvim-ts-context-commentstring插件提供
                 context_commentstring = {
                     enable = true,
                     enable_autocmd = false,
                 },
-                -- textobjects
                 textobjects = {
                     select = {
                         enable = true,
@@ -88,9 +86,9 @@ return {
                             ["ic"] = { query = "@class.inner", desc = "Select inner part of a class region" },
                         },
                         selection_modes = {
-                            ['@parameter.outer'] = 'v', -- charwise
-                            ['@function.outer'] = 'V', -- linewise
-                            ['@class.outer'] = '<c-v>', -- blockwise
+                            ['@parameter.outer'] = 'v',
+                            ['@function.outer'] = 'V',
+                            ['@class.outer'] = '<M-v>',
                         },
                         include_surrounding_whitespace = true,
                     },

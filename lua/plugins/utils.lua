@@ -63,6 +63,7 @@ return {
     -- 弹出按键绑定和输入命令窗口
     {
         "folke/which-key.nvim",
+        lazy = true,
         event = "VeryLazy",
         opts = {
             plugins = {

@@ -5,7 +5,7 @@ return {
         "nvim-treesitter/nvim-treesitter",
         build = {":TSUpdate"},
         lazy = true,
-        event = {"BufReadPost","BufNewFile"},
+        event = {"BufReadPre","BufNewFile"},
         dependencies = {
             ------- 不需要配置启动项--------
             --语法感知文本对象、选择、移动、交换和查看支持

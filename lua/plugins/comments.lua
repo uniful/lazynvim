@@ -37,7 +37,7 @@ return {
     -- TODO注释样式
     {
         "folke/todo-comments.nvim",
-        cmd = {"TodoTrouble","TodoTelescope"},
+        cmd = {"TodoTrouble","TodoTelescope","TodoQuickFix","TodoLocList"},
         event = "BufReadPost",
         opts = {
             keywords = {

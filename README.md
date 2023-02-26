@@ -50,7 +50,7 @@
 
 - 在plugins/lspconfig.lua文件中修改需要补全的服务器，在下方的排除列表中进行取消，则mason.nvim插件会自行安装所需的服务。
 
-## completion
+### completion
 
 - 此配置中使用的是nvim-cmp作为自动补全框架
 
@@ -63,3 +63,11 @@
 1. 在debugger/lang/dap-cpp.lua文件中, 修改你使用的c/c++调试适配器, 具体可以看[dap](https://github.com/mfussenegger/nvim-dap/wiki/Debug-Adapter-installation),自己选择自己需要的适配器，然后修改就可以了。
 
 2. dap-lua.lua文件基本上不用修改.
+
+## 插件问题
+
+1. Icon-picker: 此插件依赖telecope.nvim插件，而telescope插件被设置成了延迟加载，需要先调用Telescope插件，如果不想这样，则注释掉Telescope插件的cmd
+
+2. toggleterm: 由于此插件也使用的延迟加载，所以直接调用lazygit会不成功，可以先调用终端，或者注释掉此插件的cmd
+
+3. mini-starter: 插件倒是还好，如果有时候通知出现`lazy.*`等问题，一般没什么问题。不管就好了，如果完全不想出现，则在collect文件夹中使用hold-plugins文件中的alpha-nvim插件

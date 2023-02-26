@@ -1,4 +1,5 @@
 vim.g.mapleader = ';'
+vim.g.maplocalleader = ','
 
 local kopts = {noremap = true, silent = true}
 local bufopts = {noremap = true, silent = true, buffer = bufnr}
@@ -29,17 +30,6 @@ end
 -- auto-save
 -- 关闭或启用自动保存功能
 mapcmd("<leader>at", "ASToggle")
-
--- aerial
-mapcmd("<leader>ae", "AerialToggle")
-mapcmd("<leader>ao", "AerialOpen")
-mapcmd("<leader>al", "AerialOpenAll")
-mapcmd("<leader>ac", "AerialClose")
-mapcmd("<leader>ax", "AerialCloseAll")
-mapcmd("<leader>ap", "AerialPrev")
-mapcmd("<leader>an", "AerialNext")
-mapcmd("<leader>ag", "AerialGo")
-mapcmd("<leader>ai", "AerialInfo")
 
 
 -- B:
@@ -153,9 +143,15 @@ maplua("<leader>dls", "=require'osv'.stop_trace()")
 -- 查看所有文件历史
 mapcmd("<leader>dvh", "DiffviewFileHistory")
 -- 查看当前文件历史
-mapcmd("<leader>dvc", "DiffviewFileHistory %")
+mapcmd("<leader>dvf", "DiffviewFileHistory %")
 -- 查找特定文件或目录历史
 maptext("<leader>dvs", "DiffviewFileHistory ")
+-- 打开文件差异视图
+mapcmd("<leader>dvo", "DiffviewOpen")
+-- 关闭文件差异视图
+mapcmd("<leader>dvc", "DiffviewClose")
+-- 切换文件面板
+mapcmd("<leader>dvt", "DiffviewToggleFiles")
 
 
 -- E
@@ -284,6 +280,9 @@ mapcmd("<leader>iy", "IconPickerYank")
 
 
 -- L
+-- lazy
+mapcmd("<leader>la", "Lazy")
+
 -- lspconfig自带功能
 maplua('<leader>lf', 'vim.diagnostic.open_float()')
 maplua("<leader>lp", "vim.diagnostic.goto_prev()")
@@ -515,8 +514,27 @@ mapcmd("<leader>ttf", "ToggleTerm")
 -- 用特定操作打开终端
 maptext("<leader>tte", "TermExec ")
 
--- 查找 TODO 标签
-mapcmd("<leader>td", "TodoTelescope theme=dropdown")
+-- todo-comments
+-- 查找 TODO 标签 
+-- 上方预览
+mapcmd("<leader>tdt", "TodoTelescope theme=dropdown")
+-- 右侧预览
+mapcmd("<leader>tdr", "TodoTelescope")
+-- 筛选关键词
+maptext("<leader>tdg", "TodoTelescope keywords=")
+-- 指定搜索目录
+maptext("<leader>tdd", "TodoTrouble cwd=")
+-- 使用快速修复列表来显示项目中的所有待办事项
+mapcmd("<leader>tdq", "TodoQuickFix")
+-- 使用位置列表来显示项目中的所有待办事项
+mapcmd("<leader>tdl", "TodoLocList")
+-- 跳转
+vim.keymap.set("n", "]t", function()
+  require("todo-comments").jump_next()
+end, { desc = "Next todo comment" })
+vim.keymap.set("n", "[t", function()
+  require("todo-comments").jump_prev()
+end, { desc = "Previous todo comment" })
 
 -- telescope
 mapcmd("<leader>tsw", "Telescope find_files")
@@ -547,8 +565,6 @@ maplua("<leader>tsa", "Telescope live_grep_args")
 mapcmd("<leader>tsu", "Telescope undo")
 -- 查看harpoon标记
 mapcmd("<leader>tss", "Telescope harpoon marks")
--- 查看文本大纲
-mapcmd("<leader>tsl", "Telescope aerial")
 -- 查看yank历史
 mapcmd("<leader>tsy", "Telescope yank_history")
 

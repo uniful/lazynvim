@@ -51,7 +51,7 @@ return {
                 border = "rounded",
                 debug = true,
                 diagnostics_format = "[#{c}] #{m} (#{s})",
-                update_in_insert = true,
+                update_in_insert = false,
             })
         end
     }

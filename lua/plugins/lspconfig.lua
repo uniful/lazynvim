@@ -8,8 +8,8 @@ return {
 
             local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-            local servers = {"clangd","pyright","lua_ls","cmake","vimls","bashls","zk",
-                "yamlls","taplo","tsserver","jsonls","html","cssls"}
+            local servers = {"clangd","pyright","lua_ls","cmake","vimls","bashls","marksman",
+                "yamlls","taplo","tsserver","jsonls","html","cssls","diagnosticls","lemminx"}
 
             for _, lsp in pairs(servers) do
                 if rawequal(lsp,"lua_ls") then
@@ -45,6 +45,11 @@ return {
                         },
                         capabilities = capabilities
                     })
+                elseif rawequal(lsp,"diagnosticls") then
+                    lspconfig[lsp].setup({
+                        filetypes = {"fish","zsh","email"},
+                        capabilities = capabilities
+                    })
                 else
                     lspconfig[lsp].setup({
                         capabilities = capabilities
@@ -74,8 +79,8 @@ return {
         opts = {
             ensure_installed = {},
             automatic_installation = {
-                exclude = {"lua_ls","cmake","pyright","clangd","bashls","vimls",
-                    "jsonls","cssls","tsserver","ymalls","zk","taplo"}
+                exclude = {"lua_ls","cmake","pyright","clangd","bashls","vimls","lemminx",
+                    "jsonls","cssls","tsserver","ymalls","marksman","taplo","diagnosticls","html"}
             }
         }
     },
@@ -86,10 +91,16 @@ return {
         opts = {
             ensure_installed = {},
             automatic_installation = {
-                exclude = {"cspell","gitsigns","eslint",
-                    "pylint","cmakelint","luacheck","vint",
-                    "shellcheck","tidy","markdownlint","yamllint",
-                    "shellharden","yapf","jq","taplo","stylua","cmake_format","codespell"}
+                exclude = {
+                    -- code_action
+                    "cspell","eslint",
+                    -- diagnostics
+                    "pylint","cmakelang","luacheck","shellcheck","tidy","markdownlint","yamllint",
+                    -- formatting
+                    "shellharden","yapf","jq","taplo","stylua","gersemi","codespell",
+                    ----- common -----
+                    -- cspell,eslint,markdownlint,tidy,
+                }
             },
             automatic_setup = false
         }

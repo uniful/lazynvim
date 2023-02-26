@@ -24,15 +24,14 @@ return {
                 diagnostics.pylint, --python
                 diagnostics.shellcheck, --sh
                 diagnostics.tidy, --html,xml
-                diagnostics.vint, --vim
                 diagnostics.yamllint, --yaml
                 diagnostics.zsh, --zsh
                 diagnostics.cspell.with({
                     disabled_filetypes = {"lua","c","cpp","cmake","javascript","typescript","python",
-                    "vim","sh","zsh","yaml","fish","markdown"}
+                    "sh","zsh","yaml","fish","markdown","html","xml"}
                 }),
                 -- Formatting
-                formatting.cmake_format, --cmake
+                formatting.gersemi, --cmake
                 formatting.eslint, --javascript,javascriptact,typescript,typescriptact,vue,
                 formatting.fish_indent, --fish
                 formatting.jq, --json
@@ -44,7 +43,7 @@ return {
                 formatting.yapf, --python
                 formatting.codespell.with({
                     disabled_filetypes = {"c","cpp","lua","cmake","python","markdown","json","html","sh",
-                    "javascript","typescript"}
+                    "javascript","typescript","toml","xml"}
                 })
             }
             null_ls.setup({

@@ -40,9 +40,15 @@
 
 ### lsp
 
-- lsp服务可以自行安装，也可以通过mason安装，由于本人用的是archlinux,安装语言服务比较方便，包也新，所以并没有使用Mason.nvim。
+- lsp服务可以自行安装，也可以通过mason安装，由于本人用的是archlinux,安装语言服务比较方便，包也新，所以并没有使用Mason.nvim来安装。
 
-- 使用其它Linux发行版如Ubuntu等，则通过mason安装比较方便，如果电脑上还没有安装语言服务器，则在plugins/lspconfig.lua文件中，修改配置，详细配置请看[mason-lspconfig](https://github.com/williamboman/mason-lspconfig.nvim)
+- 使用其它Linux发行版如Ubuntu等，则通过mason安装比较方便。
+
+- 使用mason.nvim安装语言服务
+
+- 在[server.md](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md)中查看你所需要的语言服务。
+
+- 在plugins/lspconfig.lua文件中修改需要补全的服务器，在下方的排除列表中进行取消，则mason.nvim插件会自行安装所需的服务。
 
 ## completion
 

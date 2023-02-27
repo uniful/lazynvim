@@ -3,7 +3,7 @@ return {
         "utilyre/barbecue.nvim",
         name = "barbecue",
         version = "*",
-        event = {"BufReadPost","BufNewFile"},
+        event = {"BufReadPre","BufNewFile"},
         opts = {
             kinds = {
                 File = "",
@@ -37,7 +37,7 @@ return {
     },
     {
         "SmiteshP/nvim-navic",
-        event = {"BufReadPost","BufNewFile"},
+        event = {"BufReadPre","BufNewFile"},
         config = function ()
             local navic = require("nvim-navic")
             navic.setup({

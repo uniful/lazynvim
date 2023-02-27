@@ -6,6 +6,7 @@ return {
         event = "InsertEnter",
         dependencies = {
             "rafamadriz/friendly-snippets", --提供多种语言的代码片段
+            lazy = true,
             config = function ()
                 require("luasnip.loaders.from_vscode").lazy_load()
                 require("luasnip.loaders.from_lua").lazy_load()

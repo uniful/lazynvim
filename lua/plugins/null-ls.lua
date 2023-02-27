@@ -41,10 +41,6 @@ return {
                 formatting.taplo, --toml
                 formatting.tidy, --html,xml
                 formatting.yapf, --python
-                formatting.codespell.with({
-                    disabled_filetypes = {"c","cpp","lua","cmake","python","markdown","json","html","sh",
-                    "javascript","typescript","toml","xml"}
-                })
             }
             null_ls.setup({
                 sources = sources,

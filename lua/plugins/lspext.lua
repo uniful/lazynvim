@@ -114,7 +114,8 @@ return {
     --显示代码诊断, 参考, telescope结果, quickfix和位置列表
     {
         "folke/trouble.nvim",
-        cmd = {"TroubleToggle","Trouble"},
+        lazy = true,
+        cmd = {"TroubleToggle","Trouble","TroubleRefresh","TroubleClose"},
         opts = {
             position = "bottom",
             height = 10,

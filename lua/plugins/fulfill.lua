@@ -8,7 +8,7 @@ return {
     -- 自动恢复光标位置
     {
         "ethanholz/nvim-lastplace",
-        evnet = "BufReadPre",
+        evnet = "VeryLazy",
         opts = {
             --这些 buffer 类型不记录光标位置
             lastplace_ignore_buftype = {"quickfix", "nofile", "help"},

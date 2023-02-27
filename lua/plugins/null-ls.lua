@@ -13,7 +13,7 @@ return {
                 -- code_actions
                 code_actions.eslint, -- javascript,typescript
                 code_actions.cspell.with({
-                    disabled_filetypes = {"c","cpp","javascript","typescript"}
+                    disabled_filetypes = {"c","cpp","javascript","typescript","java"}
                 }),
                 -- Diagnostics
                 diagnostics.cmake_lint, --cmake
@@ -28,7 +28,7 @@ return {
                 diagnostics.zsh, --zsh
                 diagnostics.cspell.with({
                     disabled_filetypes = {"lua","c","cpp","cmake","javascript","typescript","python",
-                    "sh","zsh","yaml","fish","markdown","html","xml"}
+                    "sh","zsh","yaml","fish","markdown","html","xml","java"}
                 }),
                 -- Formatting
                 formatting.gersemi, --cmake

@@ -5,5 +5,10 @@ return {
         "p00f/clangd_extensions.nvim",
         ft = {"c","cpp","cxx","C","cc","c++","cp","h","H","hh","hpp","hxx","h++","hp"},
         opts = {}
+    },
+    -- java
+    {
+        "mfussenegger/nvim-jdtls",
+        ft = "java"
     }
 }

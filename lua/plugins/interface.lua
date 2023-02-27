@@ -45,6 +45,9 @@ return {
     {
         "nvim-neo-tree/neo-tree.nvim",
         cmd = "Neotree",
+        init = function ()
+            vim.g.neo_tree_remove_legacy_commands = 1
+        end,
         opts = {}
     },
     -- 屏保

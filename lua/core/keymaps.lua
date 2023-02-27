@@ -369,6 +369,8 @@ mapcmd("<leader>lda", "Legendary autocmds")
 -- M
 -- mason
 mapcmd("<leader>ms", "Mason")
+-- 安装服务
+maptext("<leader>mi", "MasonInstall ")
 -- 卸载服务
 maptext("<leader>mu", "MasonUninstall ")
 -- 卸载所有
@@ -398,6 +400,8 @@ mapcmd("<leader>ni", "NullLsInfo")
 
 -- notify
 maplua("<leader>nh", "require('notify').history()")
+-- 显示历史日志
+mapcmd("<leader>ns", "Notifications")
 
 -- contect_vt
 -- 切换上下文虚拟文本
@@ -543,14 +547,14 @@ mapcmd("<leader>tsb", "Telescope buffers")
 mapcmd("<leader>tsh", "Telescope help_tags")
 mapcmd("<leader>tso", "Telescope oldfiles")
 mapcmd("<leader>tsm", "Telescope marks")
--- 显示弹窗历史记录
-mapcmd('<leader>tsn', "Telescope notify")
 -- telescope dap
 mapcmd("<leader>tpc", "Telescope dap commands")
 mapcmd("<leader>tps", "Telescope dap configurations")
 mapcmd("<leader>tpl", "Telescope dap list_breakpoints")
 mapcmd("<leader>tpv", "Telescope dap variables")
 mapcmd("<leader>tpf", "Telescope dap frames")
+-- notify
+mapcmd("<leader>tsn", "Telescope notify")
 -- projects
 mapcmd("<leader>tsp", "Telescope projects")
 -- file_browser

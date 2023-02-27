@@ -67,7 +67,7 @@ vim.o.shiftround      = true
 -- 插入括号时短暂跳转到另一半括号
 vim.o.showmatch       = true
 -- 自动补全不自动选中
-vim.opt.completeopt:append{"menu,menuone,noselect,noinsert"}
+vim.opt.completeopt:append("menu,menuone,noselect,noinsert")
 -- 光标在行首尾时<Left><Right>可以跳到下一行
 vim.o.whichwrap       = "<,>,[,]"
 -- 补全最多显示16行
@@ -85,26 +85,10 @@ vim.o.foldlevelstart  = 99
 vim.o.foldenable      = true
 vim.o.foldmethod      = "expr"
 vim.o.foldexpr        = "nvim_treesitter#foldexpr()"
------------某些插件需要定义全局变量-----------
--- neo-tree
-vim.g.neo_tree_remove_legacy_commands = 1
 
 -- disable some useless standard plugins to save startup time
--- these features have been better covered by plugins
-vim.g.loaded_matchparen        = 1
-vim.g.loaded_matchit           = 1
-vim.g.loaded_logiPat           = 1
-vim.g.loaded_rrhelper          = 1
-vim.g.loaded_tarPlugin         = 1
-vim.g.loaded_gzip              = 1
-vim.g.loaded_zipPlugin         = 1
-vim.g.loaded_2html_plugin      = 1
-vim.g.loaded_shada_plugin      = 1
-vim.g.loaded_spellfile_plugin  = 1
-vim.g.loaded_netrw             = 1
-vim.g.loaded_netrwPlugin       = 1
-vim.g.loaded_tutor_mode_plugin = 1
-vim.g.loaded_remote_plugins    = 1
+-- 禁用命令如下
+-- vim.g.loaded_matchparen        = 1
 vim.g.markdown_fenced_languages={
     "ts=typescript"
 }

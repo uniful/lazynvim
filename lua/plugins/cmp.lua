@@ -3,6 +3,7 @@ return {
     -- lua代码片段支持插件
     {
         "L3MON4D3/luasnip",
+        build = "make install_jsregexp",
         event = "InsertEnter",
         dependencies = {
             "rafamadriz/friendly-snippets", --提供多种语言的代码片段

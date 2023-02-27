@@ -37,7 +37,25 @@ local settings = {
     performance = {
         rtp = {
             -- 列出禁用的插件
-            disabled_plugins = {}
+            disabled_plugins = {
+                "matchparen",
+                "matchit",
+                "gzip",
+                "logiPat",
+                "rrhelper",
+                "tarPlugin",
+                "zipPlugin",
+                "2html_plugin",
+                "shada_plugin",
+                "spellfile_plugin",
+                "netrw",
+                "netrwPlugin",
+                "tutor_mode_plugin",
+                "remote_plugins",
+                "zipPlugin",
+                "tutor",
+                "tohtml"
+            }
         }
     }
 }

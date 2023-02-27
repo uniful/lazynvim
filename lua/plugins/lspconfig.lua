@@ -3,13 +3,20 @@ return {
     {
         "neovim/nvim-lspconfig",
         event = {"BufReadPre","BufNewFile"},
+        dependencies = {
+            {
+                -- Neovim中lua API完整签名、帮助和补全
+                "folke/neodev.nvim",lazy = true,
+                opts = {}
+            }
+        },
         config = function()
             local lspconfig = require("lspconfig")
 
             local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
             local servers = {"clangd","pyright","lua_ls","cmake","vimls","bashls","marksman",
-                "yamlls","taplo","tsserver","jsonls","html","cssls","diagnosticls","lemminx"}
+                "yamlls","taplo","tsserver","jsonls","html","cssls","diagnosticls","lemminx","jdtls"}
 
             for _, lsp in pairs(servers) do
                 if rawequal(lsp,"lua_ls") then
@@ -77,10 +84,10 @@ return {
         "williamboman/mason-lspconfig.nvim",
         cmd = {"LspInstall","LspUninstall"},
         opts = {
-            ensure_installed = {},
+            ensure_installed = {"jdtls","marksman","lemminx"},
             automatic_installation = {
-                exclude = {"lua_ls","cmake","pyright","clangd","bashls","vimls","lemminx",
-                    "jsonls","cssls","tsserver","ymalls","marksman","taplo","diagnosticls","html"}
+                exclude = {"lua_ls","cmake","pyright","clangd","bashls","vimls",
+                    "jsonls","cssls","tsserver","ymalls","taplo","diagnosticls","html"}
             }
         }
     },

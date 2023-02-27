@@ -5,16 +5,10 @@ return {
         event = {"BufReadPre","BufNewFile"},
         config = function()
             local null_ls = require("null-ls")
-            local code_actions = null_ls.builtins.code_actions
             local diagnostics = null_ls.builtins.diagnostics
             local formatting = null_ls.builtins.formatting
 
             local sources = {
-                -- code_actions
-                code_actions.eslint, -- javascript,typescript
-                code_actions.cspell.with({
-                    disabled_filetypes = {"c","cpp","javascript","typescript","java"}
-                }),
                 -- Diagnostics
                 diagnostics.cmake_lint, --cmake
                 diagnostics.eslint, --javascript,javascriptact,typescript,typescriptact,vue
@@ -46,8 +40,7 @@ return {
                 sources = sources,
                 border = "rounded",
                 debug = true,
-                diagnostics_format = "[#{c}] #{m} (#{s})",
-                update_in_insert = false,
+                diagnostics_format = "[#{c}] #{m} (#{s})"
             })
         end
     }

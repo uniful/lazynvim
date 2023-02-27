@@ -3,7 +3,7 @@ return {
     -- 快速跳转
     {
         "phaazon/hop.nvim",
-        event = {"BufReadPost","BufNewFile"},
+        cmd = {"HopAnyWhere","HopChar1","HopChar2","HopLine","HopLineStart","HopVertical","HopPattern","HopWord"},
         branch = 'v2',
         opts = {
             keys = "etovxqpdygfblzhckisuran"

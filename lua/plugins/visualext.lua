@@ -157,8 +157,7 @@ return {
     -- 显示光标下相同词汇
     {
         "RRethy/vim-illuminate",
-        cmd = {"IlluminatePause","IlluminateResumeBuf","IlluminateResume","IlluminateToggle",
-        "IlluminatePauseBuf","IlluminateToggleBuf","IlluminateDebug"},
+        event = {"BufReadPost","BufNewFile"},
         config = function ()
             local opts = {
                 providers = {

@@ -212,6 +212,8 @@ mapcmd("<leader>ht", "HopLineStart")
 mapcmd("<leader>hv", "HopVertical")
 -- 默认的 Neovim 搜索与提示混合在一起
 mapcmd("<leader>ht", "HopPattern")
+-- 提升缓冲区所有内容
+mapcmd("<leader>ha", "HopAnyWhere")
 
 -- hlslens
 -- 启动或关闭nvim-hlslens

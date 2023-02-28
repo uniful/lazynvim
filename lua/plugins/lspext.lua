@@ -125,7 +125,7 @@ return {
                 close = "q",
                 cancel = "<esc>",
                 refresh = "r",
-                jump = {"<cr>", "<tab>"},
+                jump = {"<leader><cr>", "<leader><tab>"},
                 open_split = { "<c-x>" },
                 open_vsplit = { "<c-l>" },
                 open_tab = { "<c-t>" },

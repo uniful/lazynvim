@@ -18,6 +18,9 @@ return {
             local servers = {"clangd","pyright","lua_ls","cmake","vimls","bashls","marksman",
                 "yamlls","taplo","tsserver","jsonls","html","cssls","diagnosticls","lemminx","jdtls"}
 
+            -- 代码折叠(nvim-ufo)
+            capabilities.textDocument.foldingRange = {dynamicRegistration = false,lineFoldingOnly = true}
+
             for _, lsp in pairs(servers) do
                 if rawequal(lsp,"lua_ls") then
                     lspconfig[lsp].setup({
@@ -54,7 +57,7 @@ return {
                     })
                 elseif rawequal(lsp,"diagnosticls") then
                     lspconfig[lsp].setup({
-                        filetypes = {"fish","zsh","email"},
+                        filetypes = {"fish","zsh","org","norg"},
                         capabilities = capabilities
                     })
                 else
@@ -69,8 +72,31 @@ return {
     {
         "williamboman/mason.nvim",
         cmd = {"Mason","MasonInstall","MasonUninstall","MasonUninstallAll","MasonLog"},
+        dependencies = {
+            {
+                -- 管理和安装null-ls的diagnostics和formatting服务
+                "jay-babu/mason-null-ls.nvim", lazy = true,
+                cmd = {"NullInstall","NullUninstall"},
+                opts = {
+                    ensure_installed = {},
+                    automatic_installation = {
+                        exclude = {
+                            -- diagnostics
+                            "pylint","cmakelang","luacheck","shellcheck","tidy","markdownlint","yamllint",
+                            "cspell","eslint",
+                            -- formatting
+                            "shellharden","yapf","jq","taplo","stylua","gersemi","codespell",
+                            ----- common -----
+                            -- eslint,markdownlint,tidy
+                        }
+                    },
+                    automatic_setup = false
+                }
+            }
+        },
         opts = {
             ui = {
+                border = "rounded",
                 icons = {
                     package_installed = "✓",
                     package_pending = "➜",
@@ -89,27 +115,6 @@ return {
                 exclude = {"lua_ls","cmake","pyright","clangd","bashls","vimls",
                     "jsonls","cssls","tsserver","ymalls","taplo","diagnosticls","html"}
             }
-        }
-    },
-    -- 管理安装code_action,diagnostics,formatting服务
-    {
-        "jay-babu/mason-null-ls.nvim",
-        lazy = true,
-        opts = {
-            ensure_installed = {},
-            automatic_installation = {
-                exclude = {
-                    -- code_action
-                    "cspell","eslint",
-                    -- diagnostics
-                    "pylint","cmakelang","luacheck","shellcheck","tidy","markdownlint","yamllint",
-                    -- formatting
-                    "shellharden","yapf","jq","taplo","stylua","gersemi","codespell",
-                    ----- common -----
-                    -- cspell,eslint,markdownlint,tidy,
-                }
-            },
-            automatic_setup = false
         }
     }
 }

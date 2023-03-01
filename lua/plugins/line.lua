@@ -12,7 +12,7 @@ return {
                 opts = {
                     quit = false
                 }
-            },
+            }
         },
         opts = {
             options = {

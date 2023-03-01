@@ -157,5 +157,10 @@ return {
         opts = {
             number_only = true
         }
+    },
+    -- 不需要时隐藏颜色列
+    {
+        "m4xshen/smartcolumn.nvim",
+        opts = {}
     }
 }

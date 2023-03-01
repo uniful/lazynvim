@@ -30,8 +30,6 @@ return {
             {"hrsh7th/cmp-buffer",lazy = true}, --缓冲区补全
             {"hrsh7th/cmp-cmdline",lazy = true}, --命令补全
             {"hrsh7th/cmp-path",lazy = true}, --路径补全
-            {"hrsh7th/cmp-calc",lazy = true}, --数学计算
-            {"dmitmel/cmp-cmdline-history",lazy = true},  --命令行历史记录
             {"ray-x/cmp-treesitter",lazy = true}, -- treesitter高亮节点作为候选
             {"lukas-reineke/cmp-rg",lazy = true}, -- rg完成源
             {"f3fora/cmp-spell",lazy = true}, -- 拼写建议
@@ -56,7 +54,9 @@ return {
                 sources = cmp.config.sources({
                     {
                         name = "luasnip",
-                        option = {show_autosnippets = true}
+                        option = {
+                            show_autosnippets = true
+                        }
                     },
                     {name = "nvim_lsp"},
                     {name = "path"},
@@ -69,9 +69,11 @@ return {
                             end
                         }
                     },
-                    {name = "calc"},
                     {name = "treesitter"},
-                    {name = "rg"},
+                    {
+                        name = "rg",
+                        keyword_length = 3
+                    },
                     {name = "orgmode"},
                     {name = "spell"},
                 }),
@@ -155,9 +157,6 @@ return {
                         },
                         {
                             {name = "cmdline"}
-                        },
-                        {
-                            {name = "cmdline_history"}
                         }
                     )
                 }

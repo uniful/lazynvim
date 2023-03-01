@@ -50,6 +50,11 @@ return {
         end,
         opts = {}
     },
+    -- 在悬浮窗中运行ranger
+    {
+        "kevinhwang91/rnvimr",
+        cmd = {"RnvimrResize","RnvimrToggle"}
+    },
     -- 屏保
     {
         "folke/drop.nvim",

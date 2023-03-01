@@ -14,6 +14,8 @@ return {
             {"JoosepAlviste/nvim-ts-context-commentstring",lazy = true},
             -- 彩虹括号
             {"mrjones2014/nvim-ts-rainbow",lazy = true},
+            -- 自动关闭和重命名html标签
+            {"windwp/nvim-ts-autotag"},
             ---------- 需要配置启动项----------
             {
                 "m-demare/hlargs.nvim", lazy = true,  -- 突出显示参数的定义和用法
@@ -35,7 +37,7 @@ return {
                 -- 同步下载高亮支持
                 sync_install = true,
                 -- 安装高亮支持文件
-                ensure_installed = { "c","cpp","python","lua","vim","cmake","bash","yaml","toml",
+                ensure_installed = { "c","cpp","python","lua","vim","cmake","bash","yaml","toml","help",
                     "markdown","markdown_inline","regex","org","norg","css","html","json","javascript","typescript"},
                 -- 忽略安装
                 ignore_install = { },
@@ -64,6 +66,9 @@ return {
                 },
                 -- 缩进
                 indent = {
+                    enable = true
+                },
+                autotag = {
                     enable = true
                 },
                 rainbow = {

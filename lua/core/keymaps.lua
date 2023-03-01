@@ -438,6 +438,9 @@ mapcmd("<leader>rc", "ReachOpen colorschemes")
 mapcmd("<leader>rm", "ReachOpen marks")
 mapcmd("<leader>rt", "ReachOpen tabpages")
 
+-- rnvimr
+mapcmd("<leader>rv", "RnvimrToggle")
+mapcmd("<leader>rs", "RnvimrResize")
 
 -- S
 -- spectre

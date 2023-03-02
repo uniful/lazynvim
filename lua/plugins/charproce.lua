@@ -107,10 +107,10 @@ return {
     -- 字符、颜色、数字增量/减量
     {
         "monaqa/dial.nvim",
-        evnet = {"BufReadPost","BufNewFile"},
+        lazy = true,
+        event = {"BufReadPost","BufNewFile"},
         config = function()
             local augend = require("dial.augend")
-            local nopts = {noremap = true}
             require("dial.config").augends:register_group{
                 -- 字符循环跳转
                 chars_dial = {
@@ -148,14 +148,14 @@ return {
                         only_valid = true,
                         word = false,
                     }
-                },
+                }
             }
-            vim.keymap.set("n", "<M-c>", require("dial.map").inc_normal("chars_dial"), nopts)
-            vim.keymap.set("n", "<M-d>", require("dial.map").dec_normal("chars_dial"), nopts)
-            vim.keymap.set("n", "<M-f>", require("dial.map").inc_normal("color_dial"), nopts)
-            vim.keymap.set("n", "<M-g>", require("dial.map").dec_normal("color_dial"), nopts)
-            vim.keymap.set("n", "<M-z>", require("dial.map").inc_normal("date_dial"), nopts)
-            vim.keymap.set("n", "<M-x>", require("dial.map").dec_normal("date_dial"), nopts)
+            vim.keymap.set("n", "<M-b>", require("dial.map").inc_normal("chars_dial"), {noremap = true})
+            vim.keymap.set("n", "<M-d>", require("dial.map").dec_normal("chars_dial"), {noremap = true})
+            vim.keymap.set("n", "<M-f>", require("dial.map").inc_normal("color_dial"), {noremap = true})
+            vim.keymap.set("n", "<M-g>", require("dial.map").dec_normal("color_dial"), {noremap = true})
+            vim.keymap.set("n", "<M-z>", require("dial.map").inc_normal("date_dial"), {noremap = true})
+            vim.keymap.set("n", "<M-x>", require("dial.map").dec_normal("date_dial"), {noremap = true})
         end
     }
 }

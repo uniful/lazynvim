@@ -63,7 +63,7 @@ return {
     --光标行号模式指示器
     {
         "mawkler/modicator.nvim",
-        evnet = "VeryLazy",
+        dependencies = "onenord.nvim",
         init = function ()
             vim.o.cursorline = true
             vim.o.number = true

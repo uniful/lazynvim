@@ -44,4 +44,13 @@ return {
         cmd = "ZenMode",
         opts = {}
     },
+    -- 图标选择器
+    {
+        "ziontee113/icon-picker.nvim",
+        cmd = {"IconPickerNormal","IconPickerYank","IconPickerInsert"},
+        dependencies = "telescope.nvim",
+        opts = {
+            disable_legacy_commands =true,
+        }
+    }
 }

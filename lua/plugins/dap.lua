@@ -7,9 +7,15 @@ return {
         "DapVirtualTextEnable","DapVirtualTextDisable","DapVirtualTextForceRefresh","DapShowLog","DapStepInto",
         "DapStepOver","DapStepOut","DapSetLogLevel","DapRestartFrame","DapLoadLaunchJSON"},
         dependencies = {
-            {"rcarriga/nvim-dap-ui",lazy = true}, -- 提供UI界面
+            -- 提供UI界面
             {
-                "theHamsta/nvim-dap-virtual-text",lazy = true, -- 提供内联文本
+                "rcarriga/nvim-dap-ui",
+                lazy = true
+            },
+            -- 提供内联文本
+            {
+                "theHamsta/nvim-dap-virtual-text",
+                lazy = true,
                 opts = {
                     enabled = true,
                     enabled_commands = true,

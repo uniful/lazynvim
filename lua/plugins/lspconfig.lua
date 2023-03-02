@@ -4,10 +4,28 @@ return {
         "neovim/nvim-lspconfig",
         event = {"BufReadPre","BufNewFile"},
         dependencies = {
+            -- Neovim中lua API完整签名、帮助和补全
             {
-                -- Neovim中lua API完整签名、帮助和补全
-                "folke/neodev.nvim",lazy = true,
-                opts = {}
+                "folke/neodev.nvim",
+                lazy = true,
+                opts = {
+                    experimental = {
+                        pathStrict = true
+                    }
+                }
+            },
+            -- 连接mason.nvim和lspconfig的桥梁
+            {
+                "williamboman/mason-lspconfig.nvim",
+                cmd = {"LspInstall","LspUninstall"},
+                dependencies = "mason.nvim",
+                opts = {
+                    ensure_installed = {"jdtls","marksman","lemminx","taplo"},
+                    automatic_installation = {
+                        exclude = {"lua_ls","cmake","pyright","clangd","bashls","vimls",
+                        "jsonls","cssls","tsserver","ymalls","diagnosticls","html"}
+                    }
+                }
             }
         },
         config = function()
@@ -39,7 +57,7 @@ return {
                                     enable = false
                                 },
                                 completion = {
-                                    callSnippet = "Replace"
+                                    callSnippet = "Both"
                                 }
                             }
                         },
@@ -67,54 +85,5 @@ return {
                 end
             end
         end
-    },
-    -- 管理lsp,dap,lint服务的安装和配置
-    {
-        "williamboman/mason.nvim",
-        cmd = {"Mason","MasonInstall","MasonUninstall","MasonUninstallAll","MasonLog"},
-        dependencies = {
-            {
-                -- 管理和安装null-ls的diagnostics和formatting服务
-                "jay-babu/mason-null-ls.nvim", lazy = true,
-                cmd = {"NullInstall","NullUninstall"},
-                opts = {
-                    ensure_installed = {},
-                    automatic_installation = {
-                        exclude = {
-                            -- diagnostics
-                            "pylint","cmakelang","luacheck","shellcheck","tidy","markdownlint","yamllint",
-                            "cspell","eslint",
-                            -- formatting
-                            "shellharden","yapf","jq","taplo","stylua","gersemi","codespell",
-                            ----- common -----
-                            -- eslint,markdownlint,tidy
-                        }
-                    },
-                    automatic_setup = false
-                }
-            }
-        },
-        opts = {
-            ui = {
-                border = "rounded",
-                icons = {
-                    package_installed = "✓",
-                    package_pending = "➜",
-                    package_uninstalled = "✗"
-                }
-            }
-        }
-    },
-    -- 管理安装lsp服务器
-    {
-        "williamboman/mason-lspconfig.nvim",
-        cmd = {"LspInstall","LspUninstall"},
-        opts = {
-            ensure_installed = {"jdtls","marksman","lemminx"},
-            automatic_installation = {
-                exclude = {"lua_ls","cmake","pyright","clangd","bashls","vimls",
-                    "jsonls","cssls","tsserver","ymalls","taplo","diagnosticls","html"}
-            }
-        }
     }
 }

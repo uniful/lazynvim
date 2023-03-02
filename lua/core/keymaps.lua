@@ -532,15 +532,13 @@ mapcmd("<leader>sku", "UnpinBuffer")
 -- ToggleTerm
 -- 退出终端插入模式
 mapkey("t", "<Esc>", "<C-\\><C-n>")
--- 打开自定义lazygit终端
-maplua("<leader>ttg", "_lazygit_toggle()")
 -- 打开终端
 mapcmd("<leader>ttf", "ToggleTerm")
 -- 用特定操作打开终端
 maptext("<leader>tte", "TermExec ")
 
 -- todo-comments
--- 查找 TODO 标签 
+-- 查找 TODO 标签
 -- 上方预览
 mapcmd("<leader>tdt", "TodoTelescope theme=dropdown")
 -- 右侧预览
@@ -562,32 +560,20 @@ vim.keymap.set("n", "[t", function()
 end, { desc = "Previous todo comment" })
 
 -- telescope
-mapcmd("<leader>tsw", "Telescope find_files")
-mapcmd("<leader>tsg", "Telescope live_grep")
-mapcmd("<leader>tsb", "Telescope buffers")
-mapcmd("<leader>tsh", "Telescope help_tags")
-mapcmd("<leader>tso", "Telescope oldfiles")
-mapcmd("<leader>tsm", "Telescope marks")
--- telescope dap
-mapcmd("<leader>tpc", "Telescope dap commands")
-mapcmd("<leader>tps", "Telescope dap configurations")
-mapcmd("<leader>tpl", "Telescope dap list_breakpoints")
-mapcmd("<leader>tpv", "Telescope dap variables")
-mapcmd("<leader>tpf", "Telescope dap frames")
+mapcmd("<leader>tsw", "Telescope find_files theme=ivy")
+mapcmd("<leader>tsg", "Telescope live_grep theme=ivy")
+mapcmd("<leader>tsb", "Telescope buffers theme=ivy")
+mapcmd("<leader>tsh", "Telescope help_tags theme=ivy")
+mapcmd("<leader>tso", "Telescope oldfiles theme=ivy")
+mapcmd("<leader>tsm", "Telescope marks theme=ivy")
 -- notify
-mapcmd("<leader>tsn", "Telescope notify")
+mapcmd("<leader>tsn", "Telescope notify theme=ivy")
 -- projects
 mapcmd("<leader>tsp", "Telescope projects")
 -- file_browser
 mapcmd("<leader>tse", "Telescope file_browser")
 -- frecency
-mapcmd("<leader>tsr", "Telescope frecency")
--- 使用特定的工作区标签
-mapcmd("<leader>tsc", "Telescope frecency workspace=CWD")
--- 带参数的grep
-maplua("<leader>tsa", "Telescope live_grep_args")
--- 可视化您的撤消树和其中的模糊搜索更改
-mapcmd("<leader>tsu", "Telescope undo")
+mapcmd("<leader>tsr", "Telescope frecency theme=ivy")
 -- 查看harpoon标记
 mapcmd("<leader>tss", "Telescope harpoon marks")
 -- 查看yank历史
@@ -646,10 +632,6 @@ mapkey('n', '<m-t>', 'vertical resize<space>')
 --单行或多行移动
 mapkey("v", "J", ":m '>+1<CR>gv=gv")
 mapkey("v", "K", ":m '<-2<CR>gv=gv")
-
--- window-picker
-maplua("<leader>wp", "print(require('window-picker').pick_window())")
-
 
 -- X
 -- Trouble

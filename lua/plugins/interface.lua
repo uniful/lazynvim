@@ -12,6 +12,9 @@ return {
         version = '*',
         cmd = {"ToggleTerm","TermExec","ToggleTermToggleAll","ToggleTermSendCurrentLine",
         "ToggleTermSendVisualLines","ToggleTermSendVisualSelection"},
+        keys = {
+            {"<leader>ttg", "<cmd>lua _lazygit_toggle()<CR>",desc="Lazygit Terminal"}
+        },
         config = function()
             local Terminal  = require('toggleterm.terminal').Terminal
             -- 自定义lazygit终端

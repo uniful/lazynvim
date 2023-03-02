@@ -65,9 +65,3 @@
 2. dap-lua.lua文件基本上不用修改.
 
 ## 插件问题
-
-1. Icon-picker: 此插件依赖telecope.nvim插件，而telescope插件被设置成了延迟加载，需要先调用Telescope插件，如果不想这样，则注释掉Telescope插件的cmd
-
-2. toggleterm: 由于此插件也使用的延迟加载，所以直接调用lazygit会不成功，可以先调用终端，或者注释掉此插件的cmd
-
-3. mini-starter: 插件倒是还好，如果有时候通知出现`lazy.*`等问题，一般没什么问题。不管就好了，如果完全不想出现，则在collect文件夹中使用hold-plugins文件中的alpha-nvim插件

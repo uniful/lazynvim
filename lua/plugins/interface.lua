@@ -56,7 +56,9 @@ return {
     -- 在悬浮窗中运行ranger
     {
         "kevinhwang91/rnvimr",
-        cmd = {"RnvimrResize","RnvimrToggle"}
+        keys = {
+            {"<leader>rv","<cmd>RnvimrToggle<CR>",desc="Swith Ranger in Float Window"}
+        }
     },
     -- 屏保
     {

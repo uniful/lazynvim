@@ -85,7 +85,6 @@ return {
     {
         "gbprod/yanky.nvim",
         lazy = true,
-        cmd = {"YankyClearHistory","YankyRingHistory"},
         opts = {
             ring = {
                 history_length = 200,
@@ -161,6 +160,7 @@ return {
     -- 不需要时隐藏颜色列
     {
         "m4xshen/smartcolumn.nvim",
+        evnet = "VimEnter",
         opts = {}
     }
 }

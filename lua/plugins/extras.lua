@@ -4,6 +4,13 @@ return {
     {
         "mrjones2014/legendary.nvim",
         cmd = "Legendary",
+        keys = {
+            {"<leader>ldy","<cmd>Legendary<CR>",desc="Show Legendary"},
+            {"<leader>ldc","<cmd>Legendary commands<CR>",desc="Search Commands"},
+            {"<leader>ldf","<cmd>Legendary functions<CR>",desc="Search Functions"},
+            {"<leader>lda","<cmd>Legendary autocmds<CR>",desc="Search Autocmds"}
+        },
+        dependencies = "telescope.nvim",
         opts = {}
     },
     -- 创建自定义子模式和菜单
@@ -27,7 +34,13 @@ return {
     -- 页面切换器
     {
         "toppair/reach.nvim",
-        cmd = "ReachOpen",
+        cmd="ReachOpen",
+        keys = {
+            {"<leader>rb","<cmd>ReachOpen buffers<CR>",desc="Switch Buffers Page"},
+            {"<leader>rc","<cmd>ReachOpen colorschemes<CR>",desc="Switch Scheme Page"},
+            {"<leader>rm","<cmd>ReachOpen marks<CR>",desc="Switch Mark Page"},
+            {"<leader>rt","<cmd>ReachOpen tabpages<CR>",desc="Switch Tab Page"}
+        },
         opts = {
             notifications = true
         }

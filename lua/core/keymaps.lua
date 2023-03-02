@@ -251,18 +251,6 @@ vim.api.nvim_set_keymap('n', '#', [[#<Cmd>lua require('hlslens').start()<CR>]], 
 vim.api.nvim_set_keymap('n', 'g*', [[g*<Cmd>lua require('hlslens').start()<CR>]], kopts)
 vim.api.nvim_set_keymap('n', 'g#', [[g#<Cmd>lua require('hlslens').start()<CR>]], kopts)
 
--- harpoon
--- 标记稍后访问的重要文件
-maplua("<leader>hpa", "require('harpoon.mark').add_file()")
--- 文件导航 --
--- 查看所有项目标记
-maplua("<leader>hpq", "require('harpoon.ui').toggle_quick_menu()")
--- 标记文件上下移动
-maplua("<leader>hpp", "require('harpoon.ui').nav_prev()")
-maplua("<leader>hpn", "require('harpoon.ui').nav_next()")
--- 终端导航
-maplua("<leader>hpt", "require('harpoon.term').gotoTerminal(1)") -- 导航到1号终端
-
 -- hlargs
 maplua("<leader>hae", "require('hlargs').enable()")
 maplua("<leader>had", "require('hlargs').disable()")
@@ -373,16 +361,6 @@ vim.keymap.set("n", "]E", function()
   require("lspsaga.diagnostic").goto_next({ severity = vim.diagnostic.severity.ERROR })
 end)
 
--- Legendary
--- search keymaps, commands, and autocmds
-mapcmd("<leader>ldy", "Legendary")
--- search keymaps
-mapcmd("<leader>ldc", "Legendary commands")
--- search functions
-mapcmd("<leader>ldf", "Legendary functions")
--- search autocmds
-mapcmd("<leader>lda", "Legendary autocmds")
-
 
 -- M
 -- mason
@@ -429,13 +407,6 @@ mapcmd("<leader>nv", "NvimContectVtToggle")
 maplua("<leader>nue", "require('numb').setup()")
 maplua("<leader>nud", "require('numb').disable()")
 
--- neogen
-mapcmd("<leader>nog", "Neogen")
--- 生成func,class,type,file注释
-mapcmd("<leader>nof", "Neogen func")
-mapcmd("<leader>noc", "Neogen class")
-mapcmd("<leader>not", "Neogen type")
-mapcmd("<leader>noi", "Neogen file")
 
 -- O
 
@@ -447,16 +418,7 @@ mapcmd("<leader>noi", "Neogen file")
 
 
 -- R
--- reach
--- 页面切换
-mapcmd("<leader>rb", "ReachOpen buffers")
-mapcmd("<leader>rc", "ReachOpen colorschemes")
-mapcmd("<leader>rm", "ReachOpen marks")
-mapcmd("<leader>rt", "ReachOpen tabpages")
 
--- rnvimr
-mapcmd("<leader>rv", "RnvimrToggle")
-mapcmd("<leader>rs", "RnvimrResize")
 
 -- S
 -- spectre

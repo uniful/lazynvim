@@ -56,6 +56,13 @@ return {
     {
         "danymat/neogen",
         cmd = "Neogen",
+        keys = {
+            {"<leader>nog","<cmd>Neogen<CR>",desc="Generate Comment"},
+            {"<leader>nof","<cmd>Neogen func<CR>",desc="Generate Function Comment"},
+            {"<leader>noc","<cmd>Neogen class<CR>",desc="Generate Class Comment"},
+            {"<leader>not","<cmd>Neogen type<CR>",desc="Generate Type Comment"},
+            {"<leader>noi","<cmd>Neogen file<CR>",desc="Generate File Comment"}
+        },
         opts = {
             snippet_engine = "luasnip",
         }

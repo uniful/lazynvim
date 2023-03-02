@@ -12,6 +12,7 @@ return {
     {
         "TimUntersberger/neogit",
         cmd = "Neogit",
+        dependencies = "diffview.nvim",
         opts = {
             integrations = {
                 diffview = true
@@ -21,6 +22,7 @@ return {
     -- 环浏览任何 git 版本的所有修改文件的差异
     {
         "sindrets/diffview.nvim",
+        lazy = true,
         cmd = {"DiffviewFileHistory","DiffviewClose","DiffviewOpen","DiffviewRefresh",
         "DiffviewLog","DiffviewFocusFiles","DiffviewToggleFiles"},
         opts = {

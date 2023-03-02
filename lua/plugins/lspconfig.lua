@@ -17,6 +17,7 @@ return {
             -- 连接mason.nvim和lspconfig的桥梁
             {
                 "williamboman/mason-lspconfig.nvim",
+                lazy = true,
                 cmd = {"LspInstall","LspUninstall"},
                 dependencies = "mason.nvim",
                 opts = {

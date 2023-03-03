@@ -1,8 +1,5 @@
 -- 自动缩进策略
 vim.opt.filetype      = "plugin"
--- 开启语法高亮
-vim.opt.syntax        = "enable"
-vim.g.vimsyn_embed    = '1'
 -- 防止包裹
 vim.o.wrap            = false
 -- 默认新窗口在右和下
@@ -54,9 +51,10 @@ vim.o.listchars       = "space:·,tab:··,eol:↴"
 vim.o.wildmenu        = true
 -- 终端24位色彩支持
 vim.o.termguicolors   = true
-if (vim.fn.has('termguicolors') == 1) then
-    vim.o.termguicolors = true
-end
+-- 判断终端是否支持真色彩，如果支持就开启，否则不开启
+--if (vim.fn.has('termguicolors') == 1) then
+--    vim.o.termguicolors = true
+--end
 -- 设置缩进
 vim.o.autoindent      = true
 vim.o.tabstop         = 4
@@ -85,10 +83,9 @@ vim.o.foldlevelstart  = 99
 vim.o.foldenable      = true
 vim.o.foldmethod      = "expr"
 vim.o.foldexpr        = "nvim_treesitter#foldexpr()"
+-- 在markdown文件中，使用fencend code blocks显示typescript语法高亮
+vim.g.markdown_fenced_languages = {"ts=typescript"}
 
 -- disable some useless standard plugins to save startup time
 -- 禁用命令如下
 -- vim.g.loaded_matchparen        = 1
-vim.g.markdown_fenced_languages={
-    "ts=typescript"
-}

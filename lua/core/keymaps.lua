@@ -34,8 +34,6 @@ mapcmd("<leader>at", "ASToggle")
 
 -- B:
 -- bufferline
--- 关闭当前 buffer，由 bufdelete 插件所提供的方法
-mapcmd("<C-q>", "Bdelete!")
 -- 切换上一个缓冲区
 mapcmd("<A-p>", "BufferLineCyclePrev")
 -- 切换下一个缓冲区
@@ -616,6 +614,7 @@ mapcmd("<leader>yc", "YankyClearHistory")
 mapcmd("<leader>zm", "ZenMode")
 
 
+------ 其它命令 -------
 -- 手动调用命令执行
 maplua("<leader>cu","require('implement.code_action_utils').code_action_listener()")
 

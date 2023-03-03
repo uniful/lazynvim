@@ -30,7 +30,7 @@ return {
     -- markdown笔记管理
     {
         "jakewvincent/mkdnflow.nvim",
-        ft = {"md","markdown","rmd"},
+        ft = {"md","markdown"},
         opts = {
             mappings = {
                 MkdnEnter = {{'i', 'n', 'v'}, '<CR>'}

@@ -13,14 +13,6 @@ return {
         dependencies = "telescope.nvim",
         opts = {}
     },
-    -- 创建自定义子模式和菜单
-    {
-        "anuvyklack/hydra.nvim",
-        evnet = "VeryLazy",
-        config = function ()
-            local Hydra = require("hydra")
-        end
-    },
     -- 颜色选择器
     {
         "uga-rosa/ccc.nvim",

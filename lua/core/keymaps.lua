@@ -106,14 +106,10 @@ mapcmd("<F6>", "DapStepInto")
 mapcmd("<F7>", "DapStepOver")
 -- 步出当前函数
 mapcmd("<F8>", "DapStepOut")
--- 重启调试
-vim.keymap.set("n","<F9>", function() require('dap').run_last() end,{desc="last run"})
 -- 直接加载json文件调试
 mapcmd("<leader>dj", "DapLoadLaunchJSON")
 -- 显示调试日志
 mapcmd("<leader>dl", "DapShowLog")
--- 打开repl
-vim.keymap.set("n","<leader>do",function() require("dap").repl.open() end,{desc="open repl"})
 -- 退出调试（关闭调试，关闭 repl，关闭 ui，清除内联文本）
 maplua("<F10>","require'dap'.close()")
 mapcmd("<leader>dt","DapToggleRepl")
@@ -125,10 +121,6 @@ mapcmd("<leader>dvr", "DapVirtualTextForceRefresh")
 mapcmd("<leader>dvt", "DapVirtualTextToggle")
 -- 打断点
 mapcmd("<leader>db", "DapToggleBreakpoint")
-vim.keymap.set("n","<leader>di", function() require('dap').set_breakpoint() end,{desc="Set Breakpoint"})
-vim.keymap.set("n","<leader>dm", function() require('dap').set_breakpoint(nil, nil, vim.fn.input('Log point message: ')) end,{desc="Log Point Message"})
--- 显示或隐藏调试界面
-maplua("<leader>du", "require'dapui'.toggle()")
 -- 小部件UI
  vim.keymap.set({'n', 'v'}, '<Leader>dh', function()
       require('dap.ui.widgets').hover()
@@ -144,14 +136,6 @@ vim.keymap.set('n', '<Leader>ds', function()
     local widgets = require('dap.ui.widgets')
     widgets.centered_float(widgets.scopes)
 end,{desc="dap.ui.widgets float centered scopes"})
--- 对特定语言执行不同函数
--- lua
--- 运行
-maplua("<leader>dlr", "require'osv'.run_this()")
--- 开始追踪
-maplua("<leader>dlt", "require'osv'.start_trace()")
--- 停止跟踪并显示结果
-maplua("<leader>dls", "=require'osv'.stop_trace()")
 
 -- diffview
 -- 查看所有文件历史

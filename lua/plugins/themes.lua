@@ -2,7 +2,6 @@ return {
     -- 主题
     -- {
     --     "glepnir/zephyr-nvim",
-    --     lazy = true,
     --     priority = 1000,
     --     config = function ()
     --         vim.cmd[[colorscheme zephyr]]
@@ -14,6 +13,13 @@ return {
         opts = {
             theme = "dark",
             fade_nc = true,
+            styles = {
+                comments = "italic",
+                strings = "bold",
+                keywords = "bold",
+                functions = "bold",
+                variables = "bold",
+            },
             inverse = {
                 match_paren = true,
             }

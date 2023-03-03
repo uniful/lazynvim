@@ -3,9 +3,21 @@ return {
      -- 代码调试
     {
         "mfussenegger/nvim-dap",
-        cmd = {"DapContinue","DapToggleBreakpoint","DapTerminate","DapToggleRepl","DapVirtualTextToggle",
-        "DapVirtualTextEnable","DapVirtualTextDisable","DapVirtualTextForceRefresh","DapShowLog","DapStepInto",
+        lazy = true,
+        cmd = {"DapContinue","DapToggleBreakpoint","DapTerminate","DapToggleRepl","DapShowLog","DapStepInto",
         "DapStepOver","DapStepOut","DapSetLogLevel","DapRestartFrame","DapLoadLaunchJSON"},
+        keys = {
+            {"<leader>du","<cmd>lua require('dapui').toggle()<CR>",desc="Dapui Toggle"},
+            vim.keymap.set("n","<leader>dr",function()
+                require("dap").run_last()
+            end,{desc="Restart Debug"}),
+            vim.keymap.set("n","<leader>do",function()
+                require("dap").repl.open()
+            end,{desc="Open Repl"}),
+            vim.keymap.set("n","<leader>dm", function() 
+                require('dap').set_breakpoint(nil, nil, vim.fn.input('Log point message: ')) 
+            end,{desc="Log Point Message"})
+        },
         dependencies = {
             -- 提供UI界面
             {
@@ -33,17 +45,23 @@ return {
                     virt_lines = false,
                     virt_text_win_col = nil
                 }
-            },
-            -- 特定需要插件的语言
-            {
-                "jbyuki/one-small-step-for-vimkind",
-                lazy = true,
-                ft = {"lua","luau"}
             }
         },
         config = function ()
             require("debugger.dapconfig")
             require("debugger.dapstartup")
         end
+    },
+    ------ 特定语言调试需要用到的插件 ------
+    {
+        "jbyuki/one-small-step-for-vimkind",
+        lazy = true,
+        ft = {"lua","luau"},
+        keys = {
+            {"<leader>dlr","<cmd>lua require('osv').run_this()<CR>",desc="Lua Debug Run"},
+            {"<leader>dlt","<cmd>lua require('osv').start_trace()<CR>",desc="Lua Debug Start Trace"},
+            {"<leader>dls","<cmd>lua =require('osv').stop_trace()<CR>",desc="Lua Debug Stop Trace"}
+        },
+        dependencies = "nvim-dap"
     }
 }

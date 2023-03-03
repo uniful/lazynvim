@@ -22,10 +22,7 @@ return {
                 dependencies = "mason.nvim",
                 opts = {
                     ensure_installed = {"jdtls","marksman","lemminx","taplo"},
-                    automatic_installation = {
-                        exclude = {"lua_ls","cmake","pyright","clangd","bashls","vimls",
-                        "jsonls","cssls","tsserver","ymalls","diagnosticls","html"}
-                    }
+                    automatic_installation = false
                 }
             }
         },

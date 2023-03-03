@@ -85,6 +85,8 @@ return {
     {
         "gbprod/yanky.nvim",
         lazy = true,
+        cmd = {"YankyRingHistory","YankyClearHistory"},
+        dependencies = "telescope.nvim",
         opts = {
             ring = {
                 history_length = 200,

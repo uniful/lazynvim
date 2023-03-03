@@ -2,7 +2,7 @@ return {
     -- cmake工具集成
     {
         "Civitasv/cmake-tools.nvim",
-        ft = {"CMakeLists.txt","cmake"},
+        ft = "cmake",
         opts = {
             cmake_command = "cmake",
             cmake_build_directory = "",

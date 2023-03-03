@@ -47,10 +47,12 @@ vim.o.swapfile        = false
 vim.o.list            = true
 -- 空格占用以.显示
 vim.o.listchars       = "space:·,tab:··,eol:↴"
--- complete plus
+-- 补全增强
 vim.o.wildmenu        = true
 -- 终端24位色彩支持
 vim.o.termguicolors   = true
+-- 设置背景样式
+vim.o.background      = "dark"
 -- 判断终端是否支持真色彩，如果支持就开启，否则不开启
 --if (vim.fn.has('termguicolors') == 1) then
 --    vim.o.termguicolors = true

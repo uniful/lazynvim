@@ -15,22 +15,7 @@ return {
             -- 彩虹括号
             {"mrjones2014/nvim-ts-rainbow",lazy = true},
             -- 自动关闭和重命名html标签
-            {"windwp/nvim-ts-autotag"},
-            ---------- 需要配置启动项----------
-            {
-                "m-demare/hlargs.nvim", lazy = true,  -- 突出显示参数的定义和用法
-                opts = {}
-            },
-            {
-                "nvim-treesitter/nvim-treesitter-context", lazy = true,  -- 显示当前可见缓冲区内容的上下文
-                opts = {}
-            },
-            {
-                "haringsrob/nvim_context_vt", lazy = true, -- 在函数、方法、语句等之后显示当前上下文的虚拟文本
-                opts = {
-                    prefix = "",
-                }
-            }
+            {"windwp/nvim-ts-autotag",lazy = true}
         },
         config = function()
             require("nvim-treesitter.configs").setup({
@@ -147,5 +132,32 @@ return {
                 }
             })
         end
+    },
+    ------ 依赖于treesitter的插件,同时需要配置选项 ------
+    -- 突出显示参数的定义和用法
+    {
+        "m-demare/hlargs.nvim",
+        lazy = true,
+        ft = {"c","cpp","go","java","javascript","jsx","lua","python","tsx","typescript","vim"},
+        dependencies = "nvim-treesitter",
+        opts = {}
+    },
+    -- 在函数、方法、语句等之后显示当前上下文的虚拟文本
+    {
+        "haringsrob/nvim_context_vt",
+        event = {"BufReadPost","BufNewFile"},
+        dependencies = "nvim-treesitter",
+        opts = {
+            prefix = "",
+            disable_ft = {"markdown","yaml","toml","ini","help","log"},
+            disable_virtual_lines_ft = {"yaml","python","toml"},
+        }
+    },
+    -- 显示当前可见缓冲区内容的上下文
+    {
+        "nvim-treesitter/nvim-treesitter-context",
+        event = {"BufReadPre","BufNewFile"},
+        dependencies = "nvim-treesitter",
+        opts = {}
     }
 }

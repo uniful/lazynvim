@@ -2,7 +2,7 @@
 
 - core 存放核心配置，包括基础设置和按键绑定
 
-- ftplugin 存放不同文件类型缩进设置
+- indent 存放不同文件类型缩进设置
 
 - debugger 存放debug配置
 

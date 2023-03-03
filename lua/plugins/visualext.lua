@@ -80,7 +80,9 @@ return {
 	-- 突出显示文本
 	{
 		"Pocco81/HighStr.nvim",
-        event = "VeryLazy",
+        keys = {
+            {"v","<leader>hx","<cmd>HSHighlight<CR>",desc="Highlight Select"}
+        },
 		opts = {
 			verbosity = 0,
 			saving_path = "/home/colin/.cache/nvim/highstr/", -- 最好使用绝对路径
@@ -102,7 +104,19 @@ return {
     {
         "NvChad/nvim-colorizer.lua",
         evnet = "VeryLazy",
-        opts = {}
+        opts = {
+            filetypes = {
+                '*';
+                cmp_docs = {
+                    always_update = true
+                }
+            },
+            user_default_options = {
+                RRGGBBAA = true,
+                AARRGGBB = true,
+                mode = "background"
+            }
+        }
     },
     -- 显示缩进线
     {

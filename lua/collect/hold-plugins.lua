@@ -106,4 +106,8 @@
     --         show_guides = true
     --     }
     -- }
+    -- 创建自定义子模式和菜单
+    --{
+    --    "anuvyklack/hydra.nvim"
+    --}
 

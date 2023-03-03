@@ -9,18 +9,6 @@ return {
             }
         }
     },
-    -- 为不支持LSP高亮的主题提供默认高亮方案
-    {
-        "folke/lsp-colors.nvim",
-        event = "BufReadPost",
-        -- 主题不支持LSP高亮时,采用以下方案
-        opts = {
-            Error = "#db4b4b",
-            Warning = "#e0af68",
-            Information = "#0db9d7",
-            Hint = "#10B981",
-        }
-    },
     -- 灯泡提示代码行为
     {
         "kosayoda/nvim-lightbulb",

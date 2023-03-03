@@ -39,16 +39,19 @@ mapcmd("<A-p>", "BufferLineCyclePrev")
 -- 切换下一个缓冲区
 mapcmd("<A-r>", "BufferLineCycleNext")
 -- 关闭左侧缓冲区
-mapcmd("<leader>bcl", "BufferLineCloseLeft")
+mapcmd("<leader>bl", "BufferLineCloseLeft")
 -- 关闭右侧缓冲区
-mapcmd("<leader>bcr", "BufferLineCloseRight")
+mapcmd("<leader>br", "BufferLineCloseRight")
 -- 缓冲区关闭设置由BufDel插件提供
 -- 关闭当前缓冲区
 mapcmd("<leader>bd","BufDel")
 -- 关闭当前缓冲区并忽略更改
 mapcmd("<leader>bi","BufDel!")
 -- 关闭选定的缓冲区(如果缓冲区名称为纯数字，则使用引号)
-maptext("<leader>bl","BufDel ")
+maptext("<leader>bs","BufDel ")
+
+-- babecue
+mapcmd("<leader>be","Barbecue")
 
 
 -- C

@@ -63,7 +63,6 @@ return {
     --光标行号模式指示器
     {
         "mawkler/modicator.nvim",
-        dependencies = "onenord.nvim",
         init = function ()
             vim.o.cursorline = true
             vim.o.number = true
@@ -80,9 +79,7 @@ return {
 	-- 突出显示文本
 	{
 		"Pocco81/HighStr.nvim",
-        keys = {
-            {"v","<leader>hx","<cmd>HSHighlight<CR>",desc="Highlight Select"}
-        },
+        cmd = {"HSHighlight","HSRmHighlight","HSImport"},
 		opts = {
 			verbosity = 0,
 			saving_path = "/home/colin/.cache/nvim/highstr/", -- 最好使用绝对路径

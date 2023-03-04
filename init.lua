@@ -20,7 +20,7 @@ local settings = {
     },
     install = {
         missing = true,
-        colorscheme = {"onenord"},
+        colorscheme = {"kanagawa"},
     },
     ui = {
         border = "rounded",

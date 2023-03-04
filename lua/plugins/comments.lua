@@ -38,7 +38,16 @@ return {
     {
         "folke/todo-comments.nvim",
         cmd = {"TodoTrouble","TodoTelescope","TodoQuickFix","TodoLocList"},
-        event = "BufReadPost",
+        keys={
+            -- TODO标签跳转
+            vim.keymap.set("n","[t",function()
+                require("todo-comments").jump_prev()
+            end,{desc="Prev Todo Comment"}),
+            vim.keymap.set("n","]t",function()
+                require("todo-comments").jump_next()
+            end,{desc="Next Todo Comment"})
+        },
+        event = {"BufReadPost","BufNewFile"},
         opts = {
             keywords = {
                 -- alt:别名

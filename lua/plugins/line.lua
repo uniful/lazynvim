@@ -49,7 +49,7 @@ return {
         config = function()
             require("lualine").setup({
                 options = {
-                    theme = "onenord",
+                    theme = "kanagawa",
                     globalstatus = true,
                 },
                 sections = {

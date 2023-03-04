@@ -279,21 +279,21 @@ maplua('<leader>lf', 'vim.diagnostic.open_float()')
 maplua("<leader>lp", "vim.diagnostic.goto_prev()")
 maplua("<leader>ln", "vim.diagnostic.goto_next()")
 maplua('<leader>lq', 'vim.diagnostic.setloclist()')
-vim.keymap.set('n', '<leader>lce', vim.lsp.buf.declaration, bufopts)
-vim.keymap.set('n', '<leader>lcd', vim.lsp.buf.definition, bufopts)
-vim.keymap.set('n', '<leader>lch', vim.lsp.buf.hover, bufopts)
-vim.keymap.set('n', '<leader>lci', vim.lsp.buf.implementation, bufopts)
-vim.keymap.set('n', '<leader>lcs', vim.lsp.buf.signature_help, bufopts)
-vim.keymap.set('n', '<leader>lca', vim.lsp.buf.add_workspace_folder, bufopts)
-vim.keymap.set('n', '<leader>lcm', vim.lsp.buf.remove_workspace_folder, bufopts)
+vim.keymap.set('n', '<leader>lce', vim.lsp.buf.declaration,{desc="Lsp Buf Declaration"}, bufopts)
+vim.keymap.set('n', '<leader>lcd', vim.lsp.buf.definition,{desc="Lsp Buf Definition"}, bufopts)
+vim.keymap.set('n', '<leader>lch', vim.lsp.buf.hover,{desc="Lsp Buf Hover"}, bufopts)
+vim.keymap.set('n', '<leader>lci', vim.lsp.buf.implementation,{desc="Lsp Buf Implementation"}, bufopts)
+vim.keymap.set('n', '<leader>lcs', vim.lsp.buf.signature_help,{desc="Lsp Buf Signature Help"}, bufopts)
+vim.keymap.set('n', '<leader>lca', vim.lsp.buf.add_workspace_folder,{desc="Lsp Buf Add Workspace Folder"}, bufopts)
+vim.keymap.set('n', '<leader>lcm', vim.lsp.buf.remove_workspace_folder,{desc="Lsp Buf Remove Workspace Folder"}, bufopts)
 vim.keymap.set('n', '<leader>lcl', function()
     print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-end, bufopts)
-vim.keymap.set('n', '<leader>lct', vim.lsp.buf.type_definition, bufopts)
-vim.keymap.set('n', '<leader>lcn', vim.lsp.buf.rename, bufopts)
-vim.keymap.set('n', '<leader>lcc', vim.lsp.buf.code_action, bufopts)
-vim.keymap.set('n', '<leader>lcr', vim.lsp.buf.references, bufopts)
-vim.keymap.set('n', '<leader>lcf', function() vim.lsp.buf.format { async = true } end, bufopts)
+end,{desc="Lsp Buf List Workspace Folder"}, bufopts)
+vim.keymap.set('n', '<leader>lct', vim.lsp.buf.type_definition,{desc="Lsp Buf Type Definition"}, bufopts)
+vim.keymap.set('n', '<leader>lcn', vim.lsp.buf.rename,{desc="Lsp Buf Rename"},bufopts)
+vim.keymap.set('n', '<leader>lcc', vim.lsp.buf.code_action,{desc="Lsp Buf Code Action"}, bufopts)
+vim.keymap.set('n', '<leader>lcr', vim.lsp.buf.references,{desc="Lsp Buf References"}, bufopts)
+vim.keymap.set('n', '<leader>lcf', function() vim.lsp.buf.format { async = true } end,{desc="Lsp Buf Format"}, bufopts)
 
 -- 查看language-server信息
 mapcmd("<leader>li", "LspInfo")
@@ -305,7 +305,7 @@ mapcmd("<leader>lr", "LspRestart")
 -- 显示缓冲区诊断
 mapcmd("<leader>lgb", "Lspsaga show_buf_diagnostics")
 -- 代码活动
-mapcmd("<leader>lgc", "Lspsaga code_action")
+vim.keymap.set({"n","v"},"<leader>lgc","<cmd>Lspsaga code_action<CR>")
 -- 显示光标诊断
 mapcmd("<leader>lgd", "Lspsaga show_cursor_diagnostics")
 -- 重命名
@@ -335,16 +335,6 @@ mapcmd("<Leader>lgt", "Lspsaga outgoing_calls")
 mapcmd("<leader>lgm", "Lspsaga term_toggle")
 -- 查找符号定义，如果没有定义则隐藏，使用,<c-t>跳回
 mapcmd("<leader>lgn", "Lspsaga lsp_finder")
--- 诊断跳转，用<c-o>跳回
-mapcmd("[e", "Lspsaga diagnostic_jump_prev")
-mapcmd("]e", "Lspsaga diagnostic_jump_next")
--- 带有过滤器的诊断跳转
-vim.keymap.set("n", "[E", function()
-  require("lspsaga.diagnostic").goto_prev({ severity = vim.diagnostic.severity.ERROR })
-end)
-vim.keymap.set("n", "]E", function()
-  require("lspsaga.diagnostic").goto_next({ severity = vim.diagnostic.severity.ERROR })
-end)
 
 
 -- M
@@ -486,10 +476,7 @@ maptext("<leader>tte", "TermExec ")
 
 -- todo-comments
 -- 查找 TODO 标签
--- 上方预览
-mapcmd("<leader>tdt", "TodoTelescope theme=dropdown")
--- 右侧预览
-mapcmd("<leader>tdr", "TodoTelescope")
+mapcmd("<leader>tdt", "TodoTelescope theme=ivy")
 -- 筛选关键词
 maptext("<leader>tdg", "TodoTelescope keywords=")
 -- 指定搜索目录
@@ -498,13 +485,6 @@ maptext("<leader>tdd", "TodoTrouble cwd=")
 mapcmd("<leader>tdq", "TodoQuickFix")
 -- 使用位置列表来显示项目中的所有待办事项
 mapcmd("<leader>tdl", "TodoLocList")
--- 跳转
-vim.keymap.set("n", "]t", function()
-  require("todo-comments").jump_next()
-end, { desc = "Next todo comment" })
-vim.keymap.set("n", "[t", function()
-  require("todo-comments").jump_prev()
-end, { desc = "Previous todo comment" })
 
 -- telescope
 mapcmd("<leader>tsw", "Telescope find_files theme=ivy")

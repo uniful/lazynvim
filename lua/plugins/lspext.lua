@@ -26,6 +26,18 @@ return {
     {
         "glepnir/lspsaga.nvim",
         cmd = "Lspsaga",
+        keys = {
+            -- 诊断跳转，<C-o>跳回
+            vim.keymap.set("n","[e","<cmd>Lspsaga diagnostic_jump_prev<CR>",{desc="Diagnotic Jump Prev"}),
+            vim.keymap.set("n","]e","<cmd>Lspsaga diagnostic_jump_next<CR>",{desc="Diagnotic Jump Next"}),
+            -- 带过滤器的诊断跳转，如之跳转到错误处
+            vim.keymap.set("n", "[E", function()
+                require("lspsaga.diagnostic"):goto_prev({ severity = vim.diagnostic.severity.ERROR })
+            end,{desc="Goto Prev Diagnotic Serverity ERROR"}),
+            vim.keymap.set("n", "]E", function()
+                require("lspsaga.diagnostic"):goto_next({ severity = vim.diagnostic.severity.ERROR })
+            end,{desc="Goto Next Diagnotic Serverity Error"})
+        },
         opts = {}
     },
     -- 使用lsp生成的视图符号

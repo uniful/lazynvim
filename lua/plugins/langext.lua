@@ -9,6 +9,9 @@ return {
     -- java
     {
         "mfussenegger/nvim-jdtls",
-        ft = "java"
+        ft = "java",
+        config = function ()
+            require("ftplugin.java")
+        end
     }
 }

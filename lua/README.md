@@ -13,3 +13,5 @@
 - snippets 存放代码片段
 
 - collect 暂时不用的某些功能
+
+- ftplugin 某些插件需要调用的配置

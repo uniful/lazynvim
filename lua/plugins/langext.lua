@@ -5,13 +5,5 @@ return {
         "p00f/clangd_extensions.nvim",
         ft = {"c","cpp"},
         opts = {}
-    },
-    -- java
-    {
-        "mfussenegger/nvim-jdtls",
-        ft = "java",
-        config = function ()
-            require("ftplugin.java")
-        end
     }
 }

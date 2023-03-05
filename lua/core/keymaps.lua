@@ -112,7 +112,7 @@ mapcmd("<F8>", "DapStepOut")
 -- 直接加载json文件调试
 mapcmd("<leader>dj", "DapLoadLaunchJSON")
 -- 显示调试日志
-mapcmd("<leader>dl", "DapShowLog")
+mapcmd("<leader>dg", "DapShowLog")
 -- 退出调试（关闭调试，关闭 repl，关闭 ui，清除内联文本）
 maplua("<F10>","require'dap'.close()")
 mapcmd("<leader>dt","DapToggleRepl")
@@ -213,8 +213,8 @@ mapcmd("<leader>ht", "HopLineStart")
 mapcmd("<leader>hv", "HopVertical")
 -- 默认的 Neovim 搜索与提示混合在一起
 mapcmd("<leader>ht", "HopPattern")
--- 提升缓冲区所有内容
-mapcmd("<leader>ha", "HopAnyWhere")
+-- 跳转到任何地方
+mapcmd("<leader>ha", "HopAnywhere")
 
 -- hlslens
 -- 启动或关闭nvim-hlslens
@@ -237,9 +237,9 @@ vim.api.nvim_set_keymap('n', 'g*', [[g*<Cmd>lua require('hlslens').start()<CR>]]
 vim.api.nvim_set_keymap('n', 'g#', [[g#<Cmd>lua require('hlslens').start()<CR>]], kopts)
 
 -- hlargs
-maplua("<leader>hae", "require('hlargs').enable()")
-maplua("<leader>had", "require('hlargs').disable()")
-maplua("<leader>hat", "require('hlargs').toggle()")
+maplua("<leader>hge", "require('hlargs').enable()")
+maplua("<leader>hgd", "require('hlargs').disable()")
+maplua("<leader>hgt", "require('hlargs').toggle()")
 
 
 -- I

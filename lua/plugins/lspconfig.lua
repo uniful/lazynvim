@@ -32,7 +32,7 @@ return {
             local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
             local servers = {"clangd","pyright","lua_ls","cmake","vimls","bashls","marksman",
-                "yamlls","taplo","tsserver","jsonls","html","cssls","diagnosticls","lemminx","jdtls"}
+                "yamlls","taplo","tsserver","jsonls","html","cssls","lemminx","jdtls"}
 
             -- 代码折叠(nvim-ufo)
             capabilities.textDocument.foldingRange = {dynamicRegistration = false,lineFoldingOnly = true}
@@ -46,7 +46,7 @@ return {
                                     version = 'luaJIT'
                                 },
                                 diagnostics = {
-                                    globals = { 'vim' }
+                                    globals = {'vim'}
                                 },
                                 workspace = {
                                     library = vim.api.nvim_get_runtime_file("", true)
@@ -66,15 +66,26 @@ return {
                         settings = {
                             json = {
                                 schemas = require("schemastore").json.schemas(),
-                                vaildate = {enable = true},
+                                vaildate = {
+                                    enable = true
+                                }
                             }
                         },
                         capabilities = capabilities
                     })
-                elseif rawequal(lsp,"diagnosticls") then
-                    lspconfig[lsp].setup({
-                        filetypes = {"fish","zsh","org","norg"},
-                        capabilities = capabilities
+                elseif rawequal(lsp,"jdtls") then
+                        lspconfig[lsp].setup({
+                        cmd = {
+                            "jdtls",
+                            "-configuration",
+                            "/home/colin/.cache/jdtls/config",
+                            "-data",
+                            "/home/colin/.cache/jdtls/workspace"
+                        },
+                        init_options = {
+                            jvm_args = {"-javaagent:$HOME/.local/share/nvim/mason/packages/jdtls/lombok.jar"},
+                            workspace = "/home/colin/.cache/jdtls/workspace"
+                        }
                     })
                 else
                     lspconfig[lsp].setup({

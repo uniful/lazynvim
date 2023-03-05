@@ -2,7 +2,7 @@ return {
     -- 高度实验性插件
     {
         "folke/noice.nvim",
-        evnet = "VeryLazy",
+        event = "VeryLazy",
         config = function ()
             require("noice").setup({
                 lsp = {
@@ -68,6 +68,7 @@ return {
             vim.o.number = true
             vim.o.termguicolors = true
         end,
+        event = {"BufReadPost","BufNewFile"},
         opts = {
             highlishts = {
                 defaults = {
@@ -100,7 +101,7 @@ return {
     -- 显示十六进制颜色
     {
         "NvChad/nvim-colorizer.lua",
-        evnet = "VeryLazy",
+        event = "VeryLazy",
         opts = {
             filetypes = {
                 '*';
@@ -133,7 +134,7 @@ return {
     -- 显示滚动条
     {
         "petertriho/nvim-scrollbar",
-        evnet = "VeryLazy",
+        event = "VeryLazy",
         config = function()
             local colors = {
                 Handle = "#492E42",

@@ -162,7 +162,7 @@ return {
     -- 不需要时隐藏颜色列
     {
         "m4xshen/smartcolumn.nvim",
-        evnet = "VimEnter",
+        event = "VeryLazy",
         opts = {}
     }
 }

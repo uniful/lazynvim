@@ -11,6 +11,7 @@ return {
     -- neovim的magit
     {
         "TimUntersberger/neogit",
+        lazy = true,
         cmd = "Neogit",
         dependencies = "diffview.nvim",
         opts = {

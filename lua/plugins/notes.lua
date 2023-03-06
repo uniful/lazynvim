@@ -3,6 +3,7 @@ return {
     -- vim的org模式复刻
     {
         "nvim-orgmode/orgmode",
+        lazy = true,
         ft = "org",
         config = function ()
             require("orgmode").setup_ts_grammar()
@@ -13,6 +14,7 @@ return {
     {
         "nvim-neorg/neorg",
         build = ":Neorg sync-parsers",
+        lazy = true,
         ft = "norg",
         opts = {
             load = {
@@ -33,7 +35,8 @@ return {
     -- markdown笔记管理
     {
         "jakewvincent/mkdnflow.nvim",
-        ft = {"markdown"},
+        lazy = true,
+        ft = "markdown",
         opts = {
             mappings = {
                 MkdnEnter = {{'i', 'n', 'v'}, '<CR>'}

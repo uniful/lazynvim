@@ -70,6 +70,7 @@ return {
     -- fzf模糊查找
     {
         "ibhagwan/fzf-lua",
+        lazy = true,
         cmd = "FzfLua",
         opts = {
             winopts = {
@@ -82,6 +83,7 @@ return {
     -- 文件标记
     {
         "ThePrimeagen/harpoon",
+        lazy = true,
         keys = {
             {"<leader>hpa","<cmd>lua require('harpoon.mark').add_file()<CR>",desc="Mark Files"},
             {"<leader>hpq","<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>",desc="View All File Mark"},
@@ -96,6 +98,7 @@ return {
     -- 文件字符标记
     {
         "LeonHeidelbach/trailblazer.nvim",
+        lazy = true,
         cmd = {"TrailBlazerNewTrailMark","TrailBlazerTrackBack","TrailBlazerPeekMovePreviousUp",
         "TrailBlazerPeekMoveNextDown","TrailBlazerMoveToNearest","TrailBlazerDeleteAllTrailMarks",
         "TrailBlazerPasteAtLastTrailMark","TrailBlazerPasteAtAllTrailMarks","TrailBlazerNewTrailMark",

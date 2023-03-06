@@ -3,6 +3,7 @@ return {
     -- 命令面板
     {
         "mrjones2014/legendary.nvim",
+        lazy = true,
         cmd = "Legendary",
         keys = {
             {"<leader>ldy","<cmd>Legendary<CR>",desc="Show Legendary"},
@@ -16,6 +17,7 @@ return {
     -- 颜色选择器
     {
         "uga-rosa/ccc.nvim",
+        lazy = true,
         cmd = {"CccPick","CccConvert","CccHighlighterToggle","CccHighlighterEnable","CccHighlighterDisable"},
         config = function ()
             local ccc = require("ccc")
@@ -26,6 +28,7 @@ return {
     -- 页面切换器
     {
         "toppair/reach.nvim",
+        lazy = true,
         cmd="ReachOpen",
         keys = {
             {"<leader>rb","<cmd>ReachOpen buffers<CR>",desc="Switch Buffers Page"},
@@ -40,18 +43,21 @@ return {
     -- 非活动代码变暗
     {
         "folke/twilight.nvim",
+        lazy = true,
         cmd = {"Twilight","TwilightEnable","TwilightDisable"},
         opts = {}
     },
     -- 禅模式
     {
         "folke/zen-mode.nvim",
+        lazy = true,
         cmd = "ZenMode",
         opts = {}
     },
     -- 图标选择器
     {
         "ziontee113/icon-picker.nvim",
+        lazy = true,
         cmd = {"IconPickerNormal","IconPickerYank","IconPickerInsert"},
         dependencies = "telescope.nvim",
         opts = {

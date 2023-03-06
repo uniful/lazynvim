@@ -39,6 +39,7 @@ return {
     -- 光标位置
     {
         "edluffy/specs.nvim",
+        lazy = true,
         event = "CursorMoved",
         config=function ()
             require("specs").setup({
@@ -63,6 +64,7 @@ return {
     --光标行号模式指示器
     {
         "mawkler/modicator.nvim",
+        lazy = true,
         init = function ()
             vim.o.cursorline = true
             vim.o.number = true
@@ -80,6 +82,7 @@ return {
 	-- 突出显示文本
 	{
 		"Pocco81/HighStr.nvim",
+        lazy = true,
         cmd = {"HSHighlight","HSRmHighlight","HSImport"},
 		opts = {
 			verbosity = 0,
@@ -119,6 +122,7 @@ return {
     -- 显示缩进线
     {
         "lukas-reineke/indent-blankline.nvim",
+        lazy = true,
         event = {"BufReadPost","BufNewFile"},
         opts = {
             -- 显示当前所在区域
@@ -169,6 +173,7 @@ return {
     -- 显示光标下相同词汇
     {
         "RRethy/vim-illuminate",
+        lazy = true,
         event = {"BufReadPost","BufNewFile"},
         config = function ()
             local opts = {

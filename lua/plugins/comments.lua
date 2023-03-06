@@ -3,6 +3,7 @@ return {
      -- 快速注释
      {
         "numToStr/Comment.nvim",
+        lazy = true,
         event = {"BufReadPost","BufNewFile"},
         config = function ()
             local opts = {
@@ -37,6 +38,7 @@ return {
     -- TODO注释样式
     {
         "folke/todo-comments.nvim",
+        lazy = true,
         cmd = {"TodoTrouble","TodoTelescope","TodoQuickFix","TodoLocList"},
         keys={
             -- TODO标签跳转
@@ -64,6 +66,7 @@ return {
     -- 注释生成器
     {
         "danymat/neogen",
+        lazy = true,
         cmd = "Neogen",
         keys = {
             {"<leader>nog","<cmd>Neogen<CR>",desc="Generate Comment"},

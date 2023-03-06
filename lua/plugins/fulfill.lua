@@ -2,7 +2,7 @@ return {
     -- 自动保存
     {
         "Pocco81/auto-save.nvim",
-        event = "VeryLazy",
+        event = {"BufReadPre","BufNewFile"},
         opts = {}
     },
     -- 自动恢复光标位置
@@ -21,7 +21,7 @@ return {
     -- 自动匹配括号
     {
         "windwp/nvim-autopairs",
-        event = {"InsertEnter","CmdlineEnter"},
+        event = "InsertEnter",
         -- 使用treesitter来检查
         config = function ()
             local npairs = require("nvim-autopairs")

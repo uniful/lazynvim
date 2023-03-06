@@ -85,7 +85,8 @@ return {
                         init_options = {
                             jvm_args = {"-javaagent:$HOME/.local/share/nvim/mason/packages/jdtls/lombok.jar"},
                             workspace = "/home/colin/.cache/jdtls/workspace"
-                        }
+                        },
+                        capabilities = capabilities
                     })
                 else
                     lspconfig[lsp].setup({

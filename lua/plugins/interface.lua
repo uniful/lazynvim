@@ -2,6 +2,7 @@ return {
     --侧边栏
     {
         "sidebar-nvim/sidebar.nvim",
+        lazy = true,
         cmd = {"SidebarNvimToggle","SidebarNvimFocus","SidebarNvimOpen",
             "SidebarNvimResize","SidebarNvimClose","SidebarNvimUpdate"},
         opts = {}
@@ -9,6 +10,7 @@ return {
     -- 终端
     {
         "akinsho/toggleterm.nvim",
+        lazy = true,
         version = '*',
         cmd = {"ToggleTerm","TermExec","ToggleTermToggleAll","ToggleTermSendCurrentLine",
         "ToggleTermSendVisualLines","ToggleTermSendVisualSelection"},
@@ -47,6 +49,7 @@ return {
     -- 文件目录树
     {
         "nvim-neo-tree/neo-tree.nvim",
+        lazy = true,
         cmd = "Neotree",
         init = function ()
             vim.g.neo_tree_remove_legacy_commands = 1
@@ -56,6 +59,7 @@ return {
     -- 在悬浮窗中运行ranger
     {
         "kevinhwang91/rnvimr",
+        lazy = true,
         keys = {
             {"<leader>rv","<cmd>RnvimrToggle<CR>",desc="Swith Ranger in Float Window"}
         }

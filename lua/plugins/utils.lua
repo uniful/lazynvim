@@ -3,6 +3,7 @@ return {
     -- 完善旧的quickfix窗口
     {
         "kevinhwang91/nvim-bqf",
+        lazy = true,
         ft = "qf",
         opts = {
             auto_resize_height = true,
@@ -43,6 +44,7 @@ return {
     -- 代码折叠
     {
         "kevinhwang91/nvim-ufo",
+        lazy = true,
         init = function ()
             vim.keymap.set('n', 'zF', require('ufo').openAllFolds)
             vim.keymap.set('n', 'zC', require('ufo').closeAllFolds)
@@ -100,6 +102,7 @@ return {
     -- VIM中文文档
     {
         "yianwillis/vimcdoc",
+        lazy = true,
         event = "CmdlineEnter"
     },
     -- 弹出按键绑定和输入命令窗口
@@ -121,11 +124,13 @@ return {
     -- 测量启动时间
     {
         "dstein64/vim-startuptime",
+        lazy = true,
         cmd = "StartupTime"
     },
     -- 更好的模式切换
     {
         "max397574/better-escape.nvim",
+        lazy = true,
         event = {"BufReadPost","BufNewFile"},
         opts = {
             mapping = {"jk", "jj"},
@@ -148,12 +153,14 @@ return {
     -- 将缓冲区锁定到窗口
     {
         "stevearc/stickybuf.nvim",
+        lazy = true,
         cmd = {"PinBuffer","PinBuftype","PinFIleType","UnpinBuffer"},
         opts = {}
     },
     -- 输入命令查看缓冲区
     {
         "nacro90/numb.nvim",
+        lazy = true,
         event = "CmdlineEnter",
         opts = {
             number_only = true

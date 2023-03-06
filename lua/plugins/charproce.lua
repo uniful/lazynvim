@@ -3,6 +3,7 @@ return {
     -- 快速跳转
     {
         "phaazon/hop.nvim",
+        lazy = true,
         cmd = {"HopAnywhere","HopChar1","HopChar2","HopLine","HopLineStart","HopVertical","HopPattern","HopWord"},
         branch = 'v2',
         opts = {
@@ -12,6 +13,7 @@ return {
     -- 文本内字符移动、跳转
     {
         "ggandor/leap.nvim",
+        lazy = true,
         event = {"BufReadPost","BufNewFile"},
         dependencies = {
             {
@@ -30,12 +32,14 @@ return {
     -- 文本字符替换
     {
         "nvim-pack/nvim-spectre",
+        lazy = true,
         event = {"BufReadPost","BufNewFile"},
         opts = {}
     },
     -- 添加/更改/删除周围的定界符对
     {
         "kylechui/nvim-surround",
+        lazy = true,
         version = "*",
         event = {"BufReadPost","BufNewFile"},
         opts = {}
@@ -43,6 +47,7 @@ return {
     -- 结构搜索和替换
     {
         "cshuaimin/ssr.nvim",
+        lazy = true,
         keys = {
             vim.keymap.set({"n","x"},"<leader>sr",function ()
                 require("ssr").open()

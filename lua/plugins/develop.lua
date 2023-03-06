@@ -2,6 +2,7 @@ return {
     -- cmake工具集成
     {
         "Civitasv/cmake-tools.nvim",
+        lazy = true,
         ft = "cmake",
         opts = {
             cmake_command = "cmake",
@@ -29,6 +30,7 @@ return {
     -- 正则表达式解释器
     {
         "bennypowers/nvim-regexplainer",
+        lazy = true,
         event = {"BufReadPre","BufNewFile"},
         opts = {
             mappings = {

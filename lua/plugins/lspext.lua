@@ -25,6 +25,7 @@ return {
     -- LSP高性能UI插件
     {
         "glepnir/lspsaga.nvim",
+        lazy = true,
         cmd = "Lspsaga",
         keys = {
             -- 诊断跳转，<C-o>跳回
@@ -43,6 +44,7 @@ return {
     -- 使用lsp生成的视图符号
     {
         "simrat39/symbols-outline.nvim",
+        lazy = true,
         cmd = {"SymbolsOutline","SymbolsOutlineOpen","SymbolsOutlineClose"},
         config = function ()
             local opts = {

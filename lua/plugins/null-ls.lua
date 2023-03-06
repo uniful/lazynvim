@@ -2,7 +2,22 @@ return {
     -- 使用lua注入诊断、格式化、补全服务
     {
         "jose-elias-alvarez/null-ls.nvim",
+        lazy = true,
         event = {"BufReadPre","BufNewFile"},
+        dependencies = {
+            {
+                "jay-babu/mason-null-ls.nvim",lazy = true,
+                cmd = {"NullLsInstall","NullLsUninstall"},
+                dependencies = "mason.nvim",
+                config =function ()
+                    require("mason-null-ls").setup({
+                        ensure_installed = {"shellcheck"},
+                        automatic_installation = false,
+                        automatic_setup = true
+                    })
+                end
+            }
+        },
         config = function()
             local null_ls = require("null-ls")
             local diagnostics = null_ls.builtins.diagnostics

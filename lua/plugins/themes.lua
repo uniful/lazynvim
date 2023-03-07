@@ -30,11 +30,12 @@ return {
     --     priority = 1000,
     --     config = function ()
     --         require("onedark").setup({
-    --             style = "darker",
+    --             style = "cool",
+    --             ending_tildes = true,
     --             code_style = {
     --                 comments = "italic",
-    --                 keywords = "bold",
-    --                 functions = "bold,italic"
+    --                 keywords = "bold,italic",
+    --                 functions = "bold"
     --             }
     --         })
     --         require("onedark").load()
@@ -45,9 +46,23 @@ return {
         priority = 1000,
         config = function ()
             require("kanagawa").setup({
-                functionStyle = {italic=true,bold=true}
+                functionStyle = {bold = true},
+                keywordStyle = {bold = true,italic = true},
+                statementStyle = {bold = true,italic = true},
+                colors = {
+                    palette = {},
+                    theme = {
+                        wave = {
+                            ui = {
+                                float = {
+                                    bg = "none",
+                                }
+                            }
+                        }
+                    }
+                }
             })
-            vim.cmd("colorscheme kanagawa")
+            require("kanagawa").load()
         end
     }
 }

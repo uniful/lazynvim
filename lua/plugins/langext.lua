@@ -6,5 +6,14 @@ return {
         lazy = true,
         ft = {"c","cpp"},
         opts = {}
+    },
+    -- java
+    {
+        "mfussenegger/nvim-jdtls",
+        lazy = true,
+        ft = "java",
+        config = function ()
+            require("ftplugin.java")
+        end
     }
 }

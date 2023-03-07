@@ -171,5 +171,13 @@ return {
         "m4xshen/smartcolumn.nvim",
         event = "VeryLazy",
         opts = {}
+    },
+    -- 增强的matchparen
+    {
+        "utilyre/sentiment.nvim",
+        name = "sentiment",
+        version = "*",
+        event = "VeryLazy",
+        opts = {}
     }
 }

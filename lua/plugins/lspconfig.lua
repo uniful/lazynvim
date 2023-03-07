@@ -32,7 +32,7 @@ return {
             local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
             local servers = {"clangd","pyright","lua_ls","cmake","vimls","bashls","marksman",
-                "yamlls","taplo","tsserver","jsonls","html","cssls","lemminx","jdtls"}
+                "yamlls","taplo","tsserver","jsonls","html","cssls","lemminx"}
 
             -- 代码折叠(nvim-ufo)
             capabilities.textDocument.foldingRange = {dynamicRegistration = false,lineFoldingOnly = true}
@@ -70,21 +70,6 @@ return {
                                     enable = true
                                 }
                             }
-                        },
-                        capabilities = capabilities
-                    })
-                elseif rawequal(lsp,"jdtls") then
-                        lspconfig[lsp].setup({
-                        cmd = {
-                            "jdtls",
-                            "-configuration",
-                            "/home/colin/.cache/jdtls/config",
-                            "-data",
-                            "/home/colin/.cache/jdtls/workspace"
-                        },
-                        init_options = {
-                            jvm_args = {"-javaagent:$HOME/.local/share/nvim/mason/packages/jdtls/lombok.jar"},
-                            workspace = "/home/colin/.cache/jdtls/workspace"
                         },
                         capabilities = capabilities
                     })

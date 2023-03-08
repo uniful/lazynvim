@@ -48,7 +48,8 @@ return {
             }
         },
         config = function ()
-            require("debugger.dapconfig")
+            require("debugger.dapsettings")
+            require("debugger.dapuisettings")
             require("debugger.dapstartup")
         end
     },

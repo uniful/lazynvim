@@ -35,7 +35,10 @@ return {
                 "yamlls","taplo","tsserver","jsonls","html","cssls","lemminx"}
 
             -- 代码折叠(nvim-ufo)
-            capabilities.textDocument.foldingRange = {dynamicRegistration = false,lineFoldingOnly = true}
+            capabilities.textDocument.foldingRange = {
+                dynamicRegistration = false,
+                lineFoldingOnly = true
+            }
 
             for _, lsp in pairs(servers) do
                 if rawequal(lsp,"lua_ls") then

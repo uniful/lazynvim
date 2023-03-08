@@ -10,9 +10,12 @@ return {
                 config = function ()
                     local navic = require("nvim-navic")
                     navic.setup({
-                        highlight = true,
+                        highlight = true
                     })
                 end
+            },
+            {
+                "nvim-lspconfig"
             }
         },
         config = function ()

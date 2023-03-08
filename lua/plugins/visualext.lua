@@ -104,18 +104,15 @@ return {
     -- 显示十六进制颜色
     {
         "NvChad/nvim-colorizer.lua",
-        event = "VeryLazy",
         opts = {
             filetypes = {
                 '*';
-                cmp_docs = {
-                    always_update = true
-                }
+                cmp_docs = {always_update = true}
             },
             user_default_options = {
                 RRGGBBAA = true,
                 AARRGGBB = true,
-                mode = "background"
+                tailwind = true
             }
         }
     },

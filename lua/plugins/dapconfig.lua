@@ -45,6 +45,9 @@ return {
                     virt_lines = false,
                     virt_text_win_col = nil
                 }
+            },
+            {
+                "telescope.nvim"
             }
         },
         config = function ()
@@ -54,10 +57,10 @@ return {
         end
     },
     ------ 特定语言调试需要用到的插件 ------
+    -- lua
     {
         "jbyuki/one-small-step-for-vimkind",
         lazy = true,
-        ft = {"lua","luau"},
         keys = {
             {"<leader>dlr","<cmd>lua require('osv').run_this()<CR>",desc="Lua Debug Run"},
             {"<leader>dlt","<cmd>lua require('osv').start_trace()<CR>",desc="Lua Debug Start Trace"},

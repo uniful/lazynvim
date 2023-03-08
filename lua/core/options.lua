@@ -46,7 +46,7 @@ vim.o.swapfile        = false
 -- 显示特殊字符
 vim.o.list            = true
 -- 空格占用以.显示
-vim.o.listchars       = "space:·,tab:··,eol:↴"
+vim.opt.listchars     = {space="·",tab="▸ ",eol="↴"}
 -- 补全增强
 vim.o.wildmenu        = true
 -- 终端24位色彩支持

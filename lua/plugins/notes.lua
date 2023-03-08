@@ -42,5 +42,23 @@ return {
                 MkdnEnter = {{'i', 'n', 'v'}, '<CR>'}
             }
         }
+    },
+    -- markdown代码块管理
+    {
+        "AckslD/nvim-FeMaco.lua",
+        lazy = true,
+        ft = "markdown",
+        keys = {
+            {"<leader>fm","<cmd>FeMaco<CR>",desc="调用窗口编辑代码块"}
+        },
+        opts = {}
+    },
+    -- 任务工作流
+    {
+        "phaazon/mind.nvim",
+        lazy = true,
+        branch = "v2.2",
+        event = {"BufReadPre","BufNewFile"},
+        opts = {}
     }
 }

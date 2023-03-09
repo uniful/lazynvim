@@ -7,6 +7,7 @@ return {
         dependencies = {
             {
                 "SmiteshP/nvim-navic",
+                lazy = true,
                 config = function ()
                     local navic = require("nvim-navic")
                     navic.setup({

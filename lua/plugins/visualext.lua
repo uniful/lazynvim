@@ -86,7 +86,7 @@ return {
         cmd = {"HSHighlight","HSRmHighlight","HSImport"},
 		opts = {
 			verbosity = 0,
-			saving_path = "/home/colin/.cache/nvim/highstr/", -- 最好使用绝对路径
+			saving_path = "/home/colin/.cache/nvim/highstr/", -- 使用绝对路径
 			highlight_colors = {
 				color_0 = {"#0c0d0e", "smart"},	-- Cosmic charcoal
 				color_1 = {"#e5c07b", "smart"},	-- Pastel yellow

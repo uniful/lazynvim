@@ -31,14 +31,11 @@ return {
 
             local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-            local servers = {"clangd","pyright","lua_ls","cmake","vimls","bashls","marksman",
-                "yamlls","taplo","tsserver","jsonls","html","cssls","lemminx"}
+            local servers = {"lua_ls","pyright","clangd","cmake","vimls","bashls","marksman","lemminx",
+                            "yamlls","taplo","tsserver","cssls","html","jsonls"}
 
             -- 代码折叠(nvim-ufo)
-            capabilities.textDocument.foldingRange = {
-                dynamicRegistration = false,
-                lineFoldingOnly = true
-            }
+            capabilities.textDocument.foldingRange = {dynamicRegistration = false,lineFoldingOnly = true}
 
             for _, lsp in pairs(servers) do
                 if rawequal(lsp,"lua_ls") then

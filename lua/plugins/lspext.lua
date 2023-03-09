@@ -20,7 +20,10 @@ return {
     -- 显示元信息和差异预览的代码操作的弹出菜单
     {
         "weilbith/nvim-code-action-menu",
-        cmd = "CodeActionMenu"
+        lazy = true,
+        keys = {
+            {"<leader>ca","CodeActionMenu<CR>",desc = "Show Code Action Menu"}
+        }
     },
     -- LSP高性能UI插件
     {
@@ -45,7 +48,11 @@ return {
     {
         "simrat39/symbols-outline.nvim",
         lazy = true,
-        cmd = {"SymbolsOutline","SymbolsOutlineOpen","SymbolsOutlineClose"},
+        keys = {
+            {"<leader>syo","<cmd>SymbolsOutlineOpen<CR>",desc="Open Symbols Outline"},
+            {"<leader>syc","<cmd>SymbolsOutlineClose<CR>",desc = "Close Symbols Outline"},
+            {"<leader>syl","<cmd>SymbolsOutline<CR>",desc = "Symbols Outline"}
+        },
         config = function ()
             local opts = {
                 highlight_hovered_item = true,

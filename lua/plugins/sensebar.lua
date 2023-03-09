@@ -3,7 +3,9 @@ return {
         "utilyre/barbecue.nvim",
         name = "barbecue",
         version = "*",
-        event = {"BufReadPre","BufNewFile"},
+        keys = {
+            {"<leader>be","<cmd>Barbecue<CR>",desc = "Eject Barbecue Menu"}
+        },
         dependencies = {
             {
                 "SmiteshP/nvim-navic",
@@ -16,7 +18,7 @@ return {
                 end
             },
             {
-                "nvim-lspconfig"
+                "telescope.nvim"
             }
         },
         config = function ()

@@ -3,9 +3,18 @@ return {
     -- 快速跳转
     {
         "phaazon/hop.nvim",
-        lazy = true,
-        cmd = {"HopAnywhere","HopChar1","HopChar2","HopLine","HopLineStart","HopVertical","HopPattern","HopWord"},
         branch = 'v2',
+        lazy = true,
+        keys = {
+            {"<leader>hw","<cmd>HopWord<CR>",desc = "Search And Jump Word"},
+            {"<leader>hl","<cmd>HopLine<CR>",desc = "Search And Jump Line"},
+            {"<leader>hc","<cmd>HopChar1<CR>",desc = "Search And Jump Char(input 1 char)"},
+            {"<leader>hd","<cmd>HopChar2<CR>",desc = "Search And Jump Char(input 2 char)"},
+            {"<leader>ht","<cmd>HopLineStart<CR>",desc = "Show Each Line 1st Non-blanke Char And Jump"},
+            {"<leader>hv","<cmd>HopVertical<CR>",desc = "Show Cursor Local Char As Datum Jump"},
+            {"<leader>hr","<cmd>HopPattern<CR>",desc = "Default Neovim Search And Jump Mix"},
+            {"<leader>ha","<cmd>HopAnywhere<CR>",desc = "Jump AnyWhere"}
+        },
         opts = {
             keys = "etovxqpdygfblzhckisuran"
         }

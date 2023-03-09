@@ -3,7 +3,13 @@ return {
     {
         "Civitasv/cmake-tools.nvim",
         lazy = true,
-        ft = "cmake",
+        keys = {
+            {"<leader>cmb","<cmd>CMakeBuild<CR>",desc = "Build CMake Project"},
+            {"<leader>cmr","<cmd>CMakeRun<CR>",desc = "Run CMake Project"},
+            {"<leader>cmd","<cmd>CMakeDebug<CR>",desc = "Debug CMake Project"},
+            {"<leader>cmk","<cmd>CMakeSelectKit<CR>",desc = "Select Custom Kit"},
+            {"<leader>cms","<cmd>CMakeStop<CR>",desc = "Stop CMake"}
+        },
         opts = {
             cmake_command = "cmake",
             cmake_build_directory = "",

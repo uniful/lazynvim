@@ -50,9 +50,6 @@ mapcmd("<leader>bi","BufDel!")
 -- 关闭选定的缓冲区(如果缓冲区名称为纯数字，则使用引号)
 maptext("<leader>bs","BufDel ")
 
--- babecue
-mapcmd("<leader>be","Barbecue")
-
 
 -- C
 -- 快捷命令
@@ -68,9 +65,6 @@ mapcmd('<leader>cx', 'x')
 -- 健康检查
 mapcmd("<leader>ch","checkhealth")
 
--- nvim-code-action-menu
-mapcmd("<leader>ca", "CodeActionMenu")
-
 -- clangd_extensions
 -- 将光标放在所需的符号上
 mapcmd("<leader>cs","ClangdSymbolInfo")
@@ -78,18 +72,6 @@ mapcmd("<leader>cs","ClangdSymbolInfo")
 mapcmd("<leader>ct","ClangdTypeHierarchy")
 -- 查看内存使用情况
 mapcmd("<leader>cp", "ClangdMemoryUsage expand_preamble")
-
--- cmake-tools
--- 构建
-mapcmd("<leader>cmb", "CMakeBuild")
--- 运行
-mapcmd("<leader>cmr", "CMakeRun")
--- 调试
-mapcmd("<leader>cmd", "CMakeDebug")
---选择定义套件
-mapcmd("<leader>cmk", "CMakeSelectKit")
--- 停止
-mapcmd("<leader>cms", "CMakeStop")
 
 -- ccc
 mapcmd("<leader>ccp", "CccPick")
@@ -199,23 +181,6 @@ maptext("<leader>gok", "Neogit kind=")
 
 
 -- H
--- hop
--- 搜索并跳转到单词
-mapcmd("<leader>hw", "HopWord")
--- 搜索并跳转到行
-mapcmd("<leader>hl", "HopLine")
--- 搜索并跳转到字符
-mapcmd("<leader>hc", "HopChar1")
-mapcmd("<leader>hd", "HopChar2")
--- 提示每行的第一个非空白字符
-mapcmd("<leader>ht", "HopLineStart")
--- 如果某条线短于光标列位置，则其行尾将用作跳转目标。
-mapcmd("<leader>hv", "HopVertical")
--- 默认的 Neovim 搜索与提示混合在一起
-mapcmd("<leader>ht", "HopPattern")
--- 跳转到任何地方
-mapcmd("<leader>ha", "HopAnywhere")
-
 -- hlslens
 -- 启动或关闭nvim-hlslens
 mapcmd("<Leader>hst", "HlSearchLensToggle")
@@ -423,7 +388,6 @@ mapnorm("<leader>sn","vnew:lua require('spectre.actions').replace_cmd()")
 mapnorm("<leader>su","vnew:lua require('spectre').toggle_live_update()")
 
 -- search
-mapkey('n', '<leader>ss', '/')
 mapkey('n', '<leader>sw', '/\\<lt>\\><left><left>')
 
 -- specs
@@ -432,37 +396,13 @@ maplua("<leader>slt", "require('specs').toggle()")
 -- 插件调用
 maplua("<M-s>", "require('specs').show_specs()")
 
-
--- startupTime
-mapcmd("<leader>st", "StartupTime")
-
--- sidebar
-mapcmd("<leader>sbt", "SidebarNvimToggle")
-mapcmd("<leader>sbc", "SidebarNvimClose")
-mapcmd("<leader>sbo", "SidebarNvimOpen")
-mapcmd("<leader>sbu", "SidebarNvimUpdate")
--- 光标移至侧边栏窗口
-mapcmd("<leader>sbf", "SidebarNvimFocus")
--- 将视图宽度调整为自定义大小
-maptext("<leader>sbr", "SidebarNvimResize ")
-
--- symbols-outline
--- 切换符号大纲
-mapcmd("<leader>syl", "SymbolsOutline")
--- 关闭符号轮廓
-mapcmd("<leader>syc", "SymbolsOutlineClose")
--- 打开符号大纲
-mapcmd("<leader>syo", "SymbolsOutlineOpen")
-
--- stickybuf
--- 将当前缓冲区固定到窗口
-mapcmd("<leader>skf", "PinBuffer")
--- 将当前的 buftype 固定到窗口。它将允许具有相同 buftype 的任何缓冲区
-mapcmd("<leader>skt", "PinBuftype")
--- 将当前文件类型固定到窗口。它将允许具有相同文件类型的任何缓冲区
-mapcmd("<leader>ske", "PinFiletype")
--- 从当前窗口中删除任何类型的固定
-mapcmd("<leader>sku", "UnpinBuffer")
+-- Sidebar
+mapcmd("<leader>sbt","SidebarNvimToggle")
+mapcmd("<leader>sbo","SidebarNvimOpen")
+mapcmd("<leader>sbc","SidebarNvimClose")
+mapcmd("<leader>sbu","SidebarNvimUpdate")
+mapcmd("<leader>sbf","SidebarNvimFocus")
+maptext("<leader>sbr","SidebarNvimResize ")
 
 
 -- T
@@ -505,11 +445,6 @@ mapcmd("<leader>tsr", "Telescope frecency theme=ivy")
 mapcmd("<leader>tss", "Telescope harpoon marks")
 -- 查看yank历史
 mapcmd("<leader>tsy", "Telescope yank_history")
-
--- twilight
-mapcmd("<leader>twl", "Twilight")
-mapcmd("<leader>twe", "TwilightEnable")
-mapcmd("<leader>twd", "TwilightDisable")
 
 -- treesitter-context
 mapcmd("<leader>tre", "TSContextEnable")
@@ -571,14 +506,9 @@ mapcmd("<leader>xr", "TroubleToggle lsp_references")
 
 
 -- Y
--- yanky
-mapcmd("<leader>yr", "YankyRingHistory")
-mapcmd("<leader>yc", "YankyClearHistory")
 
 
 -- Z
--- zem-mode
-mapcmd("<leader>zm", "ZenMode")
 
 
 ------ 其它命令 -------

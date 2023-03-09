@@ -3,9 +3,12 @@ return {
     {
         "sidebar-nvim/sidebar.nvim",
         lazy = true,
-        cmd = {"SidebarNvimToggle","SidebarNvimFocus","SidebarNvimOpen",
-            "SidebarNvimResize","SidebarNvimClose","SidebarNvimUpdate"},
-        opts = {}
+        cmd = {"SidebarNvimToggle","SidebarNvimOpen","SidebarNvimClose","SidebarNvimUpdate",
+              "SidebarNvimFocus","SidebarNvimResize"},
+        config = function ()
+            local sidebar = require("sidebar-nvim")
+            sidebar.setup({})
+        end
     },
     -- 终端
     {

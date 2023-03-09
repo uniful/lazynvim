@@ -87,7 +87,10 @@ return {
     {
         "gbprod/yanky.nvim",
         lazy = true,
-        cmd = {"YankyRingHistory","YankyClearHistory"},
+        keys = {
+            {"<leader>yr","<cmd>YankyRingHistory<CR>",desc = "Show Yank History"},
+            {"<leader>yc","<cmd>YankyClearHistory<CR>",desc = "Clear Yank History"}
+        },
         dependencies = "telescope.nvim",
         opts = {
             ring = {
@@ -125,7 +128,7 @@ return {
     {
         "dstein64/vim-startuptime",
         lazy = true,
-        cmd = "StartupTime"
+        keys = {"<leader>st","<cmd>StartupTime<CR>",desc = "Gauge Start Time"}
     },
     -- 更好的模式切换
     {
@@ -154,7 +157,12 @@ return {
     {
         "stevearc/stickybuf.nvim",
         lazy = true,
-        cmd = {"PinBuffer","PinBuftype","PinFIleType","UnpinBuffer"},
+        keys = {
+            {"<leader>skf","<cmd>PinBuffer<CR>",desc = "Fix Before Buffer In Window"},
+            {"<leader>skt","<cmd>PinBuftype<CR>",desc = "Set Before Buftype Fix In Window"},
+            {"<leader>ske","<cmd>PinFiletype<CR>",desc = "Set Before Filetype Fix In Window"},
+            {"<leader>sku","<cmd>UnpinBuffer<CR>",desc = "Cancel Everything Fix Window"}
+        },
         opts = {}
     },
     -- 输入命令查看缓冲区

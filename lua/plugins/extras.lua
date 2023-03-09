@@ -39,14 +39,18 @@ return {
     {
         "folke/twilight.nvim",
         lazy = true,
-        cmd = {"Twilight","TwilightEnable","TwilightDisable"},
+        keys = {
+            {"<leader>twl","<cmd>Twilight<CR>",desc = "Inactive Code Shade"},
+            {"<leader>twe","<cmd>TwilightEnable<CR>",desc = "Enable Inactive Code Shade"},
+            {"<leader>twd","<cmd>TwilightDisable<CR>",desc = "Disable Inactive Code Shade"}
+        },
         opts = {}
     },
     -- 禅模式
     {
         "folke/zen-mode.nvim",
         lazy = true,
-        cmd = "ZenMode",
+        keys = {"<leader>zm","<cmd>ZenMode<CR>",desc = "Zen Mode"},
         opts = {}
     },
     -- 图标选择器

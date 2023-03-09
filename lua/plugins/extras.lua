@@ -19,17 +19,12 @@ return {
         "uga-rosa/ccc.nvim",
         lazy = true,
         cmd = {"CccPick","CccConvert","CccHighlighterToggle","CccHighlighterEnable","CccHighlighterDisable"},
-        config = function ()
-            local ccc = require("ccc")
-            local mapping = ccc.mapping
-            ccc.setup({})
-        end
+        opts = {}
     },
     -- 页面切换器
     {
         "toppair/reach.nvim",
         lazy = true,
-        cmd="ReachOpen",
         keys = {
             {"<leader>rb","<cmd>ReachOpen buffers<CR>",desc="Switch Buffers Page"},
             {"<leader>rc","<cmd>ReachOpen colorschemes<CR>",desc="Switch Scheme Page"},

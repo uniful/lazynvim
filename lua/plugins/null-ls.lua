@@ -6,7 +6,8 @@ return {
         event = {"BufReadPre","BufNewFile"},
         dependencies = {
             {
-                "jay-babu/mason-null-ls.nvim",lazy = true,
+                "jay-babu/mason-null-ls.nvim",
+                lazy = true,
                 cmd = {"NullLsInstall","NullLsUninstall"},
                 dependencies = "mason.nvim",
                 config =function ()

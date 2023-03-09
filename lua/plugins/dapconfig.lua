@@ -14,7 +14,7 @@ return {
             vim.keymap.set("n","<leader>do",function()
                 require("dap").repl.open()
             end,{desc="Open Repl"}),
-            vim.keymap.set("n","<leader>dm", function() 
+            vim.keymap.set("n","<leader>dm", function()
                 require('dap').set_breakpoint(nil, nil, vim.fn.input('Log point message: ')) 
             end,{desc="Log Point Message"})
         },

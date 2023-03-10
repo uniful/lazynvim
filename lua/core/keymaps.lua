@@ -69,16 +69,9 @@ mapcmd("<leader>ch","checkhealth")
 -- 将光标放在所需的符号上
 mapcmd("<leader>cs","ClangdSymbolInfo")
 -- 将光标放在所需类型或该类型的符号上
-mapcmd("<leader>ct","ClangdTypeHierarchy")
+mapcmd("<leader>cl","ClangdTypeHierarchy")
 -- 查看内存使用情况
-mapcmd("<leader>cp", "ClangdMemoryUsage expand_preamble")
-
--- ccc
-mapcmd("<leader>ccp", "CccPick")
-mapcmd("<leader>ccn", "CccConvert")
-mapcmd("<leader>cct", "CccHighlighterToggle")
-mapcmd("<leader>cce", "CccHighlighterEnable")
-mapcmd("<leader>ccd", "CccHighlighterDisable")
+mapcmd("<leader>cg", "ClangdMemoryUsage expand_preamble")
 
 
 -- D
@@ -221,12 +214,6 @@ mapcmd("<leader>if","IlluminatePauseBuf")
 mapcmd("<leader>iu","IlluminateResumeBuf")
 --本地缓冲区恢复/暂停切换
 mapcmd("<leader>it","IlluminateToggleBuf")
-
--- icon-picker
--- 选择图标并将其插入缓冲区
-mapcmd("<leader>ic", "IconPickerNormal")
--- 选择图标并将其拉出以注册
-mapcmd("<leader>iy", "IconPickerYank")
 
 
 -- J

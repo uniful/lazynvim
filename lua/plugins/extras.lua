@@ -18,7 +18,13 @@ return {
     {
         "uga-rosa/ccc.nvim",
         lazy = true,
-        cmd = {"CccPick","CccConvert","CccHighlighterToggle","CccHighlighterEnable","CccHighlighterDisable"},
+        keys = {
+            {"<leader>ccp","<cmd>CccPick<CR>",desc = "Check And Replace Cursor Local Color"},
+            {"<leader>ccn","<cmd>CccConvert<CR>",desc = "Direct Change Color Form"},
+            {"<leader>cct","<cmd>CccHighlighterToggle<CR>",desc = "Switch Buffer Color"},
+            {"<leader>cce","<cmd>CccHighlighterEnable<CR>",desc = "Open Show Buffer Color"},
+            {"<leader>ccd","<cmd>CccHighlighterDisable<CR>",desc = "Close Show Buffer Color"}
+        },
         opts = {}
     },
     -- 页面切换器
@@ -57,7 +63,10 @@ return {
     {
         "ziontee113/icon-picker.nvim",
         lazy = true,
-        cmd = {"IconPickerNormal","IconPickerYank","IconPickerInsert"},
+        keys = {
+            {"<leader>ic","<cmd>IconPickerNormal<CR>",desc = "Nomal Mode Pick Icon Insert Buffer"},
+            {"<leader>iy","<cmd>IconPickerYank<CR>",desc = "Pick Icon And Yank To Regeister"}
+        },
         dependencies = "telescope.nvim",
         opts = {
             disable_legacy_commands =true,

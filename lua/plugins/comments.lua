@@ -4,7 +4,9 @@ return {
      {
         "numToStr/Comment.nvim",
         lazy = true,
-        event = {"BufReadPost","BufNewFile"},
+        keys = {
+            {"gcc","gCC","gc","gb","gcO","gco","gcA"}
+        },
         config = function ()
             local opts = {
                 -- Normal模式下注释命令
@@ -49,7 +51,6 @@ return {
                 require("todo-comments").jump_next()
             end,{desc="Next Todo Comment"})
         },
-        event = {"BufReadPost","BufNewFile"},
         opts = {
             keywords = {
                 -- alt:别名

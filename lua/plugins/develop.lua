@@ -37,7 +37,9 @@ return {
     {
         "bennypowers/nvim-regexplainer",
         lazy = true,
-        event = {"BufReadPre","BufNewFile"},
+        keys = {
+            {"gR","gS","gH","gU"}
+        },
         opts = {
             mappings = {
                 toggle = "gR",

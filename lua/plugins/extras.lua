@@ -4,9 +4,9 @@ return {
     {
         "mrjones2014/legendary.nvim",
         lazy = true,
-        cmd = "Legendary",
         keys = {
             {"<leader>ldy","<cmd>Legendary<CR>",desc="Show Legendary"},
+            {"<leader>ldk","<cmd>Legendary keymaps<CR>",desc = "Search Keymaps"},
             {"<leader>ldc","<cmd>Legendary commands<CR>",desc="Search Commands"},
             {"<leader>ldf","<cmd>Legendary functions<CR>",desc="Search Functions"},
             {"<leader>lda","<cmd>Legendary autocmds<CR>",desc="Search Autocmds"}

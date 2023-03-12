@@ -23,7 +23,9 @@ return {
     {
         "ggandor/leap.nvim",
         lazy = true,
-        event = {"BufReadPost","BufNewFile"},
+        keys = {
+            {"s","S","gs"}
+        },
         dependencies = {
             {
                 "ggandor/flit.nvim", --跳转增强
@@ -35,7 +37,7 @@ return {
             }
         },
         config = function ()
-            require("leap").add_default_mappings(true)
+            require("leap").add_default_mappings()
         end
     },
     -- 文本字符替换
@@ -122,7 +124,9 @@ return {
     {
         "monaqa/dial.nvim",
         lazy = true,
-        event = {"BufReadPost","BufNewFile"},
+        keys = {
+            {"<M-b>","<M-d>","<M-f>","<M-g>","<M-z>","<M-x>"}
+        },
         config = function()
             local augend = require("dial.augend")
             require("dial.config").augends:register_group{

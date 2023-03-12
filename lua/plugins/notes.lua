@@ -47,7 +47,6 @@ return {
     {
         "AckslD/nvim-FeMaco.lua",
         lazy = true,
-        ft = "markdown",
         keys = {
             {"<leader>fm","<cmd>FeMaco<CR>",desc="调用窗口编辑代码块"}
         },

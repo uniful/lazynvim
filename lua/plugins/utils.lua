@@ -128,7 +128,7 @@ return {
     {
         "dstein64/vim-startuptime",
         lazy = true,
-        keys = {"<leader>st","<cmd>StartupTime<CR>",desc = "Gauge Start Time"}
+        cmd = "StartupTime"
     },
     -- 更好的模式切换
     {

@@ -348,31 +348,8 @@ maplua("<leader>nud", "require('numb').disable()")
 
 
 -- S
--- spectre
--- 只替换当前文件
-mapnorm("<leader>sf", "viw:lua require('spectre').open_file_search()")
--- 全项目替换
-maplua("<leader>sp", "require('spectre').open()")
--- 全项目中搜索当前单词
-maplua("<leader>sv", "require('spectre').open_visual({select_word=true})")
--- 替换一切
-mapnorm("<leader>sa","vnew:lua require('spectre.actions').run_replace()")
--- 显示差异
-mapnorm("<leader>sc","vnew:lua require('spectre').change_view()")
--- 删除选中
-mapnorm("<leader>sd","vnew:lua require('spectre').toggle_line()")
--- 切换搜索隐藏
-mapnorm("<leader>se","vnew:lua require('spectre').change_options('hidden')")
--- 前往文件
-mapnorm("<leader>sg","vnew:lua require('spectre.actions').select_entry()")
--- 切换忽略大小写
-mapnorm("<leader>si","vnew:lua require('spectre').change_options('ignore-case')")
--- 查看菜单（忽略大小写、忽略隐藏文件）
-mapnorm("<leader>sm","lua require('spectre').show_options()")
--- 输入替换vim命令
-mapnorm("<leader>sn","vnew:lua require('spectre.actions').replace_cmd()")
--- vim写入文件时更新更改
-mapnorm("<leader>su","vnew:lua require('spectre').toggle_live_update()")
+-- strartuptime
+mapcmd("<leader>st","StartupTime")
 
 -- search
 mapkey('n', '<leader>sw', '/\\<lt>\\><left><left>')

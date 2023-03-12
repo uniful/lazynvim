@@ -54,10 +54,34 @@ return {
         "nvim-neo-tree/neo-tree.nvim",
         lazy = true,
         cmd = "Neotree",
+        dependencies = "nvim-window-picker",
         init = function ()
             vim.g.neo_tree_remove_legacy_commands = 1
+            if vim.fn.argc() == 1 then
+                local stat = vim.loop.fs_stat(vim.fn.argv(0))
+                if stat and stat.type == "directory" then
+                    require("neo-tree")
+                end
+            end
         end,
-        opts = {}
+        opts = {
+            filesystem = {
+                follow_current_file = true,
+                use_libuv_file_watcher = true,
+            },
+            default_component_configs = {
+                indent = {
+                    with_expander = true,
+                    expander_collapsed = "",
+                    expander_expanded = "",
+                    expander_highlight = "NeoTreeExpander",
+                }
+            },
+            source_selector = {
+                winbar = true,
+                statusline = true
+            }
+        }
     },
     -- 在悬浮窗中运行ranger
     {

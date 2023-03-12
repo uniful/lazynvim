@@ -71,5 +71,22 @@ return {
         opts = {
             disable_legacy_commands =true,
         }
+    },
+    -- 窗口选择器
+    {
+        "s1n7ax/nvim-window-picker",
+        version = "v1.*",
+        lazy = true,
+        opts = {
+            autoselect_one = true,
+            include_current = false,
+            filter_rules = {
+              bo = {
+                filetype = { 'neo-tree', "neo-tree-popup", "notify" },
+                buftype = { 'terminal', "quickfix" },
+              },
+            },
+            other_win_hl_color = '#e35e4f',
+        }
     }
 }

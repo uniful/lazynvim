@@ -24,7 +24,9 @@ return {
         "ggandor/leap.nvim",
         lazy = true,
         keys = {
-            {"s","S","gs"}
+            {"s",mode = {"n","o","x"},desc = "Leap ForWard To"},
+            {"S",mode = {"n","o","x"},desc = "Leap BackWard To"},
+            {"gs",mode = {"n","o","x"},desc = "Leap From Windows"}
         },
         dependencies = {
             {
@@ -37,7 +39,7 @@ return {
             }
         },
         config = function ()
-            require("leap").add_default_mappings()
+            require("leap").add_default_mappings(true)
         end
     },
     -- 文本字符替换

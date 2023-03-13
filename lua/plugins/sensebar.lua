@@ -18,6 +18,9 @@ return {
                 end
             },
             {
+                "nvim-lspconfig"
+            },
+            {
                 "telescope.nvim"
             }
         },

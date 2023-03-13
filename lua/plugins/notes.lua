@@ -55,8 +55,8 @@ return {
     -- 任务工作流
     {
         "phaazon/mind.nvim",
-        lazy = true,
         branch = "v2.2",
+        lazy = true,
         event = {"BufReadPre","BufNewFile"},
         opts = {}
     }

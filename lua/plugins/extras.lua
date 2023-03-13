@@ -50,13 +50,20 @@ return {
             {"<leader>twe","<cmd>TwilightEnable<CR>",desc = "Enable Inactive Code Shade"},
             {"<leader>twd","<cmd>TwilightDisable<CR>",desc = "Disable Inactive Code Shade"}
         },
-        opts = {}
+        opts = {
+            dimming = {
+                inactive = true,
+            },
+            exclude = {"txt","markdown","log","help"},
+        }
     },
     -- 禅模式
     {
         "folke/zen-mode.nvim",
         lazy = true,
-        keys = {"<leader>zm","<cmd>ZenMode<CR>",desc = "Zen Mode"},
+        keys = {
+            {"<leader>mz", "<cmd>ZenMode<CR>",desc = "Zen Mode"}
+        },
         opts = {}
     },
     -- 图标选择器

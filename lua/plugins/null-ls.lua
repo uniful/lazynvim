@@ -36,6 +36,7 @@ return {
                 diagnostics.tidy, --html,xml
                 diagnostics.yamllint, --yaml
                 diagnostics.zsh, --zsh
+                diagnostics.npm_groovy_lint, --java,groovy,jenkinsfile
                 diagnostics.cspell.with({
                     disabled_filetypes = {"lua","c","cpp","cmake","javascript","typescript","python",
                     "sh","zsh","yaml","fish","markdown","html","xml","java"}

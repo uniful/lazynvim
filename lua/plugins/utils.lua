@@ -49,7 +49,9 @@ return {
             vim.keymap.set('n', 'zF', require('ufo').openAllFolds)
             vim.keymap.set('n', 'zC', require('ufo').closeAllFolds)
         end,
-        event = {"BufReadPre","BufNewFile"},
+        keys = {
+            {"zF","zC"}
+        },
         config = function ()
             -- 自定义折叠文本
             local handler = function(virtText, lnum, endLnum, width, truncate)
@@ -186,6 +188,13 @@ return {
         name = "sentiment",
         version = "*",
         event = "VeryLazy",
-        opts = {}
+        opts = {
+            pairs = {
+                {"(",")"},
+                {"{","}"},
+                {"[","]"},
+                {"<",">"},
+            }
+        }
     }
 }

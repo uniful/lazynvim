@@ -368,6 +368,11 @@ mapcmd("<leader>sbu","SidebarNvimUpdate")
 mapcmd("<leader>sbf","SidebarNvimFocus")
 maptext("<leader>sbr","SidebarNvimResize ")
 
+-- symbols-outline
+mapcmd("<leader>syo","SymbolsOutlineOpen")
+mapcmd("<leader>syc","SymbolsOutlineClose")
+mapcmd("<leader>syl","SymbolsOutline")
+
 
 -- T
 -- ToggleTerm

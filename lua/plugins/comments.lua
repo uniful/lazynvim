@@ -5,7 +5,13 @@ return {
         "numToStr/Comment.nvim",
         lazy = true,
         keys = {
-            {"gcc","gCC","gc","gb","gcO","gco","gcA"}
+            {"gcc",mode = {"n"},desc = "line comment"},
+            {"gCC",mode = {"n"},desc = "line block comment"},
+            {"gcO",mode = {"n"},desc = "prev line comment"},
+            {"gco",mode = {"n"},desc = "next line comment"},
+            {"gcA",mode = {"n"},desc = "tail line comment"},
+            {"gc",mode = {"v"},desc = "visual line comment"},
+            {"gb",mode = {"v"},desc = "visual block comment"}
         },
         config = function ()
             local opts = {

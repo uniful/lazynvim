@@ -22,7 +22,7 @@ return {
         "weilbith/nvim-code-action-menu",
         lazy = true,
         keys = {
-            {"<leader>ca","CodeActionMenu<CR>",desc = "Show Code Action Menu"}
+            {"<leader>ca","<cmd>CodeActionMenu<CR>",desc = "Show Code Action Menu"}
         }
     },
     -- LSP高性能UI插件
@@ -48,11 +48,7 @@ return {
     {
         "simrat39/symbols-outline.nvim",
         lazy = true,
-        keys = {
-            {"<leader>syo","<cmd>SymbolsOutlineOpen<CR>",desc="Open Symbols Outline"},
-            {"<leader>syc","<cmd>SymbolsOutlineClose<CR>",desc = "Close Symbols Outline"},
-            {"<leader>syl","<cmd>SymbolsOutline<CR>",desc = "Symbols Outline"}
-        },
+        cmd = {"SymbolsOutlineOpen","SymbolsOutlineClose","SymbolsOutline"},
         config = function ()
             local opts = {
                 highlight_hovered_item = true,

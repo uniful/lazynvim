@@ -106,7 +106,13 @@ return {
         "kylechui/nvim-surround",
         lazy = true,
         version = "*",
-        event = {"BufReadPost","BufNewFile"},
+        keys = {
+            {"ysiw",mode = {"n"},desc = "Surround Words"},
+            {"ys$",mode = {"n"},desc = "make strings"},
+            {"ds",mode = {"n"},desc = "delete around or function or tag etc"},
+            {"cs'",mode = {"n"},desc = "Change quotes"},
+            {"csth1<CR>",mode = {"n"},desc = "<h1>or tag types</h1>"}
+        },
         opts = {}
     },
     -- 结构搜索和替换

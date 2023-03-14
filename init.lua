@@ -12,7 +12,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local settings = {
-    concurrency = nil,
     dev = {
         path = "~/.local/share/nvim/local-plugin",
         patterns = {},
@@ -59,7 +58,6 @@ local settings = {
         }
     }
 }
-
 require("core.keymaps")
 require("core.options")
 require("lazy").setup("plugins",settings)

@@ -104,14 +104,12 @@ return {
     -- 添加/更改/删除周围的定界符对
     {
         "kylechui/nvim-surround",
-        lazy = true,
         version = "*",
+        lazy = true,
         keys = {
-            {"ysiw",mode = {"n"},desc = "Surround Words"},
-            {"ys$",mode = {"n"},desc = "make strings"},
-            {"ds",mode = {"n"},desc = "delete around or function or tag etc"},
-            {"cs'",mode = {"n"},desc = "Change quotes"},
-            {"csth1<CR>",mode = {"n"},desc = "<h1>or tag types</h1>"}
+            {"ys",mode = {"n","v"},desc = "add surround"},
+            {"ds",mode = {"n","v"},desc = "delete surround"},
+            {"cs",mode = {"n","v"},desc = "change quotes"}
         },
         opts = {}
     },

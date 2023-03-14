@@ -121,6 +121,16 @@ return {
         "folke/trouble.nvim",
         lazy = true,
         cmd = {"TroubleToggle","Trouble","TroubleRefresh","TroubleClose"},
+        keys = {
+            {"<leader>xt","<cmd>TroubleToggle<CR>",desc = "Toggle Diagnotics List"},
+            {"<leader>xr","<cmd>TroubleRefresh<CR>",desc = "Refresh Action List"},
+            {"<leader>xw","<cmd>TroubleToggle workspace_diagnostics<CR>",desc = "Lsp Workspace Diagnotics"},
+            {"<leader>xd","<cmd>TroubleToggle document_diagnostics<CR>",desc = "Lsp Document Diagnostics"},
+            {"<leader>xn","<cmd>TroubleToggle lsp_definitions<CR>",desc = "Lsp Cursor Word Definition"},
+            {"<leader>xf","<cmd>TroubleToggle lsp_references<CR>",desc = "Lsp Cursor Word References"},
+            {"<leader>xq","<cmd>TroubleToggle quickfix<CR>",desc = "Window Quickfix Project"},
+            {"<leader>xl","<cmd>TroubleToggle loclist<CR>",desc = "Window Local List Project"}
+        },
         opts = {
             position = "bottom",
             height = 10,

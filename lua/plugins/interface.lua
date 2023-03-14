@@ -18,7 +18,10 @@ return {
         cmd = {"ToggleTerm","TermExec","ToggleTermToggleAll","ToggleTermSendCurrentLine",
         "ToggleTermSendVisualLines","ToggleTermSendVisualSelection"},
         keys = {
-            {"<leader>ttg", "<cmd>lua _lazygit_toggle()<CR>",desc="Lazygit Terminal"}
+            -- 打开终端
+            {"<leader>ttf","<cmd>ToggleTerm<CR>",desc = "Open Float Terminal"},
+            -- 打开lazygit terminal
+            {"<leader>ttg", "<cmd>lua _lazygit_toggle()<CR>",desc="Open Lazygit Terminal"}
         },
         config = function()
             local Terminal  = require('toggleterm.terminal').Terminal
@@ -48,6 +51,43 @@ return {
                 }
             })
         end
+    },
+    -- 终端缓冲区打开文件
+    {
+        "willothy/flatten.nvim",
+        opts = {
+            callbacks = {
+                pre_open = function()
+                    require("toggleterm").toggle(0)
+                end,
+                post_open = function(bufnr, winnr, ft)
+                    if ft == "gitcommit" then
+                        vim.api.nvim_create_autocmd(
+                            "BufWritePost",
+                            {
+                                buffer = bufnr,
+                                once = true,
+                                callback = function()
+                                    vim.defer_fn(
+                                        function()
+                                            vim.api.nvim_buf_delete(bufnr, {})
+                                        end,
+                                        50
+                                    )
+                                end
+                            }
+                        )
+                    else
+                        require("toggleterm").toggle(0)
+                        vim.api.nvim_set_current_win(winnr)
+                    end
+                end,
+                block_end = function()
+                    require("toggleterm").toggle(0)
+                end
+            }
+        },
+        priority = 1001,
     },
     -- 文件目录树
     {

@@ -136,11 +136,11 @@ mapcmd("<leader>dvt", "DiffviewToggleFiles")
 -- F
 -- fzf
 -- 功能选择
-maptext("<leader>fs", "FzfLua ")
+maptext("<leader>fg", "FzfLua ")
 -- 直接查找文件
 mapcmd("<leader>ff", "FzfLua files")
 -- 带参数查找
-maptext("<leader>fp","FzfLua files cwd=")
+maptext("<leader>fc","FzfLua files cwd=")
 -- 打开缓冲区
 mapcmd("<leader>fb", "FzfLua buffers")
 -- 打开文件历史
@@ -148,7 +148,7 @@ mapcmd("<leader>fo", "FzfLua oldfiles")
 -- 快速修复列表
 mapcmd("<leader>fq", "FzfLua quickfix")
 -- 打开标签
-mapcmd("<leader>ft", "FzfLua tabs")
+mapcmd("<leader>fb", "FzfLua tabs")
 -- 参数列表
 mapcmd("<leader>fa", "FzfLua args")
 
@@ -352,13 +352,7 @@ maplua("<leader>nud", "require('numb').disable()")
 mapcmd("<leader>st","StartupTime")
 
 -- search
-mapkey('n', '<leader>sw', '/\\<lt>\\><left><left>')
-
--- specs
--- 打开/关闭
-maplua("<leader>slt", "require('specs').toggle()")
--- 插件调用
-maplua("<M-s>", "require('specs').show_specs()")
+mapkey('n', '<leader>se', '/\\<lt>\\><left><left>')
 
 -- Sidebar
 mapcmd("<leader>sbt","SidebarNvimToggle")
@@ -378,8 +372,6 @@ mapcmd("<leader>syl","SymbolsOutline")
 -- ToggleTerm
 -- 退出终端插入模式
 mapkey("t", "<Esc>", "<C-\\><C-n>")
--- 打开终端
-mapcmd("<leader>ttf", "ToggleTerm")
 -- 用特定操作打开终端
 maptext("<leader>tte", "TermExec ")
 
@@ -465,13 +457,6 @@ mapkey("v", "J", ":m '>+1<CR>gv=gv")
 mapkey("v", "K", ":m '<-2<CR>gv=gv")
 
 -- X
--- Trouble
-mapcmd("<leader>xt", "TroubleToggle")
-mapcmd("<leader>xw", "TroubleToggle workspace_diagnostics")
-mapcmd("<leader>xd", "TroubleToggle document_diagnostics")
-mapcmd("<leader>xq", "TroubleToggle quickfix")
-mapcmd("<leader>xl", "TroubleToggle loclist")
-mapcmd("<leader>xr", "TroubleToggle lsp_references")
 
 
 -- Y

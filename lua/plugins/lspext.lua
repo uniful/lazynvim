@@ -143,7 +143,7 @@ return {
                 jump = {"<leader><cr>", "<leader><tab>"},
                 open_split = { "<c-x>" },
                 open_vsplit = { "<c-l>" },
-                open_tab = { "<m-t>" },
+                open_tab = { "<space>" },
                 jump_close = {"o"},
                 toggle_mode = "m",
                 toggle_preview = "P",
